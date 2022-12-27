@@ -35,19 +35,19 @@
     <div class="col-md-12">
         <div class="content-panel">
             <table class="table table-striped table-advance table-hover">
-                <h4><i class="fa fa-angle-right"></i> Products <button class="btn btn-primary btn-xs"
+                <h4><i class="fa fa-angle-right"></i> Product <button class="btn btn-primary btn-xs"
                             onclick="show_add_new(event)"><i class="fa fa-plus"></i> Add New</button></h4>
                 <!-- add new product-->
                 <div class="add_new hide">
-                    <h4 class="mb"><i class="fa fa-angle-right"></i>Add New product</h4>
+                    <h4 class="mb"><i class="fa fa-angle-right"></i>Add New Product</h4>
                     <form class="form-horizontal style-form"
                           method="post">
                         <div class="form-group">
                             <label for=""
-                                   class="col-sm-2 col-sm-2 control-label"> Name: </label>
+                                   class="col-sm-2 col-sm-2 control-label">Name: </label>
                             <div class="col-sm-10">
-                                <input id="product_name"
-                                       name="product_name"
+                                <input id="name"
+                                       name="name"
                                        type="text"
                                        class="form-control"
                                        autofocus
@@ -57,32 +57,29 @@
                         <br style="clear: both;">
                         <div class="form-group">
                             <label for=""
-                                   class="col-sm-2 col-sm-2 control-label"> Description: </label>
+                                   class="col-sm-2 col-sm-2 control-label">Description: </label>
                             <div class="col-sm-10">
-                                <input id="product_description"
-                                       name="product_description"
+                                <input id="description"
+                                       name="description"
                                        type="text"
-                                       class="form-control">
-                                <!-- <textarea name="form-control product_description"
-                                          id="product_description"
-                                          cols="53"
-                                          rows="4"></textarea> -->
+                                       class="form-control"
+                                       required>
                             </div>
                         </div>
                         <br style="clear: both;">
                         <div class="form-group">
                             <label for=""
-                                   class="col-sm-2 col-sm-2 control-label"> Category: </label>
+                                   class="col-sm-2 col-sm-2 control-label">Category: </label>
                             <div class="col-sm-10">
-                                <select id="product_category"
-                                        name="product_category"
+                                <select id="category"
+                                        name="category"
                                         class="form-control"
                                         required>
                                     <option value=""></option>
-                                    <?php if (is_array($categories)): ?>
-                                    <?php foreach ($categories as $category): ?>
-                                    <option value="<?= $category->id ?>"><?= $category->category ?></option>
-                                    <?php endforeach; ?>
+                                    <?php if(is_array($categories)): ?>
+                                        <?php foreach($categories as $category): ?>
+                                            <option value="<?= $category->id ?>"><?=$category->category?></option>
+                                        <?php endforeach; ?>
                                     <?php endif; ?>
                                 </select>
                             </div>
@@ -90,48 +87,51 @@
                         <br style="clear: both;">
                         <div class="form-group">
                             <label for=""
-                                   class="col-sm-2 col-sm-2 control-label"> Image: </label>
+                                   class="col-sm-2 col-sm-2 control-label">Image: </label>
                             <div class="col-sm-10">
-                                <input id="product_image"
-                                       name="product_image"
+                                <input id="image"
+                                       name="image"
                                        type="file"
-                                       class="form-control">
+                                       class="form-control"
+                                       required>
                             </div>
                         </div>
                         <br style="clear: both;">
                         <div class="form-group">
                             <label for=""
-                                   class="col-sm-2 col-sm-2 control-label"> Image2 (optional): </label>
+                                   class="col-sm-2 col-sm-2 control-label">Image2 (optional): </label>
                             <div class="col-sm-10">
-                                <input id="product_image_2"
-                                       name="product_image_2"
+                                <input id="image2"
+                                       name="image2"
                                        type="file"
-                                       class="form-control">
+                                       class="form-control"
+                                       autofocus>
                             </div>
                         </div>
                         <br style="clear: both;">
                         <div class="form-group">
                             <label for=""
-                                   class="col-sm-2 col-sm-2 control-label"> Image3 (optional): </label>
+                                   class="col-sm-2 col-sm-2 control-label">Image3 (optional): </label>
                             <div class="col-sm-10">
-                                <input id="product_image_3"
-                                       name="product_image_3"
+                                <input id="image3"
+                                       name="image3"
                                        type="file"
-                                       class="form-control">
+                                       class="form-control"
+                                       autofocus>
                             </div>
                         </div>
                         <br style="clear: both;">
                         <div class="form-group">
                             <label for=""
-                                   class="col-sm-2 col-sm-2 control-label"> Image4 (optional): </label>
+                                   class="col-sm-2 col-sm-2 control-label">Image4 (optional): </label>
                             <div class="col-sm-10">
-                                <input id="product_image_4"
-                                       name="product_image_4"
+                                <input id="image4"
+                                       name="image4"
                                        type="file"
-                                       class="form-control">
+                                       class="form-control"
+                                       autofocus>
                             </div>
                         </div>
-
                         <button type="button"
                                 class="btn btn-danger"
                                 onclick="show_add_new(event)"
@@ -147,7 +147,7 @@
                 <hr>
                 <!-- Edit product -->
                 <div class="edit_product hide">
-                    <h4 class="mb"><i class="fa fa-angle-right"></i>Edit product</h4>
+                    <h4 class="mb"><i class="fa fa-angle-right"></i>Edit Product</h4>
                     <form class="form-horizontal style-form"
                           method="post">
                         <div class="form-group">
@@ -174,17 +174,19 @@
                 <!-- Edit product end -->
                 <thead>
                     <tr>
-                        <th><i class="fa fa-bullhorn"></i> Product ID</th>
-                        <th><i class="fa fa-bullhorn"></i> Product Name</th>
-                        <th><i class=" fa fa-edit"></i> Description</th>
-                        <th><i class=" fa fa-edit"></i> Category</th>
-                        <th><i class=" fa fa-edit"></i> Date</th>
+                        <th> Product id</th>
+                        <th> Product Name</th>
+                        <th> Description</th>
+                        <th> Category</th>
+                        <th> Date</th>
                         <th><i class=" fa fa-edit"></i> Actions</th>
                     </tr>
                 </thead>
                 <tbody id="table_body">
                     <?php
                     echo $tbl_rows;
+
+                    // echo ($tbl_rows);
                     ?>
                 </tbody>
             </table>
@@ -197,7 +199,7 @@
 
     function show_add_new() {
         var show_add_box = document.querySelector(".add_new");
-        var product_input = document.querySelector("#product_name");
+        var product_input = document.querySelector("#name");
         if (show_add_box.classList.contains("hide")) {
             show_add_box.classList.remove("hide");
             product_input.focus();
@@ -229,67 +231,32 @@
     }
 
     function collect_data(e) {
-        var product_input = document.querySelector("#product_name");
+        var product_input = document.querySelector("#name");
         if (product_input.value.trim() == "" || !isNaN(product_input.value.trim())) {
             alert("Please enter a valid product name");
             return;
         }
 
-        var description_input = document.querySelector("#product_description");
+        var description_input = document.querySelector("#description");
         if (description_input.value.trim() == "" || !isNaN(description_input.value.trim())) {
             alert("Please enter a valid description");
             return;
         }
-
-        var category_input = document.querySelector("#product_category");
+        
+        var category_input = document.querySelector("#category");
         if (category_input.value.trim() == "" || isNaN(category_input.value.trim())) {
             alert("Please enter a valid category");
             return;
-
         }
 
-        var data = new FormData();
-        data.append('name' , product_input.value.trim());
-        data.append('description' , description_input.value.trim());
-        data.append('category' , category_input.value.trim());
-        data.append('data_type' , 'add_product');
-        
-        send_data_files(data);    
+        var data = product_input.value.trim();
 
-        // var image_input = document.querySelector("#product_image");
-        // if (image_input.files.length == 0) {
-        //     alert("Please enter valid image");
-        //     return;
-        // }
-
-        // var data = new FormData();
-
-        // var image_input_2 = document.querySelector("#product_image_2");
-        // if (image_input_2.files.length > 0) {
-        //     data.append('image2', image_input_2.files[0]);
-        // }
-
-        // var image_input_3 = document.querySelector("#product_image_3");
-        // if (image_input_3.files.length > 0) {
-        //     data.append('image3', image_input_3.files[0]);
-        // }
-
-        // var image_input_4 = document.querySelector("#product_image_4");
-        // if (image_input_4.files.length > 0) {
-        //     data.append('image4', image_input_4.files);
-        // }
-
-
-
-
-
-        // data.append('name', product_input.value.trim());
-        // data.append('description', description_input.value.trim());
-        // data.append('category', category_input.value.trim());
-        // data.append('data_type', 'add_product');
-        // data.append('image', image_input.files[0]);
-
-        // send_data_files(data);
+        send_data({
+            name        : product_input.value.trim(),
+            description : description_input.value.trim(),
+            category    : category_input.value.trim(),
+            data_type   : 'add_product'
+        });
 
     }
 
@@ -316,24 +283,10 @@
 
         });
 
+
         ajax.open("POST", "<?= ROOT ?>ajax_product", true);
         ajax.send(JSON.stringify(data));
     }
-
-    function send_data_files(formdata) {
-        var ajax = new XMLHttpRequest();
-
-        ajax.addEventListener('readystatechange', function () {
-            if (ajax.readyState == 4 && ajax.status == 200) {
-                handle_result(ajax.responseText);
-            }
-
-        });
-        
-        ajax.open("POST", "<?= ROOT ?>ajax_product", true);
-        ajax.send(formdata);
-    }
-
 
     function handle_result(result) {
         if (result != "") {
