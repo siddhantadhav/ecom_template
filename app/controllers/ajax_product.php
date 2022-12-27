@@ -10,6 +10,7 @@ class Ajax_product extends Controller
         if (is_object($data) && isset($data->data_type)) {
             $DB = Database::getInstance();
             $product = $this->load_model('Product');
+            $category = $this->load_model('Category');
 
             if ($data->data_type == 'add_product') {
 
@@ -27,7 +28,7 @@ class Ajax_product extends Controller
                     $arr['message'] = "Product Added Successfully";
                     $arr['message_type'] = "info";
                     $cats = $product->get_all();
-                    $arr['data'] = $product->make_table($cats);
+                    $arr['data'] = $product->make_table($cats, $category);
                     $arr['data_type'] = "add_product";
 
                     echo json_encode($arr);
