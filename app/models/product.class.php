@@ -43,7 +43,7 @@ class Product
         // error below
 
         foreach($FILES as $key => $img_row) {
-            if($img_row['error'] == 0 && in_array($img_row['type'], $allowed)) {
+            if($img_row['error'] == 0 ) {
                 if($img_row['size'] < $size) {
                     $destination = $folder . $img_row['name'];
                     move_uploaded_file($img_row['tmp_name'], $destination);
@@ -102,12 +102,15 @@ class Product
         if (is_array($cats)) {
             foreach ($cats as $cat_row) {
                 $edit_args = $cat_row->id.",'".$cat_row->name."'";
+
+                $one_cat = $model->get_one($cat_row->category);
                 $result .= "<tr>";
                 $result .= '
                     <td><a href="basic_table.html#">'.$cat_row->id.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->name.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->description.'</a></td>
-                    <td><a href="basic_table.html#">'.$cat_row->category.'</a></td>
+                    <td><a href="basic_table.html#">'.$one_cat->category.'</a></td>
+                    <td><a href="basic_table.html#"><img src ="'.ROOT.$cat_row->image.'" style="width:50px; height:50px" /></a></td>
                     <td><a href="basic_table.html#">'.$cat_row->date.'</a></td>
                     <td>
                         <button onclick = "show_edit_name('.$edit_args.', event)" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
