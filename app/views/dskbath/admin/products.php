@@ -178,6 +178,7 @@
                         <th> Product Name</th>
                         <th> Description</th>
                         <th> Category</th>
+                        <th> Image</th>
                         <th> Date</th>
                         <th><i class=" fa fa-edit"></i> Actions</th>
                     </tr>
@@ -248,15 +249,44 @@
             alert("Please enter a valid category");
             return;
         }
+        
+        var image_input = document.querySelector("#image");
+        if (image_input.files.length == 0) {
+            alert("Please enter a valid image");
+            return;
+        }
 
-        var data = product_input.value.trim();
+        var data = new FormData();
+        
+        var image2_input = document.querySelector("#image2");
+        if (image2_input.files.length > 0) {
+            data.append('image2', image2_input.files[0]);
+        }
+        
+        var image3_input = document.querySelector("#image3");
+        if (image3_input.files.length > 0) {
+            data.append('image3', image3_input.files[0]);
+        }
+        
+        var image4_input = document.querySelector("#image4");
+        if (image4_input.files.length > 0) {
+            data.append('image4', image4_input.files[0]);
+        }
+        
+        data.append('name', product_input.value.trim());
+        data.append('description', description_input.value.trim());
+        data.append('category', category_input.value.trim());
+        data.append('data_type', 'add_product');
+        data.append('image', image_input.files[0]);
 
-        send_data({
-            name        : product_input.value.trim(),
-            description : description_input.value.trim(),
-            category    : category_input.value.trim(),
-            data_type   : 'add_product'
-        });
+        
+        send_data_files(data);
+        // send_data({
+        //     name        : product_input.value.trim(),
+        //     description : description_input.value.trim(),
+        //     category    : category_input.value.trim(),
+        //     data_type   : 'add_product'
+        // });
 
     }
 
@@ -286,6 +316,21 @@
 
         ajax.open("POST", "<?= ROOT ?>ajax_product", true);
         ajax.send(JSON.stringify(data));
+    }
+
+    function send_data_files(formdata) {
+        var ajax = new XMLHttpRequest();
+
+        ajax.addEventListener('readystatechange', function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                handle_result(ajax.responseText);
+            }
+
+        });
+
+
+        ajax.open("POST", "<?= ROOT ?>ajax_product", true);
+        ajax.send(formdata);
     }
 
     function handle_result(result) {

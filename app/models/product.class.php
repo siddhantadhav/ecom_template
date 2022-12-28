@@ -3,7 +3,7 @@
 class Product
 {
     
-    public function create($DATA)
+    public function create($DATA, $FILES)
     {
         $_SESSION['error'] = "";
         $DB = Database::newInstance();
@@ -22,8 +22,41 @@ class Product
             $_SESSION['error'] .= "Enter Valid Category";
         }
 
+        $arr['image'] = "";
+        $arr['image2'] = "";
+        $arr['image3'] = "";
+        $arr['image4'] = "";
+
+        $allowed[] = "image/jepg";
+        $allowed[] = "image/jpg";
+        $allowed[] = "image/png";
+
+        $size = 10;
+        $size = ($size*1024*1024);
+
+        $folder = "upload/";
+
+        if(!file_exists($folder)){
+            mkdir($folder, 0777, true);
+        }
+
+        // error below
+
+        foreach($FILES as $key => $img_row) {
+            if($img_row['error'] == 0 && in_array($img_row['type'], $allowed)) {
+                if($img_row['size'] < $size) {
+                    $destination = $folder . $img_row['name'];
+                    move_uploaded_file($img_row['tmp_name'], $destination);
+                    $arr[$key] = $destination;
+                }
+                else {
+                    $_SESSION['error'] .= $key . "is bigger than required size";
+                }
+            }
+        }
+
         if (!isset($_SESSION['error']) || $_SESSION['error'] == "") {
-            $query = "insert into products (name, description, category, date) values (:name, :description, :category, :date)";
+            $query = "insert into products (name, description, category, date, image, image2, image3, image4) values (:name, :description, :category, :date, :image, :image2, :image3, :image4)";
             $check = $DB->write($query, $arr);
 
             if ($check) {
@@ -69,14 +102,12 @@ class Product
         if (is_array($cats)) {
             foreach ($cats as $cat_row) {
                 $edit_args = $cat_row->id.",'".$cat_row->name."'";
-
-                $one_cat = $model->get_one($cat_row->category);
                 $result .= "<tr>";
                 $result .= '
                     <td><a href="basic_table.html#">'.$cat_row->id.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->name.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->description.'</a></td>
-                    <td><a href="basic_table.html#">'.$one_cat->category.'</a></td>
+                    <td><a href="basic_table.html#">'.$cat_row->category.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->date.'</a></td>
                     <td>
                         <button onclick = "show_edit_name('.$edit_args.', event)" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
