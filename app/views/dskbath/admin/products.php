@@ -279,15 +279,7 @@
         data.append('data_type', 'add_product');
         data.append('image', image_input.files[0]);
 
-        
         send_data_files(data);
-        // send_data({
-        //     name        : product_input.value.trim(),
-        //     description : description_input.value.trim(),
-        //     category    : category_input.value.trim(),
-        //     data_type   : 'add_product'
-        // });
-
     }
 
     function collect_edit_data(e) {
@@ -312,8 +304,6 @@
             }
 
         });
-
-
         ajax.open("POST", "<?= ROOT ?>ajax_product", true);
         ajax.send(JSON.stringify(data));
     }

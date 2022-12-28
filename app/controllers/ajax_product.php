@@ -6,9 +6,9 @@ class Ajax_product extends Controller
     {
         // $data = file_get_contents("php://input");
         
-        // show($_POST);
         // show($_FILES);
-        $data = (object) $_POST;
+        $data = (object) $_POST;  
+             
 
         if (is_object($data) && isset($data->data_type)) {
             $DB = Database::getInstance();

@@ -40,7 +40,7 @@ class Product
             mkdir($folder, 0777, true);
         }
 
-        // error below
+        // error below while checking for allowed file types
 
         foreach($FILES as $key => $img_row) {
             if($img_row['error'] == 0 ) {
