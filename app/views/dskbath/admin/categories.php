@@ -49,6 +49,24 @@
                                        autofocus>
                             </div>
                         </div>
+                        <br style="clear: both;">
+                        <div class="form-group">
+                            <label for=""
+                                   class="col-sm-2 col-sm-2 control-label">Parent (optional): </label>
+                            <div class="col-sm-10">
+                                <select id="parent"
+                                        name="parent"
+                                        class="form-control"
+                                        required>
+                                    <option value=""></option>
+                                    <?php if (is_array($categories_enabled)): ?>
+                                    <?php foreach ($categories_enabled as $category): ?>
+                                    <option value="<?= $category->id ?>"><?= $category->category ?></option>
+                                    <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </select>
+                            </div>
+                        </div>
                         <button type="button"
                                 class="btn btn-danger"
                                 onclick="show_add_new(event)"
@@ -78,9 +96,27 @@
                                        autofocus>
                             </div>
                         </div>
+                        <br style="clear: both;">
+                        <div class="form-group">
+                            <label for=""
+                                   class="col-sm-2 col-sm-2 control-label">Parent (optional): </label>
+                            <div class="col-sm-10">
+                                <select id="parent_edit"
+                                        name="parent"
+                                        class="form-control"
+                                        required>
+                                    <option value=""></option>
+                                    <?php if (is_array($categories_enabled)): ?>
+                                    <?php foreach ($categories_enabled as $category): ?>
+                                    <option value="<?= $category->id ?>"><?= $category->category ?></option>
+                                    <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </select>
+                            </div>
+                        </div>
                         <button type="button"
                                 class="btn btn-danger"
-                                onclick="show_edit_category(0, '', event)"
+                                onclick="show_edit_category(0, '','', event)"
                                 style="position: absolute; bottom: 10px; left: 10px;;">Cancel</button>
                         <button type="button"
                                 onclick="collect_edit_data(event)"
@@ -92,6 +128,7 @@
                 <thead>
                     <tr>
                         <th><i class="fa fa-bullhorn"></i> Category</th>
+                        <th><i class=" fa fa-table"></i> Parent</th>
                         <th><i class=" fa fa-edit"></i> Status</th>
                         <th><i class=" fa fa-edit"></i> Action</th>
                     </tr>
@@ -125,13 +162,17 @@
 
     }
 
-    function show_edit_category(id, category, e) {
+    function show_edit_category(id, category,parent, e) {
         EDIT_ID = id;
         var show_add_box = document.querySelector(".edit_category");
         // show_add_box.style.left = (e.clientX - 600)+"px";
         show_add_box.style.top = (e.clientY - 300) + "px";
         var category_input = document.querySelector("#category_edit");
         category_input.value = category;
+
+        var parent_input = document.querySelector("#parent_edit");
+        parent_input.value = parent;
+        
         if (show_add_box.classList.contains("hide")) {
             show_add_box.classList.remove("hide");
             category_input.focus();
@@ -149,10 +190,16 @@
         if (category_input.value.trim() == "" || !isNaN(category_input.value.trim())) {
             alert("Please enter a valid category name");
         }
-        var data = category_input.value.trim();
+        var parent_input = document.querySelector("#parent");
+        if (isNaN(parent_input.value.trim())) {
+            alert("Please enter a valid category name");
+        }
+        var category = category_input.value.trim();
+        var parent = parent_input.value.trim();
 
         send_data({
-            data: data,
+            category: category,
+            parent: parent,
             data_type: 'add_category'
         });
 
@@ -163,10 +210,17 @@
         if (category_input.value.trim() == "" || !isNaN(category_input.value.trim())) {
             alert("Please enter a valid category name");
         }
-        var data = category_input.value.trim();
+
+        var parent_input = document.querySelector("#parent_edit");
+        if (isNaN(parent_input.value.trim())) {
+            alert("Please enter a valid category name");
+        }
+        var category = category_input.value.trim();
+        var parent = parent_input.value.trim();
         send_data({
             id: EDIT_ID,
-            category: data,
+            category: category,
+            parent: parent,
             data_type: 'edit_category'
         });
     }
@@ -187,7 +241,7 @@
     }
 
     function handle_result(result) {
-        console.log(typeof result);
+        console.log(result);
         if (result != "") {
             var obj = JSON.parse(result);
             if (typeof obj.data_type != 'undefined') {
@@ -203,25 +257,24 @@
                         alert(obj.message);
                     }
                 }
-                else 
-                if (obj.data_type == "edit_category") {
-                    
-                    show_edit_category(0, '', false);
-                    var table_body = document.querySelector('#table_body');
-                    table_body.innerHTML = obj.data;
-                    alert(obj.message);
-                }
-                else 
-                if (obj.data_type == "delete_row") {
-                    var table_body = document.querySelector('#table_body');
-                    table_body.innerHTML = obj.data;
-                    alert(obj.message);
-                }
-                else 
-                if (obj.data_type == "disable_row") {
-                    var table_body = document.querySelector('#table_body');
-                    table_body.innerHTML = obj.data;
-                }
+                else
+                    if (obj.data_type == "edit_category") {
+                        show_edit_category(0, '','', event);
+                        var table_body = document.querySelector('#table_body');
+                        table_body.innerHTML = obj.data;
+                        alert(obj.message);
+                    }
+                    else
+                        if (obj.data_type == "delete_row") {
+                            var table_body = document.querySelector('#table_body');
+                            table_body.innerHTML = obj.data;
+                            alert(obj.message);
+                        }
+                        else
+                            if (obj.data_type == "disable_row") {
+                                var table_body = document.querySelector('#table_body');
+                                table_body.innerHTML = obj.data;
+                            }
             }
         }
     }

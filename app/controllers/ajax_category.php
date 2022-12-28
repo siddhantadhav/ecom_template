@@ -62,7 +62,7 @@ class Ajax_category extends Controller
 
             elseif ($data->data_type == 'edit_category') {
                 
-                $category->edit($data->id, $data->category);
+                $category->edit($data);
                 $arr['message'] = "Your row was successfully edited !!!";
                 $_SESSION['error'] = "";
                 $arr['message_type'] = "info";

@@ -20,10 +20,12 @@ class Admin extends Controller
 
         $DB = Database::getInstance();
         $categories = $DB->read("select * from categories order by id desc");
+        $categories_enabled = $DB->read("select * from categories where disabled = 0 order by id desc");
         $category = $this->load_model('Category');
         $tbl_rows = $category->make_table($categories);
 
         $data['tbl_rows'] = $tbl_rows;
+        $data['categories_enabled'] = $categories_enabled;
         $data['page_title'] = "Admin";
         
         $this->view("admin/categories", $data);

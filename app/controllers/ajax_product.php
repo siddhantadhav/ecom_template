@@ -5,8 +5,10 @@ class Ajax_product extends Controller
     public function index()
     {
         // $data = file_get_contents("php://input");
+        show($_FILES);
+        show($_POST);
+        die;
         
-        // show($_FILES);
         $data = (object) $_POST;  
              
 
