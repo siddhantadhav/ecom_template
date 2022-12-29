@@ -259,7 +259,7 @@
                 }
                 else
                     if (obj.data_type == "edit_category") {
-                        show_edit_category(0, '','', event);
+                        show_edit_category(0, '','', false);
                         var table_body = document.querySelector('#table_body');
                         table_body.innerHTML = obj.data;
                         alert(obj.message);

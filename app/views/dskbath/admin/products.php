@@ -197,6 +197,7 @@
     </div><!-- /col-md-12 -->
 </div><!-- /row -->
 
+
 <script>
     var EDIT_ID = 0;
 
@@ -306,7 +307,7 @@
             }
 
         });
-        ajax.open("POST", "<?= ROOT ?>ajax_product", true);
+        ajax.open("POST", "<?= ROOT ?>ajax_product_no_file", true);
         ajax.send(JSON.stringify(data));
     }
 
@@ -364,7 +365,7 @@
         }
     }
 
-    function delete_row(id) {
+    function delete_row(id, name) {
         if (!confirm("Are you sure you want to delete this row")) {
             return;
         }
@@ -372,6 +373,7 @@
             data_type: "delete_row",
             id: id
         });
+        
     }
 
     function disable_row(id, state) {

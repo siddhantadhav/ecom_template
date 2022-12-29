@@ -24,11 +24,16 @@ class Category
     public function edit($data)
     {
         $DB = Database::newInstance();
-        
+        if($data->parent != 0){
+            $arr['parent'] = $data->parent;
+        }
+        else{
+            $data->parent = 0;
+        }
         $arr['id'] =  $data->id;
         $arr['category'] = $data->category;
-        $arr['parent'] = $data->parent;
-        $query = "update categories set category = :category, parent = :parent where id = :id limit 1";
+        
+        $query = "update categories set category = '$data->category', parent = $data->parent where id = $data->id limit 1";
         $DB->write($query, $arr);
     }
 
@@ -50,9 +55,7 @@ class Category
         $id = (int) $id;
         $DB = Database::newInstance();
         $data = $DB->read("select * from categories where id = $id limit 1");
-
-        $obj = $data;
-        return $obj;
+        return $data[0];
     }
     public function make_table($cats) 
     {
