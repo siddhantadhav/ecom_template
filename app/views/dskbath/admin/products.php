@@ -1,37 +1,39 @@
 <?php $this->view("admin/header", $data); ?>
 <?php $this->view("admin/sidebar", $data); ?>
+
+<style type="text/css">
+    .add_new {
+        width: 500px;
+        height: 500px;
+        background-color: #eae8e8;
+        box-shadow: 0px 0px 10px #aaa;
+        position: absolute;
+        padding: 6px;
+    }
+
+    .edit_product {
+        width: 500px;
+        height: 300px;
+        background-color: #eae8e8;
+        box-shadow: 0px 0px 10px #aaa;
+        position: absolute;
+        padding: 6px;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .form-group {
+        margin: 10px;
+    }
+</style>
+
 <div class="row mt">
-    <style type="text/css">
-        .add_new {
-            width: 500px;
-            height: 500px;
-            background-color: #eae8e8;
-            box-shadow: 0px 0px 10px #aaa;
-            position: absolute;
-            padding: 6px;
-        }
-
-        .edit_product {
-            width: 500px;
-            height: 300px;
-            background-color: #eae8e8;
-            box-shadow: 0px 0px 10px #aaa;
-            position: absolute;
-            padding: 6px;
-        }
-
-        .show {
-            display: block;
-        }
-
-        .hide {
-            display: none;
-        }
-
-        .form-group {
-            margin: 10px;
-        }
-    </style>
     <div class="col-md-12">
         <div class="content-panel">
             <table class="table table-striped table-advance table-hover">
@@ -76,10 +78,10 @@
                                         class="form-control"
                                         required>
                                     <option value=""></option>
-                                    <?php if(is_array($categories)): ?>
-                                        <?php foreach($categories as $category): ?>
-                                            <option value="<?= $category->id ?>"><?=$category->category?></option>
-                                        <?php endforeach; ?>
+                                    <?php if (is_array($categories)): ?>
+                                    <?php foreach ($categories as $category): ?>
+                                    <option value="<?= $category->id ?>"><?= $category->category ?></option>
+                                    <?php endforeach; ?>
                                     <?php endif; ?>
                                 </select>
                             </div>
@@ -243,13 +245,13 @@
             alert("Please enter a valid description");
             return;
         }
-        
+
         var category_input = document.querySelector("#category");
         if (category_input.value.trim() == "" || isNaN(category_input.value.trim())) {
             alert("Please enter a valid category");
             return;
         }
-        
+
         var image_input = document.querySelector("#image");
         if (image_input.files.length == 0) {
             alert("Please enter a valid image");
@@ -257,22 +259,22 @@
         }
 
         var data = new FormData();
-        
+
         var image2_input = document.querySelector("#image2");
         if (image2_input.files.length > 0) {
             data.append('image2', image2_input.files[0]);
         }
-        
+
         var image3_input = document.querySelector("#image3");
         if (image3_input.files.length > 0) {
             data.append('image3', image3_input.files[0]);
         }
-        
+
         var image4_input = document.querySelector("#image4");
         if (image4_input.files.length > 0) {
             data.append('image4', image4_input.files[0]);
         }
-        
+
         data.append('name', product_input.value.trim());
         data.append('description', description_input.value.trim());
         data.append('category', category_input.value.trim());

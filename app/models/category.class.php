@@ -49,9 +49,10 @@ class Category
     {
         $id = (int) $id;
         $DB = Database::newInstance();
-        $data = $DB->read("select * from categories where id = '$id' limit 1");
-        return $data[0];
-        
+        $data = $DB->read("select * from categories where id = $id limit 1");
+
+        $obj = $data;
+        return $obj;
     }
     public function make_table($cats) 
     {

@@ -50,4 +50,14 @@ class Admin extends Controller
         
         $this->view("admin/products", $data);
     }
+
+    public function enquires()
+    {
+        // add login functionality
+
+
+        
+        $data['page_title'] = "Admin";
+        $this->view("admin/enquires", $data);
+    }
 }

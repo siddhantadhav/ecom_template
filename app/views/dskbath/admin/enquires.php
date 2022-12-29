@@ -4,8 +4,8 @@
 
 
 
-<p>Place your content here.</p>
-            
+<p>enquires</p>
+
 
 
 <?php $this->view("admin/footer", $data); ?>
