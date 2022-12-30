@@ -70,6 +70,7 @@ class Ajax_category extends Controller
                 $arr['data'] = $category->make_table($cats);
                 $arr['data_type'] = "edit_category";
 
+                echo json_encode($arr);
             }
 
         }

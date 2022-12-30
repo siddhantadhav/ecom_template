@@ -65,14 +65,63 @@ class Product
         }
         return false;
     }
-    public function edit($id, $name)
+    public function edit($data, $FILES)
     {
-        $DB = Database::newInstance();
-        
-        $arr['id'] = (int) $id;
+        $id = $data->id;
+        $name = $data->name;
+        $description = $data->description;
+        $category = $data->category;
+        $arr['id'] = $id;
         $arr['name'] = $name;
-        $query = "update products set name = :name where id = :id limit 1";
-        $DB->write($query, $arr);
+        $arr['description'] = $description;
+        $arr['category'] = $category;
+        
+        $image_string = "";
+
+        if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['name']))) {
+            $_SESSION['error'] .= "Enter Valid Product Name";
+        }
+        if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['description']))) {
+            $_SESSION['error'] .= "Enter Valid Description";
+        }
+        if (!is_numeric($arr['category'])) {
+            $_SESSION['error'] .= "Enter Valid Category";
+        }
+
+        $allowed[] = "image/jepg";
+        $allowed[] = "image/jpg";
+        $allowed[] = "image/png";
+
+        $size = 10;
+        $size = ($size*1024*1024);
+
+        $folder = "upload/";
+
+        if(!file_exists($folder)){
+            mkdir($folder, 0777, true);
+        }
+
+        // error below while checking for allowed file types
+
+        foreach($FILES as $key => $img_row) {
+            if($img_row['error'] == 0 ) {
+                if($img_row['size'] < $size) {
+                    $destination = $folder . $img_row['name'];
+                    move_uploaded_file($img_row['tmp_name'], $destination);
+                    $arr[$key] = $destination;
+                    $image_string = "," . $key . " = :" . $key;
+                }
+                else {
+                    $_SESSION['error'] .= $key . "is bigger than required size";
+                }
+            }
+        }
+
+        if (!isset($_SESSION['error']) || $_SESSION['error'] == "") {
+            $DB = Database::newInstance();
+            $query = "update products set name = :name, description = :description, category = :category $image_string where id = :id limit 1";
+            $DB->write($query, $arr);
+        }
     }
 
     public function delete($id)
@@ -102,17 +151,28 @@ class Product
         if (is_array($cats)) {
             foreach ($cats as $cat_row) {
                 $edit_args = $cat_row->id.",'".$cat_row->name."'";
-                // $one_cat = $model->get_one($cat_row->category);
+
+                $info = array();
+                $info['id'] = $cat_row->id;
+                $info['name'] = $cat_row->name;
+                $info['description'] = $cat_row->description;
+                $info['category'] = $cat_row->category;
+                $info['image'] = $cat_row->image;
+                $info['image2'] = $cat_row->image2;
+                $info['image3'] = $cat_row->image3;
+                $info['image4'] = $cat_row->image4;
+                $info = str_replace('"', "'", json_encode($info)) ;
+                $one_cat = $model->get_one($cat_row->category);
                 $result .= "<tr>";
                 $result .= '
                     <td><a href="basic_table.html#">'.$cat_row->id.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->name.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->description.'</a></td>
-                    <td><a href="basic_table.html#">'.$cat_row->category.'</a></td>
+                    <td><a href="basic_table.html#">'.$one_cat->category.'</a></td>
                     <td><a href="basic_table.html#"><img src ="'.ROOT.$cat_row->image.'" style="width:50px; height:50px" /></a></td>
                     <td><a href="basic_table.html#">'.$cat_row->date.'</a></td>
                     <td>
-                        <button onclick = "show_edit_product('.$edit_args.', event)" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                        <button info = "'.$info.'" onclick = "show_edit_product('.$edit_args.', event)" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                         <button name="delete_row" value="'.$edit_args.'" type="submit" onclick = "delete_row('.$edit_args.')" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button>
                     </td>';
                 $result .= "</tr>";

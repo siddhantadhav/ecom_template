@@ -13,7 +13,7 @@
 
     .edit_product {
         width: 500px;
-        height: 300px;
+        height: 600px;
         background-color: #eae8e8;
         box-shadow: 0px 0px 10px #aaa;
         position: absolute;
@@ -30,6 +30,20 @@
 
     .form-group {
         margin: 10px;
+    }
+
+    .edit_product_images {
+        display: flex;
+        width: 100%;
+
+    }
+
+    .edit_product_images img {
+        flex: 1;
+        width: 50px;
+        height: 80px;
+        margin: 2px;
+
     }
 </style>
 
@@ -79,10 +93,12 @@
                                         required>
                                     <option value=""></option>
                                     <?php if (is_array($categories)): ?>
-                                    <?php foreach ($categories as $category): ?>
-                                    <option value="<?= $category->id ?>"><?= $category->category ?></option>
-                                    <?php endforeach; ?>
-                                    <?php endif; ?>
+                                        <?php foreach ($categories as $category): ?>
+                                            <option value="<?= $category->id ?>">
+                                                <?= $category->category ?>
+                                            </option>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                 </select>
                             </div>
                         </div>
@@ -163,9 +179,92 @@
                                        autofocus>
                             </div>
                         </div>
+                        <br style="clear: both;">
+                        <div class="form-group">
+                            <label for=""
+                                   class="col-sm-2 col-sm-2 control-label">Description: </label>
+                            <div class="col-sm-10">
+                                <input id="description_edit"
+                                       name="description_edit"
+                                       type="text"
+                                       class="form-control"
+                                       autofocus>
+                            </div>
+                        </div>
+                        <br style="clear: both;">
+                        <div class="form-group">
+                            <label for=""
+                                   class="col-sm-2 col-sm-2 control-label">Category: </label>
+                            <div class="col-sm-10">
+                                <select id="category_edit"
+                                        name="category_edit"
+                                        class="form-control"
+                                        required>
+                                    <option value=""></option>
+                                    <?php if (is_array($categories)): ?>
+                                        <?php foreach ($categories as $category): ?>
+                                            <option value="<?= $category->id ?>">
+                                                <?= $category->category ?>
+                                            </option>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <br style="clear: both;">
+                        <div class="form-group">
+                            <label for=""
+                                   class="col-sm-2 col-sm-2 control-label">Image: </label>
+                            <div class="col-sm-10">
+                                <input id="image_edit"
+                                       name="image_edit"
+                                       type="file"
+                                       class="form-control"
+                                       required>
+                            </div>
+                        </div>
+                        <br style="clear: both;">
+                        <div class="form-group">
+                            <label for=""
+                                   class="col-sm-2 col-sm-2 control-label">Image2 (optional): </label>
+                            <div class="col-sm-10">
+                                <input id="image2_edit"
+                                       name="image2_edit"
+                                       type="file"
+                                       class="form-control"
+                                       autofocus>
+                            </div>
+                        </div>
+                        <br style="clear: both;">
+                        <div class="form-group">
+                            <label for=""
+                                   class="col-sm-2 col-sm-2 control-label">Image3 (optional): </label>
+                            <div class="col-sm-10">
+                                <input id="image3_edit"
+                                       name="image3_edit"
+                                       type="file"
+                                       class="form-control"
+                                       autofocus>
+                            </div>
+                        </div>
+                        <br style="clear: both;">
+                        <div class="form-group">
+                            <label for=""
+                                   class="col-sm-2 col-sm-2 control-label">Image4 (optional): </label>
+                            <div class="col-sm-10">
+                                <input id="image4_edit"
+                                       name="image4_edit"
+                                       type="file"
+                                       class="form-control"
+                                       autofocus>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="js-product-images edit_product_images"></div>
+
                         <button type="button"
                                 class="btn btn-danger"
-                                onclick="show_edit_product(0, '', event)"
+                                onclick="show_edit_product(0, '', false)"
                                 style="position: absolute; bottom: 10px; left: 10px;;">Cancel</button>
                         <button type="button"
                                 onclick="collect_edit_data(event)"
@@ -216,12 +315,31 @@
     }
 
     function show_edit_product(id, product, e) {
-        EDIT_ID = id;
         var show_add_box = document.querySelector(".edit_product");
         // show_add_box.style.left = (e.clientX - 600)+"px";
-        show_add_box.style.top = (e.clientY - 300) + "px";
-        var product_input = document.querySelector("#product_edit");
-        product_input.value = product;
+        show_add_box.style.top = (e.clientY - 200) + "px";
+        if (e) {
+            var a = (e.currentTarget.getAttribute("info"));
+            var info = JSON.parse(a.replaceAll("'", '"'));
+            EDIT_ID = info.id;
+
+
+            var product_input = document.querySelector("#product_edit");
+            product_input.value = info.name;
+
+            var description_input = document.querySelector("#description_edit");
+            description_input.value = info.description;
+
+            var category_input = document.querySelector("#category_edit");
+            category_input.value = info.category;
+
+            var product_image_input = document.querySelector(".js-product-images");
+            product_image_input.innerHTML = `<img src ="<?= ROOT ?>${info.image}" />`;
+            product_image_input.innerHTML += `<img src ="<?= ROOT ?>${info.image2}" />`;
+            product_image_input.innerHTML += `<img src ="<?= ROOT ?>${info.image3}" />`;
+            product_image_input.innerHTML += `<img src ="<?= ROOT ?>${info.image4}" />`;
+        }
+
         if (show_add_box.classList.contains("hide")) {
             show_add_box.classList.remove("hide");
             product_input.focus();
@@ -230,7 +348,7 @@
 
             show_add_box.classList.add("hide");
 
-            product_input.value = "";
+            // product_input.value = "";
         }
     }
 
@@ -289,13 +407,52 @@
         var product_input = document.querySelector("#product_edit");
         if (product_input.value.trim() == "" || !isNaN(product_input.value.trim())) {
             alert("Please enter a valid product name");
+            return;
         }
-        var data = product_input.value.trim();
-        send_data({
-            id: EDIT_ID,
-            product: data,
-            data_type: 'edit_product'
-        });
+
+        var description_input = document.querySelector("#description_edit");
+        if (description_input.value.trim() == "" || !isNaN(description_input.value.trim())) {
+            alert("Please enter a valid description");
+            return;
+        }
+
+        var category_input = document.querySelector("#category_edit");
+        if (category_input.value.trim() == "" || isNaN(category_input.value.trim())) {
+            alert("Please enter a valid category");
+            return;
+        }
+
+
+
+        var data = new FormData();
+        var image_input = document.querySelector("#image_edit");
+        if (image_input.files.length > 0) {
+            data.append('image', image_input.files[0]);
+        }
+
+
+        var image2_input = document.querySelector("#image2_edit");
+        if (image2_input.files.length > 0) {
+            data.append('image2', image2_input.files[0]);
+        }
+
+        var image3_input = document.querySelector("#image3_edit");
+        if (image3_input.files.length > 0) {
+            data.append('image3', image3_input.files[0]);
+        }
+
+        var image4_input = document.querySelector("#image4_edit");
+        if (image4_input.files.length > 0) {
+            data.append('image4', image4_input.files[0]);
+        }
+
+        data.append('name', product_input.value.trim());
+        data.append('description', description_input.value.trim());
+        data.append('category', category_input.value.trim());
+        data.append('data_type', 'edit_product');
+        data.append('id', EDIT_ID);
+
+        send_data_files(data);
     }
 
     function send_data(data = {}) {
@@ -373,7 +530,7 @@
             data_type: "delete_row",
             id: id
         });
-        
+
     }
 
     function disable_row(id, state) {
