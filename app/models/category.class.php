@@ -7,11 +7,19 @@ class Category
     {
         $DB = Database::newInstance();
         $arr['category'] = ucwords($DATA->category);
-        $arr['parent'] = ucwords($DATA->parent);
+
+        if($DATA->category != 0) {
+            $arr['parent'] = ucwords($DATA->parent);    
+        }
+        else {
+            $arr['parent'] = 0;
+        }
         if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['category']))) {
             $_SESSION['error'] = "Enter Valid Category Name";
         }
+       
         if (!isset($_SESSION['error']) || $_SESSION['error'] == "") {
+
             $query = "insert into categories (category, parent) values (:category, :parent)";
             $check = $DB->write($query, $arr);
 
