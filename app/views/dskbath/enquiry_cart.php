@@ -1,0 +1,1 @@
+<?php $this->view("new_header", $data); ?>

@@ -109,7 +109,7 @@ class Product
                     $destination = $folder . $img_row['name'];
                     move_uploaded_file($img_row['tmp_name'], $destination);
                     $arr[$key] = $destination;
-                    $image_string = "," . $key . " = :" . $key;
+                    $image_string .= "," . $key . " = :" . $key;
                 }
                 else {
                     $_SESSION['error'] .= $key . "is bigger than required size";
@@ -162,13 +162,13 @@ class Product
                 $info['image3'] = $cat_row->image3;
                 $info['image4'] = $cat_row->image4;
                 $info = str_replace('"', "'", json_encode($info)) ;
-                $one_cat = $model->get_one($cat_row->category);
+                // $one_cat = $model->get_one($cat_row->category);
                 $result .= "<tr>";
                 $result .= '
                     <td><a href="basic_table.html#">'.$cat_row->id.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->name.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->description.'</a></td>
-                    <td><a href="basic_table.html#">'.$one_cat->category.'</a></td>
+                    <td><a href="basic_table.html#">'.$cat_row->category.'</a></td>
                     <td><a href="basic_table.html#"><img src ="'.ROOT.$cat_row->image.'" style="width:50px; height:50px" /></a></td>
                     <td><a href="basic_table.html#">'.$cat_row->date.'</a></td>
                     <td>

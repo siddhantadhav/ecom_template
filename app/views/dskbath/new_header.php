@@ -43,19 +43,23 @@
                         <li class="nav-item">
                             <a class="nav-link active"
                                aria-current="page"
-                               href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                               href="<?=ROOT."new_index"?>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                               href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> About Us</a>
+                               href="<?=ROOT."about"?>"><i class="fa fa-info-circle" aria-hidden="true"></i> About Us</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?=ROOT."product"?>"><i class="fa fa-info-circle" aria-hidden="true"></i> Products</a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"
-                               href="#"
+                               href="<?=ROOT."products.php"?>"
                                role="button"
                                data-bs-toggle="dropdown"
                                aria-expanded="false"> <i class="fa fa-list-ul" aria-hidden="true"></i>
-                                Catalogue
+                                Products
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item"
@@ -65,14 +69,14 @@
                                 <li><a class="dropdown-item"
                                        href="#">Something else here</a></li>
                             </ul>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?=ROOT. "contact"?>"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                               href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               href="#"><i class="fa fa-commenting" aria-hidden="true"></i> Enquiry</a>
+                               href="<?=ROOT . "enquiry_cart"?>"><i class="fa fa-commenting" aria-hidden="true"></i> Enquiry</a>
                         </li>
                     </ul>
                 </div>

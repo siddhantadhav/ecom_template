@@ -33,7 +33,7 @@ class Ajax_product_no_file extends Controller
                 }
             } 
             elseif ($data->data_type == 'delete_row') {
-                $product->delete($data->id);
+                // $product->delete($data->id);
                 $arr['message'] = "Your row was successfully deleted !!!";
                 $_SESSION['error'] = "";
                 $arr['message_type'] = "info";
@@ -59,19 +59,6 @@ class Ajax_product_no_file extends Controller
 
                 echo json_encode($arr);
             }
-
-            elseif ($data->data_type == 'edit_product') {
-                
-                $product->edit($data);
-                $arr['message'] = "Your row was successfully edited !!!";
-                $_SESSION['error'] = "";
-                $arr['message_type'] = "info";
-                $cats = $product->get_all();
-                $arr['data'] = $product->make_table($cats);
-                $arr['data_type'] = "edit_product";
-
-            }
-
         }
     }
 

@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
 
 <head>
@@ -12,7 +12,9 @@
           crossorigin="anonymous">
     <link rel="stylesheet"
           href="<?= ASSETS . THEME ?>css/font-awesome.min.css">
-</head>
+</head> -->
+
+<?php $this->view("new_header", $data); ?>
 
 <body>
     <div class="container-fluid"

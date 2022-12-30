@@ -1,15 +1,15 @@
 <?php
 
-Class Home extends Controller {
+Class Product extends Controller {
     public function index() {
         
 
         $DB = Database::getInstance();
 
         $ROWS = $DB->read("select * from products");
-        $data['page_title'] = "Home";
+        $data['page_title'] = "Products";
         $data['ROWS'] = $ROWS;
-        $this->view("index", $data);
+        $this->view("product", $data);
         
     }
 

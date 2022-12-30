@@ -170,3 +170,15 @@
 			</div>
 		</div> -->
 	</header><!--/header-->
+
+	<style>
+		.product-image:hover {
+			transform: scale(1.5);
+		}
+		.product-image {
+			height: 30vh;
+			transition: all 1s ease;
+			
+		}
+		
+	</style>

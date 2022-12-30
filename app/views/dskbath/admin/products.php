@@ -484,6 +484,7 @@
     }
 
     function handle_result(result) {
+        console.log(result);
         if (result != "") {
             var obj = JSON.parse(result);
             if (typeof obj.data_type != 'undefined') {
