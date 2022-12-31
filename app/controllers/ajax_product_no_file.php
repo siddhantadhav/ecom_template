@@ -33,7 +33,7 @@ class Ajax_product_no_file extends Controller
                 }
             } 
             elseif ($data->data_type == 'delete_row') {
-                // $product->delete($data->id);
+                $product->delete($data->id);
                 $arr['message'] = "Your row was successfully deleted !!!";
                 $_SESSION['error'] = "";
                 $arr['message_type'] = "info";

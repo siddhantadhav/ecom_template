@@ -477,8 +477,6 @@
             }
 
         });
-
-
         ajax.open("POST", "<?= ROOT ?>ajax_product", true);
         ajax.send(formdata);
     }

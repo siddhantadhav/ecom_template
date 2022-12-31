@@ -78,15 +78,15 @@ class Product
         
         $image_string = "";
 
-        if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['name']))) {
-            $_SESSION['error'] .= "Enter Valid Product Name";
-        }
-        if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['description']))) {
-            $_SESSION['error'] .= "Enter Valid Description";
-        }
-        if (!is_numeric($arr['category'])) {
-            $_SESSION['error'] .= "Enter Valid Category";
-        }
+        // if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['name']))) {
+        //     $_SESSION['error'] .= "Enter Valid Product Name";
+        // }
+        // if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['description']))) {
+        //     $_SESSION['error'] .= "Enter Valid Description";
+        // }
+        // if (!is_numeric($arr['category'])) {
+        //     $_SESSION['error'] .= "Enter Valid Category";
+        // }
 
         $allowed[] = "image/jepg";
         $allowed[] = "image/jpg";
