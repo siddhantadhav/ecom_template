@@ -184,3 +184,5 @@
         </div>
     </div>
 </section>
+
+<?php $this->view("new_footer", $data); ?>
