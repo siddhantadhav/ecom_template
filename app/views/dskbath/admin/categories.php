@@ -102,7 +102,7 @@
                                    class="col-sm-2 col-sm-2 control-label">Parent (optional): </label>
                             <div class="col-sm-10">
                                 <select id="parent_edit"
-                                        name="parent"
+                                        name="parent_edit"
                                         class="form-control"
                                         required>
                                     <option value=""></option>
@@ -202,6 +202,7 @@
             parent: parent,
             data_type: 'add_category'
         });
+        console.log(parent);
 
     }
 
@@ -241,6 +242,7 @@
     }
 
     function handle_result(result) {
+        console.log(result);
         if (result != "") {
             var obj = JSON.parse(result);
             if (typeof obj.data_type != 'undefined') {

@@ -7,8 +7,42 @@ Categories
 2. Overhead Showers
 3. Hand Showers
 4. Bath fittings
+	a. Matrix
+	b. Qube
+	c.Capsule
+	d. Flow
+	e. Loop
+	f. Fusion
+	g. Onyx
+	h. Classic
+	i. Live
+	j. Prime
+	k. Cross
+	l. Curve
+	m. Deluxe
+	n. Mouth Operating Round/ Square
+	o.Mixer Accessories
+	p. Spout
 5. Allied products
 6. Drainers
 7. Kitchen Solutions
 8. Accessories
 9. Automatic Pressure Pumps
+
+
+
+Tasks
+
+Website
+1. Send contact us data to email
+2. Enquiry cart UI
+3. Enquiry cart information to Database
+4. Single product 
+5. Footer
+
+Admin panel
+1. Dashboard
+2. Displaying enquiries information 
+3. Slider Images/ Settings
+4. Manage users
+6. Website backup

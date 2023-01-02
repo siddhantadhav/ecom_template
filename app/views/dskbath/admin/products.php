@@ -217,8 +217,9 @@
                                    class="col-sm-2 col-sm-2 control-label">Image: </label>
                             <div class="col-sm-10">
                                 <input id="image_edit"
-                                       name="image_edit"
+                                       name="image"
                                        type="file"
+                                       onchange = "display_image(this.file[0], this.id)"
                                        class="form-control"
                                        required>
                             </div>
@@ -229,8 +230,9 @@
                                    class="col-sm-2 col-sm-2 control-label">Image2 (optional): </label>
                             <div class="col-sm-10">
                                 <input id="image2_edit"
-                                       name="image2_edit"
+                                       name="image2"
                                        type="file"
+                                       onchange = "display_image(this.file[0], this.id)"
                                        class="form-control"
                                        autofocus>
                             </div>
@@ -241,8 +243,9 @@
                                    class="col-sm-2 col-sm-2 control-label">Image3 (optional): </label>
                             <div class="col-sm-10">
                                 <input id="image3_edit"
-                                       name="image3_edit"
+                                       name="image3"
                                        type="file"
+                                       onchange = "display_image(this.file[0], this.id)"
                                        class="form-control"
                                        autofocus>
                             </div>
@@ -253,8 +256,9 @@
                                    class="col-sm-2 col-sm-2 control-label">Image4 (optional): </label>
                             <div class="col-sm-10">
                                 <input id="image4_edit"
-                                       name="image4_edit"
+                                       name="image4"
                                        type="file"
+                                       onchange = "display_image(this.file[0], this.id)"
                                        class="form-control"
                                        autofocus>
                             </div>
@@ -350,6 +354,23 @@
 
             // product_input.value = "";
         }
+    }
+
+    function display_image(file, id) {
+        var index = 0;
+        if(id == "image2_edit") {
+            index = 1;
+        }
+        else if (id == "image3_edit") {
+            index = 2;
+        }
+        else if (id == "image4_edit") {
+            index = 3
+        }
+
+        var image_holder = document.querySelector("js-product-images");
+        var images = image_holder.querySelectorAll("IMG");
+        images[index].src = URL.createObjectURL(file);
     }
 
     function collect_data(e) {

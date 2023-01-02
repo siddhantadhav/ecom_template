@@ -11,8 +11,9 @@ class Product
         $arr['description'] = ucwords($DATA->description);
         $arr['category'] = ucwords($DATA->category);
         $arr['date'] = date("Y-m-d H:i:s");
+        $arr['slug'] = $this->str_to_url($DATA->name);
 
-        if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['name']))) {
+        if (!preg_match("/^[a-zA-Z 0-9]+$/", trim($arr['name']))) {
             $_SESSION['error'] .= "Enter Valid Product Name";
         }
         if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['description']))) {
@@ -20,6 +21,14 @@ class Product
         }
         if (!is_numeric($arr['category'])) {
             $_SESSION['error'] .= "Enter Valid Category";
+        }
+
+        //checking for unique slug
+        $slug_arr['slug'] = $arr['slug'];
+        $query = "Select slug from products where slug = :slug limit 1";
+        $check = $DB->read($query, $slug_arr['slug']);
+       if ($check) {
+            $arr['slug'] .= "-" .rand(0, 99999);
         }
 
         $arr['image'] = "";
@@ -56,7 +65,7 @@ class Product
         }
 
         if (!isset($_SESSION['error']) || $_SESSION['error'] == "") {
-            $query = "insert into products (name, description, category, date, image, image2, image3, image4) values (:name, :description, :category, :date, :image, :image2, :image3, :image4)";
+            $query = "insert into products (name, description, category, date, image, image2, image3, image4, slug) values (:name, :description, :category, :date, :image, :image2, :image3, :image4, :slug)";
             $check = $DB->write($query, $arr);
 
             if ($check) {
@@ -162,13 +171,13 @@ class Product
                 $info['image3'] = $cat_row->image3;
                 $info['image4'] = $cat_row->image4;
                 $info = str_replace('"', "'", json_encode($info)) ;
-                // $one_cat = $model->get_one($cat_row->category);
+                $one_cat = $model->get_one($cat_row->category);
                 $result .= "<tr>";
                 $result .= '
                     <td><a href="basic_table.html#">'.$cat_row->id.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->name.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->description.'</a></td>
-                    <td><a href="basic_table.html#">'.$cat_row->category.'</a></td>
+                    <td><a href="basic_table.html#">'.$one_cat->category.'</a></td>
                     <td><a href="basic_table.html#"><img src ="'.ROOT.$cat_row->image.'" style="width:50px; height:50px" /></a></td>
                     <td><a href="basic_table.html#">'.$cat_row->date.'</a></td>
                     <td>
@@ -179,6 +188,15 @@ class Product
             }
         }
         return $result;
+    }
+
+    public function str_to_url($url) {
+        $url = preg_replace('~[^\\pL0-9_]+~u', '-', $url);
+        $url = trim($url, "-");
+        $url = iconv("utf-8", "us-ascii//TRANSLIT", $url);
+        $url = strtolower($url);
+        $url = preg_replace('~[^-a-z0-9_]+~', '', $url);
+        return $url;
     }
 
 }

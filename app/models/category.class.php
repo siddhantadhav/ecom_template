@@ -7,12 +7,11 @@ class Category
     {
         $DB = Database::newInstance();
         $arr['category'] = ucwords($DATA->category);
-
-        if($DATA->category != 0) {
-            $arr['parent'] = ucwords($DATA->parent);    
+        if($DATA->parent == "") {
+            $arr['parent'] = 0;
         }
         else {
-            $arr['parent'] = 0;
+            $arr['parent'] = (int)($DATA->parent);
         }
         if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['category']))) {
             $_SESSION['error'] = "Enter Valid Category Name";

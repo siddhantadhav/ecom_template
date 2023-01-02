@@ -161,10 +161,11 @@
             <?php if (is_array($ROWS)): ?>
                 <?php foreach ($ROWS as $row): ?>
                     <div class="col-md-6 col-lg-4 col-xl-3">
+                        <a href="<?=ROOT . "product_detail/"?><?=$row->slug?>">
                         <div id="product-1"
                              class="single-product">
                             <div class="part-1">
-                            <img class="img-fluid" src="<?=ROOT.$row->image?>" alt="">
+                            <img class="img-fluid" src="<?=ROOT.$row->image?>" alt=""></a>
                                 <ul>
                                     <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
