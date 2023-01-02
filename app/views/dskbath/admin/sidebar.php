@@ -39,7 +39,7 @@
                 </ul>
             </li>
             <li class="sub-menu">
-                <a href="<?=ROOT?>admin/enquiries">
+                <a href="<?=ROOT?>admin/enquires">
                     <i class="fa fa-reorder"></i>
                     <span>Enquiries</span>
                 </a>

@@ -168,67 +168,73 @@
         font-weight: 300;
     }
 </style>
-<?php if($ROW):?>
-<div class="container bootdey">
-    <div class="col-md-12">
-        <section class="panel">
-            <div class="panel-body">
-                <div class="row">
-                <div class="col-md-6">
-                    <div class="pro-img-details">
-                        <img src="<?=ROOT . $ROW->image?>"
-                             alt="">
-                    </div>
-                    <div class="pro-img-list">
-                        <a href="#">
-                            <img class="img-fluid" src="<?=ROOT . $ROW->image2?>"
-                                 alt="" style="max-height: 15vh;">
-                        </a>
-                        <a href="#">
-                            <img class="img-fluid" src="<?=ROOT . $ROW->image3?>"
-                                 alt="" style="max-height: 15vh;">
-                        </a>
-                        <a href="#">
-                            <img class="img-fluid" src="<?=ROOT . $ROW->image4?>"
-                                 alt="" style="max-height: 15vh;">
-                        </a>
+<?php if ($ROW): ?>
+    <div class="container bootdey">
+        <div class="col-md-12">
+            <section class="panel">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="pro-img-details">
+                                <img src="<?= ROOT . $ROW->image ?>"
+                                     alt="">
+                            </div>
+                            <div class="pro-img-list">
+                                <a href="#">
+                                    <img class="img-fluid"
+                                         src="<?= ROOT . $ROW->image2 ?>"
+                                         alt=""
+                                         style="max-height: 15vh;">
+                                </a>
+                                <a href="#">
+                                    <img class="img-fluid"
+                                         src="<?= ROOT . $ROW->image3 ?>"
+                                         alt=""
+                                         style="max-height: 15vh;">
+                                </a>
+                                <a href="#">
+                                    <img class="img-fluid"
+                                         src="<?= ROOT . $ROW->image4 ?>"
+                                         alt=""
+                                         style="max-height: 15vh;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="pro-d-title">
+                                <a href="#"
+                                   class="">
+                                    <h2><?= $ROW->name ?></h2>
+                                </a>
+                            </h4>
+                            <p><?= $ROW->description ?></p>
+                            <div class="product_meta">
+                                <span class="posted_in"> <strong>Categories:</strong> <a rel="tag"
+                                       href="#"><?= $category->category ?></a>
+                                </span>
+                                <span class="tagged_as"><strong>Tags:</strong> <a rel="tag"
+                                       href="#">mens</a>, <a rel="tag"
+                                       href="#">womens</a>.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Quantity</label>
+                                <input type="number"
+                                       placeholder=""
+                                       value="1"
+                                       class="form-control quantity">
+                            </div>
+                            <p>
+                                <button class="btn btn-round btn-danger"
+                                        type="button"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <h4 class="pro-d-title">
-                        <a href="#"
-                           class="">
-                            <h2><?=$ROW->name?></h2>
-                        </a>
-                    </h4>
-                    <p><?=$ROW->description?></p>
-                    <div class="product_meta">
-                        <span class="posted_in"> <strong>Categories:</strong> <a rel="tag"
-                               href="#"><?=$ROW->category?></a>
-                            </span>
-                        <span class="tagged_as"><strong>Tags:</strong> <a rel="tag"
-                               href="#">mens</a>, <a rel="tag"
-                               href="#">womens</a>.</span>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Quantity</label>
-                        <input type="number"
-                               placeholder=""
-                               value="1"
-                               class="form-control quantity">
-                    </div>
-                    <p>
-                        <button class="btn btn-round btn-danger"
-                                type="button"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                    </p>
-                </div>
-                </div> 
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
-</div>
-<?php else:?>
-    <div>Product Not Found</div>
-<?php endif;?>
+<?php else: ?>
+    <div>Product Not Found</div>    
+<?php endif; ?>
 <?php $this->view("new_footer", $data); ?>

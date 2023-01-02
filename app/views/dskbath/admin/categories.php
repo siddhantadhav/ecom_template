@@ -202,8 +202,6 @@
             parent: parent,
             data_type: 'add_category'
         });
-        console.log(parent);
-
     }
 
     function collect_edit_data(e) {
