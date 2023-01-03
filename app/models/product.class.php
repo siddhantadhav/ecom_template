@@ -3,7 +3,7 @@
 class Product
 {
     
-    public function create($DATA, $FILES)
+    public function create($DATA, $FILES, $image_class = null)
     {
         $_SESSION['error'] = "";
         $DB = Database::newInstance();
@@ -24,9 +24,10 @@ class Product
         }
 
         //checking for unique slug
+        $slug_arr = array();
         $slug_arr['slug'] = $arr['slug'];
         $query = "Select slug from products where slug = :slug limit 1";
-        $check = $DB->read($query, $slug_arr['slug']);
+        $check = $DB->read($query);
        if ($check) {
             $arr['slug'] .= "-" .rand(0, 99999);
         }
@@ -36,7 +37,8 @@ class Product
         $arr['image3'] = "";
         $arr['image4'] = "";
 
-        $allowed[] = "image/jepg";
+        $allowed = array();
+        $allowed[] = "image/jpeg";
         $allowed[] = "image/jpg";
         $allowed[] = "image/png";
 
@@ -49,20 +51,21 @@ class Product
             mkdir($folder, 0777, true);
         }
 
-        // error below while checking for allowed file types
-
         foreach($FILES as $key => $img_row) {
-            if($img_row['error'] == 0 ) {
+            if($img_row['error'] == 0 && in_array($img_row['type'], $allowed)) {
                 if($img_row['size'] < $size) {
-                    $destination = $folder . $img_row['name'];
+                    $destination = $folder . $image_class->generate_filename(60)  . "." . substr($img_row['type'], strrpos($img_row['type'], '/') + 1);
                     move_uploaded_file($img_row['tmp_name'], $destination);
                     $arr[$key] = $destination;
+
+                    $image_class->resize_image($destination, $destination, 1500, 1500);
                 }
                 else {
                     $_SESSION['error'] .= $key . "is bigger than required size";
                 }
             }
         }
+        
 
         if (!isset($_SESSION['error']) || $_SESSION['error'] == "") {
             $query = "insert into products (name, description, category, date, image, image2, image3, image4, slug) values (:name, :description, :category, :date, :image, :image2, :image3, :image4, :slug)";
@@ -74,7 +77,7 @@ class Product
         }
         return false;
     }
-    public function edit($data, $FILES)
+    public function edit($data, $FILES, $image_class = null)
     {
         $id = $data->id;
         $name = $data->name;
@@ -87,17 +90,18 @@ class Product
         
         $image_string = "";
 
-        // if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['name']))) {
-        //     $_SESSION['error'] .= "Enter Valid Product Name";
-        // }
-        // if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['description']))) {
-        //     $_SESSION['error'] .= "Enter Valid Description";
-        // }
-        // if (!is_numeric($arr['category'])) {
-        //     $_SESSION['error'] .= "Enter Valid Category";
-        // }
+        if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['name']))) {
+            $_SESSION['error'] .= "Enter Valid Product Name";
+        }
+        if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['description']))) {
+            $_SESSION['error'] .= "Enter Valid Description";
+        }
+        if (!is_numeric($arr['category'])) {
+            $_SESSION['error'] .= "Enter Valid Category";
+        }
 
-        $allowed[] = "image/jepg";
+        $allowed = array();
+        $allowed[] = "image/jpeg";
         $allowed[] = "image/jpg";
         $allowed[] = "image/png";
 
@@ -113,11 +117,14 @@ class Product
         // error below while checking for allowed file types
 
         foreach($FILES as $key => $img_row) {
-            if($img_row['error'] == 0 ) {
+            if($img_row['error'] == 0 && in_array($img_row['type'], $allowed)) {
                 if($img_row['size'] < $size) {
-                    $destination = $folder . $img_row['name'];
+                    $destination = $folder . $image_class->generate_filename(60)  . "." . substr($img_row['type'], strrpos($img_row['type'], '/') + 1);
                     move_uploaded_file($img_row['tmp_name'], $destination);
                     $arr[$key] = $destination;
+
+                    $image_class->resize_image($destination, $destination, 1500, 1500);
+
                     $image_string .= "," . $key . " = :" . $key;
                 }
                 else {

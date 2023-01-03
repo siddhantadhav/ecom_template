@@ -37,12 +37,12 @@ Website
 1. Send contact us data to email
 2. Enquiry cart UI
 3. Enquiry cart information to Database
-4. Single product 
+4. Single product~
 5. Footer
 
 Admin panel
 1. Dashboard
 2. Displaying enquiries information 
 3. Slider Images/ Settings
-4. Manage users
+4. Manage users + login functionality
 6. Website backup

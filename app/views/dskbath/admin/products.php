@@ -4,7 +4,7 @@
 <style type="text/css">
     .add_new {
         width: 500px;
-        height: 500px;
+        height: 600px;
         background-color: #eae8e8;
         box-shadow: 0px 0px 10px #aaa;
         position: absolute;
@@ -111,6 +111,7 @@
                                        name="image"
                                        type="file"
                                        class="form-control"
+                                       onchange="display_images(this.files, this.name, 'js-product-images-add')"
                                        required>
                             </div>
                         </div>
@@ -123,6 +124,7 @@
                                        name="image2"
                                        type="file"
                                        class="form-control"
+                                       onchange="display_images(this.files, this.name, 'js-product-images-add')"
                                        autofocus>
                             </div>
                         </div>
@@ -135,6 +137,7 @@
                                        name="image3"
                                        type="file"
                                        class="form-control"
+                                       onchange="display_images(this.files, this.name, 'js-product-images-add')"
                                        autofocus>
                             </div>
                         </div>
@@ -147,8 +150,15 @@
                                        name="image4"
                                        type="file"
                                        class="form-control"
+                                       onchange="display_images(this.files, this.name, 'js-product-images-add')"
                                        autofocus>
                             </div>
+                        </div>
+                        <div class="js-product-images-add edit_product_images">
+                            <img src="" alt="">
+                            <img src="" alt="">
+                            <img src="" alt="">
+                            <img src="" alt="">
                         </div>
                         <button type="button"
                                 class="btn btn-danger"
@@ -219,8 +229,8 @@
                                 <input id="image_edit"
                                        name="image"
                                        type="file"
-                                       onchange = "display_image(this.file[0], this.id)"
                                        class="form-control"
+                                       onchange="display_images(this.files, this.name, 'js-product-images')"
                                        required>
                             </div>
                         </div>
@@ -232,8 +242,8 @@
                                 <input id="image2_edit"
                                        name="image2"
                                        type="file"
-                                       onchange = "display_image(this.file[0], this.id)"
                                        class="form-control"
+                                       onchange="display_images(this.files, this.name, 'js-product-images')"
                                        autofocus>
                             </div>
                         </div>
@@ -245,8 +255,8 @@
                                 <input id="image3_edit"
                                        name="image3"
                                        type="file"
-                                       onchange = "display_image(this.file[0], this.id)"
                                        class="form-control"
+                                       onchange="display_images(this.files, this.name, 'js-product-images')"
                                        autofocus>
                             </div>
                         </div>
@@ -258,8 +268,8 @@
                                 <input id="image4_edit"
                                        name="image4"
                                        type="file"
-                                       onchange = "display_image(this.file[0], this.id)"
                                        class="form-control"
+                                       onchange="display_images(this.files, this.name, 'js-product-images')"
                                        autofocus>
                             </div>
                         </div>
@@ -356,22 +366,24 @@
         }
     }
 
-    function display_image(file, id) {
+    function display_images(file, name, element) {
         var index = 0;
-        if(id == "image2_edit") {
+
+        if (name == "image2") {
             index = 1;
         }
-        else if (id == "image3_edit") {
+        else if (name == "image3") {
             index = 2;
         }
-        else if (id == "image4_edit") {
-            index = 3
+        else if (name == "image4") {
+            index = 3;
         }
+        var image_holder = document.querySelector("." +element);
 
-        var image_holder = document.querySelector("js-product-images");
         var images = image_holder.querySelectorAll("IMG");
-        images[index].src = URL.createObjectURL(file);
-    }
+
+        images[index].src = URL.createObjectURL(file[0]);
+    }    
 
     function collect_data(e) {
         var product_input = document.querySelector("#name");
@@ -422,6 +434,7 @@
         data.append('image', image_input.files[0]);
 
         send_data_files(data);
+        // location.reload();
     }
 
     function collect_edit_data(e) {
@@ -514,6 +527,7 @@
 
                         var table_body = document.querySelector('#table_body');
                         table_body.innerHTML = obj.data;
+                        
                     }
                     else {
                         alert(obj.message);
@@ -550,6 +564,7 @@
             data_type: "delete_row",
             id: id
         });
+        // location.reload();
 
     }
 

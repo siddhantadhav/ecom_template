@@ -10,6 +10,7 @@ class Ajax_product_no_file extends Controller
         if (is_object($data) && isset($data->data_type)) {
             $DB = Database::getInstance();
             $product = $this->load_model('Product');
+            $category = $this->load_model('Category');
 
             if ($data->data_type == 'add_product') {
                 $check = $product->create($data);
@@ -38,7 +39,7 @@ class Ajax_product_no_file extends Controller
                 $_SESSION['error'] = "";
                 $arr['message_type'] = "info";
                 $cats = $product->get_all();
-                $arr['data'] = $product->make_table($cats);
+                $arr['data'] = $product->make_table($cats, $category);
                 $arr['data_type'] = "delete_row";
 
                 echo json_encode($arr);

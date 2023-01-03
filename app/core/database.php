@@ -43,6 +43,7 @@ Class Database{
     //write
     public function write($query, $data = array()) {
         $statement = self::$conn->prepare($query);
+        
         $result = $statement->execute($data);
 
         if($result){
