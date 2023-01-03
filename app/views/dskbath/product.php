@@ -167,9 +167,9 @@
                             <div class="part-1">
                             <img class="img-fluid" src="<?=ROOT.$row->image?>" alt=""></a>
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-plus"></i></a></li>
+                                    <li><a href="<?=ROOT?>add_to_cart/<?=$row->id?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-plus"></i></a></li> -->
                                     <li><a href="#"><i class="fa fa-expand"></i></a></li>
                                 </ul>
                             </div>
