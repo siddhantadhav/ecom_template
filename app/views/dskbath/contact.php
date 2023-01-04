@@ -68,7 +68,7 @@
                                       rows="8"
                                       placeholder="Message"></textarea>
                         </div>
-                        <button onclick="send_contact(event)"
+                        <button onclick="collect_data(event)"
                                 type="submit"
                                 class="btn btn-dark">Send</button>
                     </div>
@@ -89,6 +89,51 @@
 
         </section>
     </div>
-        
+
+    <script>
+        function collect_data(e) {
+            var fname_input = document.querySelector("#fname");
+            var lname_input = document.querySelector("#lname");
+            var phone_input = document.querySelector("#phone");
+            var city_input = document.querySelector("#city");
+            var email_input = document.querySelector("#email");
+            var subject_input = document.querySelector("#subject");
+            var message_input = document.querySelector("#message");
+
+            var data = new FormData();
+            data.append('fname',fname_input.value.trim());
+            data.append('lname', lname_input.value.trim());
+            data.append('phone', phone_input.value.trim());
+            data.append('city',city_input.value.trim());
+            data.append('email',email_input.value.trim());
+            data.append('subject',subject_input.value.trim());
+            data.append('message',message_input.value.trim());
+
+            send_data(data);
+        }
+
+        function send_data(formdata) {
+            var ajax = new XMLHttpRequest();
+
+            ajax.addEventListener('readystatechange', function () {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    handle_result(ajax.responseText);
+                }
+
+            });
+            ajax.open("POST", "<?= ROOT ?>ajax_contact", true);
+            ajax.send(formdata);
+        }
+
+        function handle_result(result) {
+            console.log(result);
+            if(result != "") {
+                var obj = JSON.parse(result);
+                    console.log(obj.message)
+            }
+        }
+
+    </script>
+
 
     <?php $this->view("new_footer", $data); ?>

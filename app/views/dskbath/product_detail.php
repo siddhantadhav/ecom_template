@@ -221,6 +221,8 @@
                                 <label>Quantity</label>
                                 <input type="number"
                                        placeholder=""
+                                       name="cart_qty_product_detail"
+                                       id="cart_qty_product_detail"
                                        value="1"
                                        class="form-control quantity">
                             </div>
@@ -237,4 +239,5 @@
 <?php else: ?>
     <div>Product Not Found</div>    
 <?php endif; ?>
+
 <?php $this->view("new_footer", $data); ?>

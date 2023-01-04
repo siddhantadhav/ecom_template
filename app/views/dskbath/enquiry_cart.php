@@ -57,8 +57,8 @@
                                             <div class="form-outline">
                                                 <input id="form1"
                                                        min="0"
+                                                       value="<?=$row->cart_qty?>"
                                                        name="quantity"
-                                                       value="1"
                                                        type="number"
                                                        class="form-control" />
                                                 <label class="form-label"
@@ -87,5 +87,24 @@
         </div>
     </div>
 </section>
+
+<script>
+    function edit_quantity(quantity) {
+
+    }
+
+    function send_data(data = {}) {
+        var ajax = new XMLHttpRequest();
+
+        ajax.addEventListener('readystatechange', function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                handle_result(ajax.responseText);
+            }
+
+        });
+        ajax.open("POST", "<?= ROOT ?>ajax_cart/edit_quantity/" . JSON.stringify(data)", true);
+        ajax.send();
+    }
+</script>
 
 <?php $this->view("new_footer", $data); ?>

@@ -167,10 +167,10 @@
                             <div class="part-1">
                             <img class="img-fluid" src="<?=ROOT.$row->image?>" alt=""></a>
                                 <ul>
-                                    <li><a href="<?=ROOT?>add_to_cart/<?=$row->id?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="<?=ROOT?>add_to_cart/<?=$row->id?>" onclick="send_alert(event)" id="cart_btn"><i class="fa fa-shopping-cart"></i></a></li>
                                     <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                     <li><a href="#"><i class="fa fa-plus"></i></a></li> -->
-                                    <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    <li><a href="<?=ROOT . "product_detail/"?><?=$row->slug?>"><i class="fa fa-expand"></i></a></li>
                                 </ul>
                             </div>
                             <div class="part-2">
@@ -185,5 +185,12 @@
         </div>
     </div>
 </section>
+
+<script>
+    function send_alert(e) {
+        var cart_btn = document.querySelector("#cart_btn");
+        alert("Successfully Added to Cart");
+    }
+</script>
 
 <?php $this->view("new_footer", $data); ?>

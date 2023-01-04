@@ -498,7 +498,7 @@
             }
 
         });
-        ajax.open("POST", "<?= ROOT ?>ajax_product_no_file", true);
+        ajax.open("POST", "<?= ROOT ?>ajax_product", true);
         ajax.send(JSON.stringify(data));
     }
 
