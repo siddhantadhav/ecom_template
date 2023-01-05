@@ -7,11 +7,31 @@ class Contact {
         $arr = array();
         $arr['fname'] = ucwords($DATA->fname);
         $arr['lname'] = ucwords($DATA->lname);
-        $arr['phone'] = ucwords($DATA->phone);
+        $arr['phone'] = ($DATA->phone);
         $arr['city'] = ucwords($DATA->city);
         $arr['email'] = ucwords($DATA->email);
         $arr['subject'] = ucwords($DATA->subject);
-        $arr['message'] = ucwords($DATA->message);
+        $arr['message'] = ($DATA->message);
+
+        if(!preg_match("/^[a-zA-Z ]+$/", trim($arr['fname']))) {
+            $_SESSION['error'] .= "Enter a Valid First Name";
+        }
+
+        if(!preg_match("/^[a-zA-Z ]+$/", trim($arr['lname']))) {
+            $_SESSION['error'] .= "Enter a Valid Last Name";
+        }
+
+        if (!is_numeric($arr['phone'])) {
+            $_SESSION['error'] .= "Enter Valid Phone Number";
+        }
+
+        if(!preg_match("/^[a-zA-Z0-9@.]+$/", trim($arr['email']))) {
+            $_SESSION['error'] .= "Enter a Valid Email";
+        }
+
+        if(!preg_match("/^[a-zA-Z ]+$/", trim($arr['message']))) {
+            $_SESSION['error'] .= "Enter a Valid Message";
+        }
 
         if(!isset($_SESSION['error']) || $_SESSION['error'] == "") {
             $query = "insert into contacts (fname, lname, phone, city, email, subject, message) values (:fname, :lname, :phone, :city, :email, :subject, :message)";

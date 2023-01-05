@@ -22,21 +22,25 @@
                                        id="fname"
                                        class="form-control"
                                        placeholder="First name"
-                                       aria-label="First name">
+                                       aria-label="First name"
+                                       required
+                                       autofocus>
                             </div>
                             <div class="col">
                                 <input type="text"
                                        id="lname"
                                        class="form-control"
                                        placeholder="Last name"
-                                       aria-label="Last name">
+                                       aria-label="Last name"
+                                       required>
                             </div>
                             <div class="col">
                                 <input type="phone"
                                        id="phone"
                                        class="form-control"
                                        placeholder="Contact Number"
-                                       aria-label="Contact Number">
+                                       aria-label="Contact Number"
+                                       required>
                             </div>
                         </div>
                         <div class="row">
@@ -52,7 +56,8 @@
                                        id="email"
                                        class="form-control"
                                        placeholder="Email"
-                                       aria-label="Email">
+                                       aria-label="Email"
+                                       required>
                             </div>
                             <div class="col">
                                 <input type="text"
@@ -66,7 +71,8 @@
                             <textarea class="form-control"
                                       id="message"
                                       rows="8"
-                                      placeholder="Message"></textarea>
+                                      placeholder="Message"
+                                      required></textarea>
                         </div>
                         <button onclick="collect_data(event)"
                                 type="submit"
@@ -93,21 +99,43 @@
     <script>
         function collect_data(e) {
             var fname_input = document.querySelector("#fname");
+            if (fname_input.value.trim() == "" || !isNaN(fname_input.value.trim())) {
+                alert("Please Enter a Valid First Name");
+            }
+
             var lname_input = document.querySelector("#lname");
+            if (lname_input.value.trim() == "" || !isNaN(lname_input.value.trim())) {
+                alert("Please Enter a Valid Last Name");
+            }
+
             var phone_input = document.querySelector("#phone");
+            if (phone_input.value.trim() == "" || isNaN(phone_input.value.trim())) {
+                alert("Please Enter a Valid Contact Number");
+            }
+
             var city_input = document.querySelector("#city");
+
             var email_input = document.querySelector("#email");
+            if (email_input.value.trim() == "") {
+                alert("Please Enter a Email");
+            }
+
             var subject_input = document.querySelector("#subject");
+
             var message_input = document.querySelector("#message");
+            if (message_input.value.trim() == "" || !isNaN(message_input.value.trim())) {
+                alert("Please Enter a Valid Message");
+            }
 
             var data = new FormData();
-            data.append('fname',fname_input.value.trim());
+            data.append('fname', fname_input.value.trim());
             data.append('lname', lname_input.value.trim());
             data.append('phone', phone_input.value.trim());
-            data.append('city',city_input.value.trim());
-            data.append('email',email_input.value.trim());
-            data.append('subject',subject_input.value.trim());
-            data.append('message',message_input.value.trim());
+            data.append('city', city_input.value.trim());
+            data.append('email', email_input.value.trim());
+            data.append('subject', subject_input.value.trim());
+            data.append('message', message_input.value.trim());
+            data.append('data_type', 'send_contact');
 
             send_data(data);
         }
@@ -127,12 +155,36 @@
 
         function handle_result(result) {
             console.log(result);
-            if(result != "") {
+            if (result != "") {
                 var obj = JSON.parse(result);
-                    console.log(obj.message)
+                if (typeof obj.data_type != 'undefined') {
+                    if (obj.data_type == "send_contact") {
+                        if (obj.message_type == "info") {
+                            alert(obj.message);
+                            var fname_input = document.querySelector("#fname");
+                            var lname_input = document.querySelector("#lname");
+                            var phone_input = document.querySelector("#phone");
+                            var city_input = document.querySelector("#city");
+                            var email_input = document.querySelector("#email");
+                            var subject_input = document.querySelector("#subject");
+                            var message_input = document.querySelector("#message");
+
+                            fname_input.value = "";
+                            lname_input.value = "";
+                            phone_input.value = "";
+                            city_input.value = "";
+                            email_input.value = "";
+                            subject_input.value = "";
+                            message_input.value = "";
+                        }
+                        else {
+                            obj.alert(obj.message);
+                        }
+                    }
+                }
+
             }
         }
-
     </script>
 
 
