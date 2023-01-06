@@ -113,90 +113,6 @@
         color: white;
     }
 </style>
-<!-- 
-<section class="h-100">
-    <div class="container-fluid py-5">
-        <div class="row d-flex justify-content-left my-4">
-            <div class="col-md-8">
-                <div class="card mb-4">
-                    <div class="card-header py-3">
-                        <h5 class="mb-0">Cart</h5>
-                    </div> -->
-<?php if ($ROWS): ?>
-    <?php foreach ($ROWS as $row): ?>
-        <!-- <div class="card-body"> -->
-        <!-- Single item -->
-        <!-- <div class="row">
-                                                                                                                    <div class="col-lg-3 mb-4 mb-lg-0"> -->
-        <!-- Image -->
-        <!-- <div class="bg-image hover-overlay hover-zoom ripple rounded"
-                                                                                                                             data-mdb-ripple-color="light">
-                                                                                                                            <img src="<?= ROOT ?><?= $row->image ?>"
-                                                                                                                                 class="w-100 img-fluid"
-                                                                                                                                 alt="" />
-                                                                                                                            <a href="#!">
-                                                                                                                                <div class="mask"
-                                                                                                                                     style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                                                                                                                            </a>
-                                                                                                                        </div> -->
-        <!-- Image -->
-        <!-- </div> -->
-
-        <!-- <div class="col-lg-5 col-md-6 mb-4 mb-lg-0"> -->
-        <!-- Data -->
-        <!-- <p><strong><?= $row->name ?></strong></p>
-                                                                                                                        <a href="<?= ROOT ?>add_to_cart/remove/<?= $row->id ?>">
-                                                                                                                        <button type="button"
-                                                                                                                                class="btn btn-primary btn-sm me-1 mb-2"
-                                                                                                                                data-mdb-toggle="tooltip"
-                                                                                                                                title="Remove item">
-                                                                                                                            <i class="fa fa-trash"></i>
-                                                                                                                        </button></a> -->
-        <!-- Data -->
-        <!-- </div> -->
-
-        <!-- <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"> -->
-        <!-- Quantity -->
-        <!-- <div class="d-flex mb-4"
-                                                                                                                             style="max-width: 300px">
-                                                                                                                             <a href="<?= ROOT ?>add_to_cart/sub_quantity/<?= $row->id ?>">
-                                                                                                                            <button class="btn btn-primary px-3 me-2">
-                                                                                                                                <i class="fa fa-minus"></i>
-                                                                                                                            </button></a> -->
-
-        <!-- <div class="form-outline">
-                                                                                                                                <input id="form1"
-                                                                                                                                       min="0"
-                                                                                                                                       value="<?= $row->cart_qty ?>"
-                                                                                                                                       name="quantity"
-                                                                                                                                       type="number"
-                                                                                                                                       class="form-control" />
-                                                                                                                                <label class="form-label"
-                                                                                                                                       for="form1">Quantity</label>
-                                                                                                                            </div>
-                                                                                                                            <a href="<?= ROOT ?>add_to_cart/add_quantity/<?= $row->id ?>">
-                                                                                                                            <button class="btn btn-primary px-3 ms-2">
-                                                                                                                                <i class="fa fa-plus"></i>
-                                                                                                                            </button></a>
-                                                                                                                        </div> -->
-        <!-- Quantity -->
-
-        <!-- Price -->
-
-        <!-- Price -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <!-- Single item -->
-
-        <!-- <hr class="my-4" />
-                                                                                                            </div>
-                                                                                                            <?php endforeach; ?>
-                                                                <?php endif; ?>
-                </div>
-            </div>
-        </div>
-    </div> -->
-<!-- </section> -->
 
 <div class="container mt-5 p-3 rounded cart">
     <div class="row no-gutters">
@@ -235,14 +151,14 @@
                                                 </a>
                                             </div>
                                             <div class="p-2">
-                                                <input id="form1"
+                                                <input id="qty"
                                                        min="0"
                                                        oninput="edit_quantity(this.value, '<?= $row->id ?>')"
                                                        value="<?= $row->cart_qty ?>"
                                                        name="quantity"
                                                        class="form-control" />
                                                 <label class="form-label"
-                                                       for="form1">Quantity</label>
+                                                       for="qty">Quantity</label>
                                             </div>
                                             <div class="p-2">
                                                 <a href="<?= ROOT ?>add_to_cart/add_quantity/<?= $row->id ?>">
@@ -260,6 +176,8 @@
                                         <input type="text"
                                                name="item_message"
                                                id="item_message"
+                                               prev_value = "<?= $row->item_message ?>"
+                                               onclick = "cart_item_message(<?= $row->id ?>)"
                                                placeholder="Message">
                                     </div>
                                     <div class="col"
@@ -267,7 +185,7 @@
                                         <a href="<?= ROOT ?>add_to_cart/remove/<?= $row->id ?>">
                                             <button type="button"
                                                     onclick="delete_item(this.getAttribute('delete_id'))"
-                                                    delete_id = "<?= $row->id ?>"
+                                                    delete_id="<?= $row->id ?>"
                                                     class="btn btn-primary btn-sm me-1 mb-2"
                                                     data-mdb-toggle="tooltip"
                                                     title="Remove item">
@@ -284,12 +202,28 @@
             </div>
             <div class="col-md-4">
                 <div class="mb-3">
-                    <label for="name"
-                           class="form-label">Name</label>
-                    <input type="text"
-                           class="form-control"
-                           id="name"
-                           placeholder="Your Name">
+                    <div class="row">
+                        <div class="col">
+                            <label for="fname"
+                                   class="form-label">First Name</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="fname"
+                                   name="fname"
+                                   placeholder="John">
+                        </div>
+                        <div class="col">
+                            <label for="lname"
+                                   class="form-label">Last Name</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="lname"
+                                   name="lname"
+                                   placeholder="Doe">
+                        </div>
+                    </div>
+
+
                     <label for="email"
                            class="form-label">Email address</label>
                     <input type="email"
@@ -302,6 +236,12 @@
                            class="form-control"
                            id="phone"
                            placeholder="+91 XXXXX XXXXX">
+                    <label for="city"
+                           class="form-label">City</label>
+                    <input type="text"
+                           class="form-control"
+                           id="city"
+                           placeholder="Mumbai">
                     <label for="subject"
                            class="form-label">Subject</label>
                     <input type="text"
@@ -326,18 +266,44 @@
 
     <script>
         function collect_cart_data(e) {
-            var name_input = document.querySelector("#name");
-            var email_input = document.querySelector("#email");
+            var fname_input = document.querySelector("#fname");
+            // if (fname_input.value.trim() == "" || !isNaN(fname_input.value.trim())) {
+            //     alert("Please Enter a Valid First Name");
+            // }
+
+            var lname_input = document.querySelector("#lname");
+            // if (lname_input.value.trim() == "" || !isNaN(lname_input.value.trim())) {
+            //     alert("Please Enter a Valid Last Name");
+            // }
+
             var phone_input = document.querySelector("#phone");
+            // if (phone_input.value.trim() == "" || isNaN(phone_input.value.trim())) {
+            //     alert("Please Enter a Valid Contact Number");
+            // }
+
+            var city_input = document.querySelector("#city");
+
+            var email_input = document.querySelector("#email");
+            // if (email_input.value.trim() == "") {
+            //     alert("Please Enter a Email");
+            // }
+
             var subject_input = document.querySelector("#subject");
+
             var message_input = document.querySelector("#message");
+            // if (message_input.value.trim() == "" || !isNaN(message_input.value.trim())) {
+            //     alert("Please Enter a Valid Message");
+            // }
 
             var data = new FormData();
-            data.append('name', name_input.value.trim());
-            data.append('email', email_input.value.trim());
+            data.append('fname', fname_input.value.trim());
+            data.append('lname', lname_input.value.trim());
             data.append('phone', phone_input.value.trim());
+            data.append('city', city_input.value.trim());
+            data.append('email', email_input.value.trim());
             data.append('subject', subject_input.value.trim());
             data.append('message', message_input.value.trim());
+            data.append('data_type', 'cart_submit');
 
             send_data(data);
         }
@@ -347,32 +313,21 @@
                 alert("Enter Valid Quantity");
                 return;
             }
-            data = {quantity    : quantity.trim(),
-                    id          : id.trim()
-                }
+            data = {
+                quantity: quantity.trim(),
+                id: id.trim()
+            }
             send_data(data, "edit_quantity");
         }
-        
+
         function delete_item(id) {
-            data = {id          : id.trim()
-                }
+            data = {
+                id: id.trim()
+            }
             send_data(data, "delete_item");
         }
 
-        // function send_data(formdata) {
-        //     var ajax = new XMLHttpRequest();
-
-        //     ajax.addEventListener('readystatechange', function () {
-        //         if (ajax.readyState == 4 && ajax.status == 200) {
-        //             handle_result(ajax.responseText);
-        //         }
-
-        //     });
-        //     ajax.open("POST", "<?= ROOT ?>ajax_enquiry_cart", true);
-        //     ajax.send(formdata);
-        // }
-
-        function send_data(data = {}, data_type) {
+        function send_data(data = {}, data_type = "") {
             var ajax = new XMLHttpRequest();
 
             ajax.addEventListener('readystatechange', function () {
@@ -381,7 +336,7 @@
                 }
             });
             ajax.open('POST', "<?= ROOT ?>ajax_enquiry_cart/" + data_type + "/" + JSON.stringify(data), true);
-            ajax.send();
+            ajax.send(data);
         }
 
         function handle_result(result) {
@@ -389,12 +344,16 @@
             if (result != "") {
                 var obj = JSON.parse(result);
                 if (typeof obj.data_type != undefined) {
-                    if(obj.data_type == "edit_quantity") {
+                    if (obj.data_type == "edit_quantity") {
                         window.location.href = window.location.href;
                     }
                     else if (obj.data_type == "delete_item") {
                         window.location.href = window.location.href;
                     }
+                    else if (obj.data_type == "cart_submit") {
+                        alert(obj.message);
+                    }
+                    
                 }
             }
         }

@@ -2,7 +2,34 @@
 
 class Ajax_enquiry_cart extends Controller {
     public function index () {
-
+        $data = (object) $_POST;
+        if(is_object($data) && isset($data->data_type)) {
+           
+            $product = $this->load_model("Product");
+            $order = $this->load_model("Order");
+            $contact = $this->load_model("Contact");
+            
+            if ($data->data_type == 'cart_submit') {
+                $check = $contact->create($data);
+                if ($_SESSION['error'] != "") {
+                    $arr['message'] = $_SESSION['error'];
+                    $arr['message_type'] = "error";
+                    $arr['data_type'] = "";
+                    $_SESSION['error'] = "";
+                    
+                    
+                    echo json_encode($arr);
+                } else {
+                   
+                    $arr['message'] = "Successful";
+                    $arr['message_type'] = "info";
+                    $arr['data_type'] = "cart_submit";
+                    $contact_user = $contact->get_one_contact($data->email);
+                    $order->create($contact_user->id);
+                    echo json_encode($arr);
+                }
+            }
+        }
     }
 
     public function edit_quantity($data = "") {
@@ -39,5 +66,10 @@ class Ajax_enquiry_cart extends Controller {
                 }
             }
         }
+    }
+
+    // connect message to cart
+    public function cart_item_message($data = "") {
+        
     }
 }

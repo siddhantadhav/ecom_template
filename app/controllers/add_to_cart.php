@@ -15,12 +15,14 @@ Class Add_to_cart extends Controller {
                 if(in_array($ROW->id, $ids)) {
                     $key = array_search($ROW->id, $ids);
                     $_SESSION['CART'][$key]['quantity']++;
+                    
                 }
                 else {
                     $arr = array();
                     $arr['id'] = $ROW->id;
                     $arr['quantity'] = 1;
-
+                    $arr['item_message'] = "";
+                    $arr['client_id'] = 0;
                     $_SESSION['CART'][] = $arr;
                 }
             }
@@ -28,7 +30,8 @@ Class Add_to_cart extends Controller {
                 $arr = array();
                 $arr['id'] = $ROW->id;
                 $arr['quantity'] = 1;
-
+                $arr['item_message'] = "";
+                $arr['client_id'] = 0;
                 $_SESSION['CART'][] = $arr;
 
             }
@@ -64,6 +67,7 @@ Class Add_to_cart extends Controller {
         }
         $this->redirect();
     }
+
     public function remove ($id = '') {
         $this->set_redirect();
         $id = addslashes($id);

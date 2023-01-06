@@ -34,9 +34,6 @@ class Enquiry_cart extends Controller
         }
         $data['ROWS'] = $ROWS;
         $this->view("enquiry_cart", $data);
-        
-        show($_SESSION['CART']);
-
     }
 
 

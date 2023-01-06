@@ -9,7 +9,7 @@ class Contact {
         $arr['lname'] = ucwords($DATA->lname);
         $arr['phone'] = ($DATA->phone);
         $arr['city'] = ucwords($DATA->city);
-        $arr['email'] = ucwords($DATA->email);
+        $arr['email'] = ($DATA->email);
         $arr['subject'] = ucwords($DATA->subject);
         $arr['message'] = ($DATA->message);
 
@@ -29,7 +29,7 @@ class Contact {
             $_SESSION['error'] .= "Enter a Valid Email";
         }
 
-        if(!preg_match("/^[a-zA-Z ]+$/", trim($arr['message']))) {
+        if(!preg_match("/^[a-zA-Z 0-9,.]+$/", trim($arr['message']))) {
             $_SESSION['error'] .= "Enter a Valid Message";
         }
 
@@ -42,5 +42,11 @@ class Contact {
             }
             return false;
         }
+    }
+
+    public function get_one_contact($email) {
+        $DB = Database::newInstance();
+        $data = $DB->read("select * from contacts where email = '$email' limit 1");
+        return $data[0];
     }
 }

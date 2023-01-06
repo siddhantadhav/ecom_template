@@ -12,6 +12,7 @@ class Ajax_Contact extends Controller
             $DB = Database::getInstance();
             $contact = $this->load_model("Contact");
             if ($data->data_type == 'send_contact') {
+                // $check = $contact->create($data);
                 if ($_SESSION['error'] != "") {
                     $arr['message'] = $_SESSION['error'];
                     unset($_SESSION['error']);
@@ -21,7 +22,7 @@ class Ajax_Contact extends Controller
                     
                     echo json_encode($arr);
                 } else {
-                    $check = $contact->create($data);
+                    
                     $arr['message'] = "Successful";
                     $arr['message_type'] = "info";
                     $arr['data_type'] = "send_contact";

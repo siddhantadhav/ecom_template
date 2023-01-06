@@ -147,12 +147,14 @@ class Product
         $query = "delete from products where id = '$id' limit 1";
         $DB->write($query);
     }
+    
     public function get_all()
     {
         $DB = Database::newInstance();
         return $DB->read("select * from products order by id desc");
         
     }
+
     public function get_one($id)
     {
         $id = (int) $id;
@@ -161,6 +163,14 @@ class Product
         return $data[0];
         
     }
+
+    public function get_one_product($id) {
+        $id = (int) $id;
+        $DB = Database::newInstance();
+        $data = $DB->read("select * from products where id = '$id' limit 1");
+        return $data[0];
+    }
+
     public function make_table($cats, $model = null) 
     {
         $result = "";
