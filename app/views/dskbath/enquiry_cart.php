@@ -106,6 +106,7 @@
     .spec {
         font-size: 11px;
     }
+
     .teal-btn {
         background-color: rgb(36, 188, 189);
         border: white;
@@ -126,58 +127,58 @@
         <!-- <div class="card-body"> -->
         <!-- Single item -->
         <!-- <div class="row">
-                                                                                    <div class="col-lg-3 mb-4 mb-lg-0"> -->
+                                                                                                                    <div class="col-lg-3 mb-4 mb-lg-0"> -->
         <!-- Image -->
         <!-- <div class="bg-image hover-overlay hover-zoom ripple rounded"
-                                                                                             data-mdb-ripple-color="light">
-                                                                                            <img src="<?= ROOT ?><?= $row->image ?>"
-                                                                                                 class="w-100 img-fluid"
-                                                                                                 alt="" />
-                                                                                            <a href="#!">
-                                                                                                <div class="mask"
-                                                                                                     style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                                                                                            </a>
-                                                                                        </div> -->
+                                                                                                                             data-mdb-ripple-color="light">
+                                                                                                                            <img src="<?= ROOT ?><?= $row->image ?>"
+                                                                                                                                 class="w-100 img-fluid"
+                                                                                                                                 alt="" />
+                                                                                                                            <a href="#!">
+                                                                                                                                <div class="mask"
+                                                                                                                                     style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                                                                                                            </a>
+                                                                                                                        </div> -->
         <!-- Image -->
         <!-- </div> -->
 
         <!-- <div class="col-lg-5 col-md-6 mb-4 mb-lg-0"> -->
         <!-- Data -->
         <!-- <p><strong><?= $row->name ?></strong></p>
-                                                                                        <a href="<?= ROOT ?>add_to_cart/remove/<?= $row->id ?>">
-                                                                                        <button type="button"
-                                                                                                class="btn btn-primary btn-sm me-1 mb-2"
-                                                                                                data-mdb-toggle="tooltip"
-                                                                                                title="Remove item">
-                                                                                            <i class="fa fa-trash"></i>
-                                                                                        </button></a> -->
+                                                                                                                        <a href="<?= ROOT ?>add_to_cart/remove/<?= $row->id ?>">
+                                                                                                                        <button type="button"
+                                                                                                                                class="btn btn-primary btn-sm me-1 mb-2"
+                                                                                                                                data-mdb-toggle="tooltip"
+                                                                                                                                title="Remove item">
+                                                                                                                            <i class="fa fa-trash"></i>
+                                                                                                                        </button></a> -->
         <!-- Data -->
         <!-- </div> -->
 
         <!-- <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"> -->
         <!-- Quantity -->
         <!-- <div class="d-flex mb-4"
-                                                                                             style="max-width: 300px">
-                                                                                             <a href="<?= ROOT ?>add_to_cart/sub_quantity/<?= $row->id ?>">
-                                                                                            <button class="btn btn-primary px-3 me-2">
-                                                                                                <i class="fa fa-minus"></i>
-                                                                                            </button></a> -->
+                                                                                                                             style="max-width: 300px">
+                                                                                                                             <a href="<?= ROOT ?>add_to_cart/sub_quantity/<?= $row->id ?>">
+                                                                                                                            <button class="btn btn-primary px-3 me-2">
+                                                                                                                                <i class="fa fa-minus"></i>
+                                                                                                                            </button></a> -->
 
         <!-- <div class="form-outline">
-                                                                                                <input id="form1"
-                                                                                                       min="0"
-                                                                                                       value="<?= $row->cart_qty ?>"
-                                                                                                       name="quantity"
-                                                                                                       type="number"
-                                                                                                       class="form-control" />
-                                                                                                <label class="form-label"
-                                                                                                       for="form1">Quantity</label>
-                                                                                            </div>
-                                                                                            <a href="<?= ROOT ?>add_to_cart/add_quantity/<?= $row->id ?>">
-                                                                                            <button class="btn btn-primary px-3 ms-2">
-                                                                                                <i class="fa fa-plus"></i>
-                                                                                            </button></a>
-                                                                                        </div> -->
+                                                                                                                                <input id="form1"
+                                                                                                                                       min="0"
+                                                                                                                                       value="<?= $row->cart_qty ?>"
+                                                                                                                                       name="quantity"
+                                                                                                                                       type="number"
+                                                                                                                                       class="form-control" />
+                                                                                                                                <label class="form-label"
+                                                                                                                                       for="form1">Quantity</label>
+                                                                                                                            </div>
+                                                                                                                            <a href="<?= ROOT ?>add_to_cart/add_quantity/<?= $row->id ?>">
+                                                                                                                            <button class="btn btn-primary px-3 ms-2">
+                                                                                                                                <i class="fa fa-plus"></i>
+                                                                                                                            </button></a>
+                                                                                                                        </div> -->
         <!-- Quantity -->
 
         <!-- Price -->
@@ -188,9 +189,9 @@
         <!-- Single item -->
 
         <!-- <hr class="my-4" />
-                                                                            </div>
-                                                                            <?php endforeach; ?>
-                                                <?php endif; ?>
+                                                                                                            </div>
+                                                                                                            <?php endforeach; ?>
+                                                                <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -201,171 +202,202 @@
     <div class="row no-gutters">
         <div class="col-md-8">
             <div class="product-details mr-2">
-                <a href="<?=ROOT?>product">
-                <div class="d-flex flex-row align-items-center"><i class="fa fa-long-arrow-left"></i><span
-                          class="ml-2">Continue Shopping</span></div></a>
+                <a href="<?= ROOT ?>product">
+                    <div class="d-flex flex-row align-items-center"><i class="fa fa-long-arrow-left"></i><span
+                              class="ml-2">Continue Shopping</span></div>
+                </a>
                 <hr>
                 <h6 class="mb-0">Shopping cart</h6>
-                <div class="d-flex justify-content-between"><span>You have <?=count($ROWS)?> items in your cart</span>
-                </div>
                 <?php if ($ROWS): ?>
-                    <?php foreach ($ROWS as $row): ?>
-                        <!-- <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
-                            <div class="d-flex flex-row"><img class="rounded"
-                                     src="<?= $row->image ?>"
-                                     width="40">
-                                <div class="ml-2"><span class="font-weight-bold d-block"><?= $row->name ?></span><span
-                                          class="spec"><?= $row->description ?></span></div>
-                            </div>
-                            <div class="d-flex flex-row align-items-center"><span class="d-block">QTY :  </span>
-                                <a href="<?= ROOT ?>add_to_cart/add_quantity/<?= $row->id ?>">
-                                <button type="button" class="btn btn-primary btn-sm">
-                                    
-                                    <i class="fa fa-plus"></i>
-                                </button></a>
-                                <span class="d-block ml-5 font-weight-bold"><?=$row->cart_qty?></span>
-                                <a href="<?= ROOT ?>add_to_cart/sub_quantity/<?= $row->id ?>">
-                                    <button class="btn btn-primary btn-sm">
-                                        <i class="fa fa-minus"></i>
-                                    </button></a>
-                            </div>
-                            <div class="d-flex flex-row align-items-center"> 
-                                <input type="text" placeholder="Message" id="item_message">
-                            </div>
-                            <div class="d-flex flex-row align-items-center">
-                            <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
-                                <i class="fa fa-trash"></i>
-                                </button></a></div>
-                        </div> -->
-                        <div class="container-fluid">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <img src="<?= $row->image ?>" class="img-fluid" alt="" style="height: 10vh;">
-                                </div>
-                                <div class="col">
-                                    <div class="row align-items-center">
+                    <div class="d-flex justify-content-between"><span>You have <?= count($ROWS) ?> items in your cart</span>
+                        <?php else: ?>
+                        <div class="d-flex justify-content-between"><span>You have 0 items in your cart</span>
+                            <?php endif; ?>
+                    </div>
+                    <?php if ($ROWS): ?>
+                        <?php foreach ($ROWS as $row): ?>
+                            <div class="container-fluid">
+                                <div class="row align-items-center">
                                     <div class="col">
-                                            <a href="<?= ROOT ?>add_to_cart/sub_quantity/<?= $row->id ?>">
-                                                <button type="button" class="btn btn-primary btn-sm">
-                                                    <i class="fa fa-minus"></i>
-                                                </button>
-                                            </a>
-                                        </div> 
-                                        <div class="col">
-                                            <p>QTY :  <?=$row->cart_qty?></p>
+                                        <img src="<?= $row->image ?>"
+                                             class="img-fluid"
+                                             alt=""
+                                             style="height: 10vh;">
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex flex-row">
+                                            <div class="p-2">
+                                                <a href="<?= ROOT ?>add_to_cart/sub_quantity/<?= $row->id ?>">
+                                                    <button type="button"
+                                                            class="btn btn-primary btn-sm">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                </a>
+                                            </div>
+                                            <div class="p-2">
+                                                <input id="form1"
+                                                       min="0"
+                                                       oninput="edit_quantity(this.value, '<?= $row->id ?>')"
+                                                       value="<?= $row->cart_qty ?>"
+                                                       name="quantity"
+                                                       class="form-control" />
+                                                <label class="form-label"
+                                                       for="form1">Quantity</label>
+                                            </div>
+                                            <div class="p-2">
+                                                <a href="<?= ROOT ?>add_to_cart/add_quantity/<?= $row->id ?>">
+                                                    <button type="button"
+                                                            class="btn btn-primary btn-sm">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </a>
+                                            </div>
                                         </div>
-                                        <div class="col">
-                                            <a href="<?= ROOT ?>add_to_cart/add_quantity/<?= $row->id ?>">
-                                                <button type="button" class="btn btn-primary btn-sm">
-                                                    <i class="fa fa-plus"></i>
-                                                </button>
-                                            </a>
-                                        </div>
+
+                                    </div>
+                                    <div class="col"
+                                         style="height: 6vh;">
+                                        <input type="text"
+                                               name="item_message"
+                                               id="item_message"
+                                               placeholder="Message">
+                                    </div>
+                                    <div class="col"
+                                         style="height: 6vh;">
+                                        <a href="<?= ROOT ?>add_to_cart/remove/<?= $row->id ?>">
+                                            <button type="button"
+                                                    onclick="delete_item(this.getAttribute('delete_id'))"
+                                                    delete_id = "<?= $row->id ?>"
+                                                    class="btn btn-primary btn-sm me-1 mb-2"
+                                                    data-mdb-toggle="tooltip"
+                                                    title="Remove item">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <input type="text" name="item_message" id="item_message" placeholder="Message">
-                                </div>
-                                <div class="col">
-                                    <a href="<?= ROOT ?>add_to_cart/remove/<?= $row->id ?>">
-                                        <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
-                                    </a>
-                                </div>
                             </div>
-                        </div>
-                        <br>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
+                            <br>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="mb-3">
-                <label for="name"
-                       class="form-label">Name</label>
-                <input type="text"
-                       class="form-control"
-                       id="name"
-                       placeholder="Your Name">
-                <label for="email"
-                       class="form-label">Email address</label>
-                <input type="email"
-                       class="form-control"
-                       id="email"
-                       placeholder="name@example.com">
-                <label for="phone"
-                       class="form-label">Contact Number</label>
-                <input type="text"
-                       class="form-control"
-                       id="phone"
-                       placeholder="+91 XXXXX XXXXX">
-                <label for="subject"
-                       class="form-label">Subject</label>
-                <input type="text"
-                       class="form-control"
-                       id="subject"
-                       placeholder="Subject">
-                <label for="message"
-                       class="form-label">Message</label>
-                <textarea type="text"
-                          class="form-control"
-                          id="message"
-                          placeholder="Message">
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="name"
+                           class="form-label">Name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="name"
+                           placeholder="Your Name">
+                    <label for="email"
+                           class="form-label">Email address</label>
+                    <input type="email"
+                           class="form-control"
+                           id="email"
+                           placeholder="name@example.com">
+                    <label for="phone"
+                           class="form-label">Contact Number</label>
+                    <input type="text"
+                           class="form-control"
+                           id="phone"
+                           placeholder="+91 XXXXX XXXXX">
+                    <label for="subject"
+                           class="form-label">Subject</label>
+                    <input type="text"
+                           class="form-control"
+                           id="subject"
+                           placeholder="Subject">
+                    <label for="message"
+                           class="form-label">Message</label>
+                    <textarea type="text"
+                              class="form-control"
+                              id="message"
+                              placeholder="Message">
                 </textarea>
+                </div>
+                <button class="btn teal-btn"
+                        type="submit"
+                        onclick="collect_cart_data(event)">Submit Enquiry</button>
             </div>
-            <button class="btn teal-btn" type="submit" onclick="collect_cart_data(event)">Submit Enquiry</button>
         </div>
     </div>
-</div>
 
-<script>
-    function collect_cart_data(e) {
-        var name_input = document.querySelector("#name")
-        var email_input = document.querySelector("#email")
-        var phone_input = document.querySelector("#phone")
-        var subject_input = document.querySelector("#subject")
-        var message_input = document.querySelector("#message")
 
-        var data = new FormData();
-        data.append('name', name_input.value.trim());
-        data.append('email', email_input.value.trim());
-        data.append('phone', phone_input.value.trim());
-        data.append('subject', subject_input.value.trim());
-        data.append('message', message_input.value.trim());
+    <script>
+        function collect_cart_data(e) {
+            var name_input = document.querySelector("#name");
+            var email_input = document.querySelector("#email");
+            var phone_input = document.querySelector("#phone");
+            var subject_input = document.querySelector("#subject");
+            var message_input = document.querySelector("#message");
 
-        send_data(data);
-    }
+            var data = new FormData();
+            data.append('name', name_input.value.trim());
+            data.append('email', email_input.value.trim());
+            data.append('phone', phone_input.value.trim());
+            data.append('subject', subject_input.value.trim());
+            data.append('message', message_input.value.trim());
 
-    function edit_quantity(quantity) {
+            send_data(data);
+        }
 
-    }
+        function edit_quantity(quantity, id) {
+            if (isNaN(quantity)) {
+                alert("Enter Valid Quantity");
+                return;
+            }
+            data = {quantity    : quantity.trim(),
+                    id          : id.trim()
+                }
+            send_data(data, "edit_quantity");
+        }
+        
+        function delete_item(id) {
+            data = {id          : id.trim()
+                }
+            send_data(data, "delete_item");
+        }
 
-    function send_data(formdata) {
+        // function send_data(formdata) {
+        //     var ajax = new XMLHttpRequest();
+
+        //     ajax.addEventListener('readystatechange', function () {
+        //         if (ajax.readyState == 4 && ajax.status == 200) {
+        //             handle_result(ajax.responseText);
+        //         }
+
+        //     });
+        //     ajax.open("POST", "<?= ROOT ?>ajax_enquiry_cart", true);
+        //     ajax.send(formdata);
+        // }
+
+        function send_data(data = {}, data_type) {
             var ajax = new XMLHttpRequest();
 
             ajax.addEventListener('readystatechange', function () {
                 if (ajax.readyState == 4 && ajax.status == 200) {
                     handle_result(ajax.responseText);
                 }
-
             });
-            ajax.open("POST", "<?= ROOT ?>ajax_enquiry_cart", true);
-            ajax.send(formdata);
+            ajax.open('POST', "<?= ROOT ?>ajax_enquiry_cart/" + data_type + "/" + JSON.stringify(data), true);
+            ajax.send();
         }
 
-    function send_data_edit_qty(data = {}) {
-        var ajax = new XMLHttpRequest();
-
-        ajax.addEventListener('readystatechange', function () {
-            if (ajax.readyState == 4 && ajax.status == 200) {
-                handle_result(ajax.responseText);
+        function handle_result(result) {
+            console.log(result);
+            if (result != "") {
+                var obj = JSON.parse(result);
+                if (typeof obj.data_type != undefined) {
+                    if(obj.data_type == "edit_quantity") {
+                        window.location.href = window.location.href;
+                    }
+                    else if (obj.data_type == "delete_item") {
+                        window.location.href = window.location.href;
+                    }
+                }
             }
+        }
+    </script>
 
-        });
-        ajax.open("POST", "<?= ROOT ?>ajax_enquiry_cart/edit_quantity/".JSON.stringify(data)", true);
-        ajax.send();
-    }
-</script>
-
-<?php $this->view("new_footer", $data); ?>
+    <?php $this->view("new_footer", $data); ?>
