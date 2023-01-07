@@ -15,6 +15,8 @@ Class Add_to_cart extends Controller {
                 if(in_array($ROW->id, $ids)) {
                     $key = array_search($ROW->id, $ids);
                     $_SESSION['CART'][$key]['quantity']++;
+                    $_SESSION['CART'][$key]['item_message'] = $_SESSION['CART'][$key]['item_message'];
+                    $_SESSION['CART'][$key]['client_id'] = $_SESSION['CART'][$key]['client_id'];
                     
                 }
                 else {

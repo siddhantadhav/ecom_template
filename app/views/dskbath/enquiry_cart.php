@@ -131,7 +131,7 @@
                             <?php endif; ?>
                     </div>
                     <?php if ($ROWS): ?>
-                        <?php foreach ($ROWS as $row): ?>
+                        <?php foreach ($ROWS as $key => $row): ?>
                             <div class="container-fluid">
                                 <div class="row align-items-center">
                                     <div class="col">
@@ -176,8 +176,8 @@
                                         <input type="text"
                                                name="item_message"
                                                id="item_message"
-                                               prev_value = "<?= $row->item_message ?>"
-                                               onclick = "cart_item_message(<?= $row->id ?>)"
+                                               value="<?= $_SESSION['CART'][$key]['item_message'] ?>"
+                                               onchange="cart_item_message(<?= $row->id ?>, this.value)"
                                                placeholder="Message">
                                     </div>
                                     <div class="col"
@@ -262,38 +262,44 @@
             </div>
         </div>
     </div>
-
-
     <script>
+        function cart_item_message(id, message) {
+            var data = new FormData();
+            data.append('id', id);
+            data.append('item_message', message);
+
+            send_data(data, "cart_item_message")
+        }
+
         function collect_cart_data(e) {
             var fname_input = document.querySelector("#fname");
-            // if (fname_input.value.trim() == "" || !isNaN(fname_input.value.trim())) {
-            //     alert("Please Enter a Valid First Name");
-            // }
+            if (fname_input.value.trim() == "" || !isNaN(fname_input.value.trim())) {
+                alert("Please Enter a Valid First Name");
+            }
 
             var lname_input = document.querySelector("#lname");
-            // if (lname_input.value.trim() == "" || !isNaN(lname_input.value.trim())) {
-            //     alert("Please Enter a Valid Last Name");
-            // }
+            if (lname_input.value.trim() == "" || !isNaN(lname_input.value.trim())) {
+                alert("Please Enter a Valid Last Name");
+            }
 
             var phone_input = document.querySelector("#phone");
-            // if (phone_input.value.trim() == "" || isNaN(phone_input.value.trim())) {
-            //     alert("Please Enter a Valid Contact Number");
-            // }
+            if (phone_input.value.trim() == "" || isNaN(phone_input.value.trim())) {
+                alert("Please Enter a Valid Contact Number");
+            }
 
             var city_input = document.querySelector("#city");
 
             var email_input = document.querySelector("#email");
-            // if (email_input.value.trim() == "") {
-            //     alert("Please Enter a Email");
-            // }
+            if (email_input.value.trim() == "") {
+                alert("Please Enter a Email");
+            }
 
             var subject_input = document.querySelector("#subject");
 
             var message_input = document.querySelector("#message");
-            // if (message_input.value.trim() == "" || !isNaN(message_input.value.trim())) {
-            //     alert("Please Enter a Valid Message");
-            // }
+            if (message_input.value.trim() == "" || !isNaN(message_input.value.trim())) {
+                alert("Please Enter a Valid Message");
+            }
 
             var data = new FormData();
             data.append('fname', fname_input.value.trim());
@@ -352,8 +358,12 @@
                     }
                     else if (obj.data_type == "cart_submit") {
                         alert(obj.message);
+                        window.location.href = window.location.href;
                     }
-                    
+                    else if (obj.data_type == "cart_empty") {
+                        alert(obj.message);
+                    }
+
                 }
             }
         }
