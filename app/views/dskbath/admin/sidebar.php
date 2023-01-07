@@ -43,7 +43,12 @@
                     <i class="fa fa-reorder"></i>
                     <span>Enquiries</span>
                 </a>
-                
+            </li>
+            <li class="sub-menu">
+                <a href="<?=ROOT?>admin/orders">
+                    <i class="fa fa-archive"></i>
+                    <span>Orders</span>
+                </a>
             </li>
             <li class="sub-menu">
                 <a href="<?=ROOT?>admin/settings">

@@ -135,6 +135,7 @@
             data.append('email', email_input.value.trim());
             data.append('subject', subject_input.value.trim());
             data.append('message', message_input.value.trim());
+            data.append('ordered', 0);
             data.append('data_type', 'send_contact');
 
             send_data(data);

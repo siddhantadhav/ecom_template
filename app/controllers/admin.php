@@ -56,8 +56,29 @@ class Admin extends Controller
         // add login functionality
 
 
+        $DB = Database::getInstance();
+        $contacts = $DB->read("select * from contacts where ordered = 0");
+        $contact = $this->load_model('Contact');
+        $tbl_rows = $contact->make_table($contacts);
         
+        $data['tbl_rows'] = $tbl_rows;
         $data['page_title'] = "Admin";
         $this->view("admin/enquires", $data);
+    }
+
+    public function orders() {
+        // add login functionality
+
+
+        $DB = Database::getInstance();
+        $orders = $DB->read("select * from orders order by date desc");
+        $contact = $this->load_model('Contact');
+        $product = $this->load_model('Product');
+        $order = $this->load_model('Order');
+        $tbl_rows = $order->make_table($orders, $contact, $product);
+        
+        $data['tbl_rows'] = $tbl_rows;
+        $data['page_title'] = "Admin";
+        $this->view("admin/orders", $data);
     }
 }

@@ -43,7 +43,7 @@
                         <li class="nav-item">
                             <a class="nav-link active"
                                aria-current="page"
-                               href="<?=ROOT."new_index"?>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                               href="<?=ROOT?>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"

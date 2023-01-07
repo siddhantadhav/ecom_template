@@ -34,10 +34,10 @@ Categories
 Tasks
 
 Website
-1. Send contact us data to email
-2. Enquiry cart UI
-3. Enquiry cart information to Database
-4. Single product~
+1. Send contact us data to database (Done)
+2. Enquiry cart UI (Done)
+3. Enquiry cart information to Database (Done)
+4. Single product~	(Done)
 5. Footer
 
 Admin panel

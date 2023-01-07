@@ -309,6 +309,7 @@
             data.append('email', email_input.value.trim());
             data.append('subject', subject_input.value.trim());
             data.append('message', message_input.value.trim());
+            data.append('ordered', 1);
             data.append('data_type', 'cart_submit');
 
             send_data(data);

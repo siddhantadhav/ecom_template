@@ -8,11 +8,10 @@ class Ajax_Contact extends Controller
         
 
         if (is_object($data) && isset($data->data_type)) {
-            
             $DB = Database::getInstance();
             $contact = $this->load_model("Contact");
             if ($data->data_type == 'send_contact') {
-                // $check = $contact->create($data);
+                $check = $contact->create($data);
                 if ($_SESSION['error'] != "") {
                     $arr['message'] = $_SESSION['error'];
                     unset($_SESSION['error']);
