@@ -36,6 +36,10 @@ class Contact
             $_SESSION['error'] .= "Enter a Valid Email";
         }
 
+        if (!preg_match("/^[a-zA-Z 0-9,.]+$/", trim($arr['subject']))) {
+            $_SESSION['error'] .= "Enter a Valid Subject";
+        }
+
         if (!preg_match("/^[a-zA-Z 0-9,.]+$/", trim($arr['message']))) {
             $_SESSION['error'] .= "Enter a Valid Message";
         }
@@ -68,9 +72,10 @@ class Contact
         return $data[0];
     }
 
-    public function make_table($contacts){
+    public function make_table($contacts)
+    {
         $result = "";
-        if(is_array($contacts)) {
+        if (is_array($contacts)) {
             foreach ($contacts as $contact) {
                 // show($contact);
                 $result .= "<tr>";
@@ -80,14 +85,14 @@ class Contact
                     '<td>' . $contact->city . '</td>' .
                     '<td>' . $contact->phone . '</td>' .
                     '<td>' . $contact->email . '</td>' .
-                    '<td>' . $contact->subject . '</td>' .
-                    '<td>' . $contact->message . '</td>' .
+                    '<div class="show_message hide">'.'<p id = "contact_message"></p>'.'</div>'.
+                    '<td style="cursor: pointer" onclick = "show_contact_message(`' . $contact->message . '`)">' . $contact->subject . '</td>' .
                     '<td>' . $contact->date . ' </td>' .
-                    '<td>'.
-                        '<button onclick = "complete_contact('.$contact->id.')" class="btn btn-primary btn-xs"><i class="fa fa-check"></i></button>'. ' ' .
-                        '<button onclick = "delete-contact('.$contact->id.')" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button>'.
+                    '<td>' .
+                    '<button onclick = "complete_contact(' . $contact->id . ')" class="btn btn-primary btn-xs"><i class="fa fa-check"></i></button>' . ' ' .
+                    '<button onclick = "delete-contact(' . $contact->id . ')" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button>' .
                     '</td>';
-                    
+
                 $result .= "</tr>";
             }
         }
