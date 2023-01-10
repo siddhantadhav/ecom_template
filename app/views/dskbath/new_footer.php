@@ -13,7 +13,7 @@
                 <img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png" alt="" class="img-fluid" style=" height: 10vh; ">
             </div>
             <p class="text-start">DSK has wide range of bathroom products which are of High Standards, each of which has been designed and evolved through keen market study and 26 Years of Experience.</p>
-            <button class="btn btn-primary">Know More</button>
+            <button class="btn btn-primary" style="float: left;">Know More</button>
         </div>
         <!--Grid column-->
 
@@ -25,7 +25,7 @@
               <a href="#!" class="text-white">Shower Solutions</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Overhead Showers</a>
+              <a href="#!" class="text-white" style="">Overhead Showers</a>
             </li>
             <li>
               <a href="#!" class="text-white">Hand Showers</a>
