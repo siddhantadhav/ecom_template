@@ -114,7 +114,7 @@
     }
 </style>
 
-<div class="container mt-5 p-3 rounded cart">
+<div class="container-fluid mt-5 p-3 rounded cart">
     <div class="row no-gutters">
         <div class="col-md-8">
             <div class="product-details mr-2">
