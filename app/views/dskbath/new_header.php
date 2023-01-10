@@ -240,6 +240,9 @@
     .nav-item a {
         font-size: 1.2em;
     }
+    section{
+        margin-top: 10vh;
+    }
     </style>
 
 <body>

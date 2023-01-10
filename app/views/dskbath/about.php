@@ -21,7 +21,7 @@
     <img src="<?= ASSETS . THEME ?>images/about/about_us_banner.jpg" alt="" class="img-fluid">
 </div>
 
-<section>
+<section style="margin-top: 0;">
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col">

@@ -1,10 +1,10 @@
 <!-- Footer -->
-<footer class="bg-dark text-center text-white">
+<footer class="bg-dark text-center text-white" style="width: 100vw;">
   <!-- Grid container -->
   <div class="container p-4">
 
     <!-- Section: Links -->
-    <section class="">
+    <section style="margin-top: 0;" class="">
       <!--Grid row-->
       <div class="row justify-content-start">
         <!--Grid column-->
