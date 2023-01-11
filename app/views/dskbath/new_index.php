@@ -24,6 +24,8 @@
     /* animation */
 
     .pulse {
+        height: 25rem; width: 25rem; 
+        padding: 0; border-radius: 15em;
         animation-duration: 0.5s;
         animation-iteration-count: 1;
     }
@@ -39,6 +41,31 @@
 
         75% {
             transform: scale(0.95, 1.05);
+        }
+    }
+
+    .card-section{
+        margin-top: -20vh;
+    }
+
+    @media only screen and (max-width: 900px) {
+        .outer-circle{
+            margin-bottom: 5vh;
+        }
+    }
+    @media only screen and (max-width: 750px) {
+        .card-section{
+            margin-top: 0;
+        }
+    }
+    @media only screen and (max-width: 450px) {
+        .pulse{
+            height: 20rem;
+            width: 20rem;
+        }
+        .outer-circle{
+            height: 22rem;
+            width: 22rem;
         }
     }
 </style>
@@ -87,7 +114,7 @@
     <div class="container-fluid"
          style="">
         <div class="row align-items-center">
-            <div class="col-lg-6 col-md-12"
+            <div class="col-lg-6 col-md-12 my-5"
                  style="padding: 0 10vh ;">
                 <h2 class="display-4">Unfold Luxurious Experience</h2>
                 <p class="text-muted">
@@ -102,11 +129,12 @@
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col-1 gx-0"
-                         style="background-color: #eee; height:85vh;"></div>
+                    <div class="col-1 gx-0 d-none d-md-block d-lg-block d-xl-block"
+                         style="background-color: #eee; height:50em;"></div>
                     <div class="col gx-0"
                          style="">
-                        <div style="background-color: #eee; height: 10vh; "></div>
+                        <div class="d-none d-md-block d-lg-block d-xl-block"
+                             style="background-color: #eee; height: 10vh; "></div>
                         <div style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;">
                             <img src="<?= ASSETS . THEME ?>images/home/home_section_2.jpg"
                                  alt=""
@@ -125,17 +153,18 @@
 <section>
     <div class="container-fluid">
         <div class="row align-items-center ">
-            <div class="col">
-                <div style="height: 10vh; background-color: #eee; width: 30vw; margin: 0 auto"></div>
+            <div class="col-lg-6 col-md-12 my-5">
+                <div class="d-none d-md-block d-lg-block d-xl-block"
+                     style="height: 7em; background-color: #eee; width: 30em; margin: 0 auto"></div>
                 <img class="img-fluid""
                 src="
                      <?= ASSETS . THEME ?>images/home/home_section_3.jpg"
                      alt=""
-                     style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;">
-                <div class=""
-                     style="height: 10vh; background-color: #eee; width: 30vw; margin: 0 auto"></div>
+                     style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px; width: 100%; margin:  auto">
+                <div class="d-none d-md-block d-lg-block d-xl-block"
+                     style="height: 7em; background-color: #eee; width: 30em; margin: auto auto"></div>
             </div>
-            <div class="col "
+            <div class="col"
                  style="padding: 0 10vh ;">
                 <h2 class="display-4">An Innovative Approach</h2>
                 <p class="text-muted">DSK has a wide range of bathroom products which are of High Standards, each of
@@ -145,7 +174,7 @@
                     types of equipment have been gifting a world of elegant bathroom accessories with its
                     high-quality range of sleek, innovative and attractive products. Helping you make your bathroom
                     experience the best.</p>
-                <button class="button"><i class="fa fa-chevron-right"></i> Quote Products</button> <br>
+                <button class="button"><i class="fa fa-chevron-right"></i> Quote Products</button><br> <br>
                 <div class="row mt-5">
                     <div class="col">
                         <p class="text-muted"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_01.png"
@@ -178,22 +207,22 @@
 
 <section style="margin-top: 0;">
     <div class="">
-
         <img src="<?= ASSETS . THEME ?>images/home/card_bg.jpg"
              alt=""
-             class="img-fluid">
+             class="img-fluid"
+             style="">
     </div>
 </section>
 
 
 
-<section style="margin-top: -20vh;">
+<section class="card-section" style="">
     <div class="row align-items-center justify-content-center">
         <div class="col row justify-content-center">
             <div class="rounded-circle outer-circle row align-items-center justify-content-center"
                  style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;">
                 <div class="card pulse"
-                     style="height: 25rem; width: 25rem; padding: 0; border-radius: 15em; text-align: center; box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; background-color: rgb(60, 183, 186);">
+                     style=" text-align: center; box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; background-color: rgb(60, 183, 186);">
                     <img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_07.png"
                          class="card-img-top"
                          alt="..."
@@ -211,7 +240,7 @@
             <div class="rounded-circle outer-circle d-flex align-items-center justify-content-center"
                  style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;">
                 <div class="card pulse"
-                     style="height: 25rem; width: 25rem; padding: 0; border-radius: 15em; text-align: center; box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; background-color: rgb(60, 183, 186);">
+                     style=" border-radius: 15em; text-align: center; box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; background-color: rgb(60, 183, 186);">
                     <img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_08.png"
                          class="card-img-top"
                          alt="..."
@@ -230,7 +259,7 @@
             <div class="rounded-circle outer-circle d-flex align-items-center justify-content-center"
                  style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;">
                 <div class="card pulse"
-                     style="height: 25rem; width: 25rem; padding: 0; border-radius: 15em; text-align: center; box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; background-color: rgb(60, 183, 186);">
+                     style="border-radius: 15em; text-align: center; box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; background-color: rgb(60, 183, 186);">
                     <img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_09.png"
                          class="card-img-top"
                          alt="..."
@@ -252,7 +281,7 @@
 <section>
     <div class="container-fluid">
         <div class="row align-items-center justify-content-center">
-            <div class="col"
+            <div class="col-lg-6 col-md-12 order-md-2 order-sm-2 my-5"
                  style="padding: 0 10vh ;">
                 <h2 class="display-4">Customer Centricity</h2>
                 <p class="text-muted">We render most high-grade experience to our customers. Providing the widest
@@ -277,14 +306,14 @@
                 </div>
             </div>
             <div class="col">
-                <div class=""
-                     style="height: 10vh; background-color: #eee; width: 30vw; margin: 0 auto"></div>
+                <div class="d-none d-md-block d-lg-block d-xl-block"
+                     style="height: 7em; background-color: #eee; width: 30em; margin: 0 auto"></div>
                 <img src="<?= ASSETS . THEME ?>images/home/home_section_4.jpg"
                      alt=""
                      class="img-fluid"
                      style="max-height: 100vh; width: 100%; box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;">
-                <div class=""
-                     style="height: 10vh; background-color: #eee; width: 30vw; margin: 0 auto"></div>
+                <div class="d-none d-md-block d-lg-block d-xl-block"
+                     style="height: 7em; background-color: #eee; width: 30em; margin: 0 auto"></div>
             </div>
         </div>
     </div>

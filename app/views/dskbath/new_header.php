@@ -5,391 +5,37 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1">
-    <title><?= $data['page_title'] ?>| DSK BATH</title>
+    <title>
+        <?= $data['page_title'] ?>| DSK BATH
+    </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <link rel="stylesheet" href="<?=ASSETS . THEME?>css/home.css">
+
+    <link rel="stylesheet"
+          href="<?= ASSETS . THEME ?>css/home.css">
 </head>
 
 <style>
-    p{
-        font-size: large;
+    p {
+        font-size: 20px;
         font-family: sans-serif;
     }
-    
-    section{
+
+    section {
         margin-top: 10vh;
     }
 
-    a,
-    a:hover {
-        text-decoration: none;
-        color: inherit;
-    }
 
-    .section-products {
-        padding: 80px 0 54px;
-    }
 
-    .section-products .header {
-        margin-bottom: 50px;
-    }
-
-    .section-products .header h3 {
-        font-size: 1rem;
-        color: #fe302f;
-        font-weight: 500;
-    }
-
-    .section-products .header h2 {
-        font-size: 2.2rem;
-        font-weight: 400;
-        color: #444444;
-    }
-
-    .section-products .single-product {
-        margin-bottom: 26px;
-    }
-
-    .section-products .single-product .part-1 {
-        position: relative;
-        height: 290px;
-        max-height: 290px;
-        margin-bottom: 20px;
-        overflow: hidden;
-    }
-
-    .section-products .single-product .part-1::before {
-        position: absolute;
-        content: "";
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        transition: all 0.3s;
-    }
-
-    .section-products .single-product:hover .part-1::before {
-        transform: scale(1.2, 1.2) rotate(5deg);
-    }
-
-    .section-products #product-1 .part-1::before {
-        transition: all 0.3s;
-    }
-
-    .section-products .single-product .part-1 .discount,
-    .section-products .single-product .part-1 .new {
-        position: absolute;
-        top: 15px;
-        left: 20px;
-        color: #ffffff;
-        background-color: #fe302f;
-        padding: 2px 8px;
-        text-transform: uppercase;
-        font-size: 0.85rem;
-    }
-
-    .section-products .single-product .part-1 .new {
-        left: 0;
-        background-color: #444444;
-    }
-
-    .section-products .single-product .part-1 ul {
-        position: absolute;
-        bottom: -41px;
-        left: 20px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        opacity: 0;
-        transition: bottom 0.5s, opacity 0.5s;
-    }
-
-    .section-products .single-product:hover .part-1 ul {
-        bottom: 30px;
-        opacity: 1;
-    }
-
-    .section-products .single-product .part-1 ul li {
-        display: inline-block;
-        margin-right: 4px;
-    }
-
-    .section-products .single-product .part-1 ul li a {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        background-color: #ffffff;
-        color: #444444;
-        text-align: center;
-        box-shadow: 0 2px 20px rgb(50 50 50 / 10%);
-        transition: color 0.2s;
-    }
-
-    .section-products .single-product .part-1 ul li a:hover {
-        color: #fe302f;
-    }
-
-    .section-products .single-product .part-2 .product-title {
-        font-size: 1rem;
-    }
-
-    .section-products .single-product .part-2 h4 {
-        display: inline-block;
-        font-size: 1rem;
-    }
-
-    .section-products .single-product .part-2 .product-old-price {
-        position: relative;
-        padding: 0 7px;
-        margin-right: 2px;
-        opacity: 0.6;
-    }
-
-    .section-products .single-product .part-2 .product-old-price::after {
-        position: absolute;
-        content: "";
-        top: 50%;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: #444444;
-        transform: translateY(-50%);
-    }
-
-    /* sidebar */
-
-    #sidebar {
-        width: 20%;
-        padding: 10px;
-        margin: 0;
-        margin-top: 10vh;
-        float: left;
-    }
-
-    #products {
-        width: 80%;
-        padding: 10px;
-        margin: 0;
-        float: right;
-    }
-
-    ul {
-        list-style: none;
-        padding: 5px;
-    }
-
-    li {
-        color: rgb(60, 183, 186);
-    }
-
-    li a {
-        color: black;
-        text-decoration: none;
-        
-    }
-
-    li:hover {
-        background-color: rgb(60, 183, 186);
-    }
-
-    li a:hover {
-        color: black;
-    }
-    
-    .fa-circle {
-        font-size: 20px;
-    }
-
-    #red {
-        color: #e94545d7;
-    }
-
-    #teal {
-        color: rgb(69, 129, 129);
-    }
-
-    #blue {
-        color: #0000ff;
-    }
-
-    .card {
-        width: 250px;
-        display: inline-block;
-        height: 300px;
-    }
-
-    .card-img-top {
-        width: 250px;
-        height: 210px;
-    }
-
-    .card-body p {
-        margin: 2px;
-    }
-
-    .card-body {
-        padding: 0;
-        padding-left: 2px;
-    }
-
-    .filter {
-        display: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    @media(min-width:991px) {
-        .navbar-nav {
-            margin-left: 35%;
-        }
-
-        .nav-item {
-            padding-left: 20px;
-        }
-
-        .card {
-            width: 190px;
-            display: inline-block;
-            height: 300px;
-        }
-
-        .card-img-top {
-            width: 188px;
-            height: 210px;
-        }
-
-        #mobile-filter {
-            display: none;
-        }
-    }
-
-    @media(min-width:768px) and (max-width:991px) {
-        .navbar-nav {
-            margin-left: 20%;
-        }
-
-        .nav-item {
-            padding-left: 10px;
-        }
-
-        .card {
-            width: 230px;
-            display: inline-block;
-            height: 300px;
-            margin-bottom: 10px;
-        }
-
-        .card-img-top {
-            width: 230px;
-            height: 210px;
-        }
-
-        #mobile-filter {
-            display: none;
-        }
-    }
-
-    @media(min-width:568px) and (max-width:767px) {
-        .navbar-nav {
-            margin-left: 20%;
-        }
-
-        .nav-item {
-            padding-left: 10px;
-        }
-
-        .card {
-            width: 205px;
-            display: inline-block;
-            height: 300px;
-            margin-bottom: 10px;
-        }
-
-        .card-img-top {
-            width: 203px;
-            height: 210px;
-        }
-
-        .fa-circle {
-            font-size: 15px;
-        }
-
-        #mobile-filter {
-            display: none;
-        }
-    }
-
-    @media(max-width:567px) {
-        .navbar-nav {
-            margin-left: 0%;
-        }
-
-        .nav-item {
-            padding-left: 10px;
-        }
-
-        #sidebar {
-            width: 100%;
-            padding: 10px;
-            margin: 0;
-            float: left;
-        }
-
-        #products {
-            width: 100%;
-            padding: 5px;
-            margin: 0;
-            float: right;
-        }
-
-        .card {
-            width: 230px;
-            display: inline-block;
-            height: 300px;
-            margin-bottom: 10px;
-            margin-top: 10px;
-        }
-
-        .card-img-top {
-            width: 230px;
-            height: 210px;
-        }
-
-        .list-group-item {
-            padding: 3px;
-        }
-
-        .offset-1 {
-            margin-left: 8%;
-        }
-
-        .filter {
-            display: block;
-            margin-left: 70%;
-            margin-top: 2%;
-        }
-
-        #sidebar {
-            display: none;
-        }
-
-        #mobile-filter {
-            padding: 10px;
-        }
-    }
-
-    .nav-item{
+    .nav-item {
         font-size: 1.4rem;
     }
-    .nav-link{
+
+    .nav-link {
         color: rgb(60, 183, 186);
     }
 
@@ -430,14 +76,12 @@
     .button-footer : hover {
         box-shadow: 0px 15px 20px rgba(112, 110, 110, 0.19)
     }
-
-    
 </style>
-    </style>
+</style>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-light mx-auto me-auto">
+        <!-- <nav class="navbar navbar-expand-lg bg-light mx-auto me-auto">
             <div class="container-fluid">
                 <a class="navbar-brand"
                    href=""><img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png"
@@ -451,26 +95,74 @@
                         <li class="nav-item">
                             <a class="nav-link "
                                aria-current="page"
-                               href="<?=ROOT?>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                               href="<?= ROOT ?>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                               href="<?=ROOT."about"?>"><i class="fa fa-info-circle" aria-hidden="true"></i> About Us</a>
+                               href="<?= ROOT . "about" ?>"><i class="fa fa-info-circle" aria-hidden="true"></i> About Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                               href="<?=ROOT."product"?>"><i class="fa fa-info-circle" aria-hidden="true"></i> Products</a>
+                               href="<?= ROOT . "product" ?>"><i class="fa fa-info-circle" aria-hidden="true"></i> Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                               href="<?=ROOT. "contact"?>"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a>
+                               href="<?= ROOT . "contact" ?>"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                               href="<?=ROOT . "enquiry_cart"?>"><i class="fa fa-commenting" aria-hidden="true"></i> Enquiry</a>
+                               href="<?= ROOT . "enquiry_cart" ?>"><i class="fa fa-commenting" aria-hidden="true"></i> Enquiry</a>
                         </li>
                     </ul>
                 </div>
             </div>
+        </nav> -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand"
+               href="<?=ROOT?>"><img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png"
+                         alt=""
+                         srcset=""
+                         class="img-fluid"
+                         style="max-height:10vh"></a>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end"
+                 id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link"
+                           href="<?= ROOT ?>"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="<?= ROOT . "about" ?>"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="<?= ROOT . "product" ?>"><i class="fa fa-info-circle" aria-hidden="true"></i> Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="<?= ROOT . "enquiry_cart" ?>"><i class="fa fa-commenting" aria-hidden="true"></i> Enquiry Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="<?= ROOT . "contact" ?>"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
