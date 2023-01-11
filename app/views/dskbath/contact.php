@@ -1,9 +1,15 @@
 <?php $this->view("new_header", $data); ?>
 
+<style>
+    input{
+        margin: 1vh 0;
+    }
+</style>
+
 <body>
     <div class="container-fluid"
          style="height: 10vh; <!-- Add background image -->">
-        <h1 class="text-center">Contact Us</h1></div>
+        <h1 class="text-center display-1" style="color: rgb(60, 183, 186)">Contact Us</h1></div>
         <section >
             <div class="container-fluid" >
                 <div class="row">
@@ -11,10 +17,10 @@
                         <img style="width: 100%;" src="<?=ASSETS . THEME?>images/contact/contact.jpeg" alt="" class="img-fluid">
                         <!-- <i class="fa fa-map-marker fa-4x"
                            aria-hidden="true"></i> -->
-                        <h2 style="">Factory</h2>
-                        <p>DSK Bath Solutions, GIDC Phase 3,
+                        <h2 class="display-6" style="">Factory</h2>
+                        <p class="text-muted">DSK Bath Solutions, GIDC Phase 3,
                             Dared, Jamnagar, Gujrat-361004.</p>
-                        <p>Phone: <a href="tel: +917021632636">07021632636</a></p>
+                        <p class="text-muted">Phone: <a href="tel: +917021632636">07021632636</a></p>
                     </div>
                     <div class="col">
                         <div class="row">
@@ -77,7 +83,7 @@
                         </div>
                         <button onclick="collect_data(event)"
                                 type="submit"
-                                class="btn btn-dark">Send</button>
+                                class="btn" style="background-color: rgb(60, 183, 186); color: white;">Send</button>
                     </div>
                 </div>
             </div>

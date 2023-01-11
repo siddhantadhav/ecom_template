@@ -16,10 +16,161 @@
     <link rel="stylesheet" href="<?=ASSETS . THEME?>css/home.css">
 </head>
 
-<style>#sidebar {
+<style>
+    p{
+        font-size: large;
+        font-family: sans-serif;
+    }
+    
+    section{
+        margin-top: 10vh;
+    }
+
+    a,
+    a:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .section-products {
+        padding: 80px 0 54px;
+    }
+
+    .section-products .header {
+        margin-bottom: 50px;
+    }
+
+    .section-products .header h3 {
+        font-size: 1rem;
+        color: #fe302f;
+        font-weight: 500;
+    }
+
+    .section-products .header h2 {
+        font-size: 2.2rem;
+        font-weight: 400;
+        color: #444444;
+    }
+
+    .section-products .single-product {
+        margin-bottom: 26px;
+    }
+
+    .section-products .single-product .part-1 {
+        position: relative;
+        height: 290px;
+        max-height: 290px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .section-products .single-product .part-1::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: all 0.3s;
+    }
+
+    .section-products .single-product:hover .part-1::before {
+        transform: scale(1.2, 1.2) rotate(5deg);
+    }
+
+    .section-products #product-1 .part-1::before {
+        transition: all 0.3s;
+    }
+
+    .section-products .single-product .part-1 .discount,
+    .section-products .single-product .part-1 .new {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        color: #ffffff;
+        background-color: #fe302f;
+        padding: 2px 8px;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+    }
+
+    .section-products .single-product .part-1 .new {
+        left: 0;
+        background-color: #444444;
+    }
+
+    .section-products .single-product .part-1 ul {
+        position: absolute;
+        bottom: -41px;
+        left: 20px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        opacity: 0;
+        transition: bottom 0.5s, opacity 0.5s;
+    }
+
+    .section-products .single-product:hover .part-1 ul {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    .section-products .single-product .part-1 ul li {
+        display: inline-block;
+        margin-right: 4px;
+    }
+
+    .section-products .single-product .part-1 ul li a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        background-color: #ffffff;
+        color: #444444;
+        text-align: center;
+        box-shadow: 0 2px 20px rgb(50 50 50 / 10%);
+        transition: color 0.2s;
+    }
+
+    .section-products .single-product .part-1 ul li a:hover {
+        color: #fe302f;
+    }
+
+    .section-products .single-product .part-2 .product-title {
+        font-size: 1rem;
+    }
+
+    .section-products .single-product .part-2 h4 {
+        display: inline-block;
+        font-size: 1rem;
+    }
+
+    .section-products .single-product .part-2 .product-old-price {
+        position: relative;
+        padding: 0 7px;
+        margin-right: 2px;
+        opacity: 0.6;
+    }
+
+    .section-products .single-product .part-2 .product-old-price::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #444444;
+        transform: translateY(-50%);
+    }
+
+    /* sidebar */
+
+    #sidebar {
         width: 20%;
         padding: 10px;
         margin: 0;
+        margin-top: 10vh;
         float: left;
     }
 
@@ -36,24 +187,23 @@
     }
 
     li {
-        color: rgb(110, 110, 110);
+        color: rgb(60, 183, 186);
     }
 
     li a {
-        color: inherit;
+        color: black;
         text-decoration: none;
+        
     }
 
     li:hover {
         background-color: rgb(60, 183, 186);
-        color: white;
     }
 
     li a:hover {
-        text-decoration: none;
-        color: inherit;
+        color: black;
     }
-
+    
     .fa-circle {
         font-size: 20px;
     }
@@ -235,18 +385,57 @@
             padding: 10px;
         }
     }
-    
-    
-    .nav-item a {
-        font-size: 1.2em;
+
+    .nav-item{
+        font-size: 1.4rem;
     }
-    section{
-        margin-top: 10vh;
+    .nav-link{
+        color: rgb(60, 183, 186);
     }
+
+    /* button */
+
+    .button {
+        /* width: 140px; */
+        height: 5vh;
+        padding: 2vh;
+        font-family: sans-serif;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 500;
+        color: white;
+        background-color: rgb(60, 183, 186);
+        border: none;
+        border-radius: 45px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+        float: left;
+    }
+
+    .button:hover {
+        background-color: rgb(110, 110, 110);
+        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+    }
+
+    /* footer button */
+    .button-footer {
+        background-color: transparent;
+    }
+
+    .button-footer : hover {
+        box-shadow: 0px 15px 20px rgba(112, 110, 110, 0.19)
+    }
+
+    
+</style>
     </style>
 
 <body>
-
     <header>
         <nav class="navbar navbar-expand-lg bg-light mx-auto me-auto">
             <div class="container-fluid">

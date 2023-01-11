@@ -145,7 +145,7 @@
                                             <div class="p-2">
                                                 <a href="<?= ROOT ?>add_to_cart/sub_quantity/<?= $row->id ?>">
                                                     <button type="button"
-                                                            class="btn btn-primary btn-sm">
+                                                            class="btn btn-dark btn-sm teal-btn">
                                                         <i class="fa fa-minus"></i>
                                                     </button>
                                                 </a>
@@ -163,7 +163,7 @@
                                             <div class="p-2">
                                                 <a href="<?= ROOT ?>add_to_cart/add_quantity/<?= $row->id ?>">
                                                     <button type="button"
-                                                            class="btn btn-primary btn-sm">
+                                                            class="btn btn-dark btn-sm teal-btn">
                                                         <i class="fa fa-plus"></i>
                                                     </button>
                                                 </a>
@@ -186,7 +186,7 @@
                                             <button type="button"
                                                     onclick="delete_item(this.getAttribute('delete_id'))"
                                                     delete_id="<?= $row->id ?>"
-                                                    class="btn btn-primary btn-sm me-1 mb-2"
+                                                    class="btn btn-dark btn-sm me-1 mb-2 teal-btn"
                                                     data-mdb-toggle="tooltip"
                                                     title="Remove item">
                                                 <i class="fa fa-trash"></i>
@@ -256,7 +256,7 @@
                               placeholder="Message">
                 </textarea>
                 </div>
-                <button class="btn teal-btn"
+                <button class="btn btn-dark teal-btn button"
                         type="submit"
                         onclick="collect_cart_data(event)">Submit Enquiry</button>
             </div>

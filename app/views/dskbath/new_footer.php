@@ -1,4 +1,9 @@
 <!-- Footer -->
+
+<style>
+  
+</style>
+
 <footer class="bg-dark text-center text-white" style="width: 100vw;">
   <!-- Grid container -->
   <div class="container p-4">
@@ -12,8 +17,8 @@
             <div style="background-color: white; width: 15vh;">
                 <img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png" alt="" class="img-fluid" style=" height: 10vh; ">
             </div>
-            <p class="text-start">DSK has wide range of bathroom products which are of High Standards, each of which has been designed and evolved through keen market study and 26 Years of Experience.</p>
-            <button class="btn btn-primary" style="float: left;">Know More</button>
+            <p class="text-start" style="color: #eee;">DSK has wide range of bathroom products which are of High Standards, each of which has been designed and evolved through keen market study and 26 Years of Experience.</p>
+            <a href="<?=ROOT?>about"><button class="button button-footer">Know More</button> <br></button></a>
         </div>
         <!--Grid column-->
 
@@ -69,7 +74,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright:
+    © 2023 Copyright:
     <a class="text-white" href="<?=ROOT?>">DSKBath.com</a>
   </div>
   <!-- Copyright -->
