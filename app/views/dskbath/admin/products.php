@@ -4,7 +4,7 @@
 <style type="text/css">
     .add_new {
         width: 500px;
-        height: 600px;
+        height: 650px;
         background-color: #eae8e8;
         box-shadow: 0px 0px 10px #aaa;
         position: absolute;
@@ -13,7 +13,7 @@
 
     .edit_product {
         width: 500px;
-        height: 600px;
+        height: 650px;
         background-color: #eae8e8;
         box-shadow: 0px 0px 10px #aaa;
         position: absolute;
@@ -105,6 +105,18 @@
                         <br style="clear: both;">
                         <div class="form-group">
                             <label for=""
+                                   class="col-sm-2 col-sm-2 control-label">SKU: </label>
+                            <div class="col-sm-10">
+                                <input id="sku"
+                                       name="sku"
+                                       type="text"
+                                       class="form-control"
+                                       required>
+                            </div>
+                        </div>
+                        <br style="clear: both;">
+                        <div class="form-group">
+                            <label for=""
                                    class="col-sm-2 col-sm-2 control-label">Image: </label>
                             <div class="col-sm-10">
                                 <input id="image"
@@ -154,7 +166,21 @@
                                        autofocus>
                             </div>
                         </div>
+                        <br style="clear: both;">
+                        <div class="form-group">
+                            <label for=""
+                                   class="col-sm-2 col-sm-2 control-label">Image5 (optional): </label>
+                            <div class="col-sm-10">
+                                <input id="image5"
+                                       name="image5"
+                                       type="file"
+                                       class="form-control"
+                                       onchange="display_images(this.files, this.name, 'js-product-images-add')"
+                                       autofocus>
+                            </div>
+                        </div>
                         <div class="js-product-images-add edit_product_images">
+                            <img src="" alt="">
                             <img src="" alt="">
                             <img src="" alt="">
                             <img src="" alt="">
@@ -224,6 +250,18 @@
                         <br style="clear: both;">
                         <div class="form-group">
                             <label for=""
+                                   class="col-sm-2 col-sm-2 control-label">SKU: </label>
+                            <div class="col-sm-10">
+                                <input id="sku_edit"
+                                       name="sku_edit"
+                                       type="text"
+                                       class="form-control"
+                                       autofocus>
+                            </div>
+                        </div>
+                        <br style="clear: both;">
+                        <div class="form-group">
+                            <label for=""
                                    class="col-sm-2 col-sm-2 control-label">Image: </label>
                             <div class="col-sm-10">
                                 <input id="image_edit"
@@ -273,6 +311,19 @@
                                        autofocus>
                             </div>
                         </div>
+                        <br style="clear: both;">
+                        <div class="form-group">
+                            <label for=""
+                                   class="col-sm-2 col-sm-2 control-label">Image5 (optional): </label>
+                            <div class="col-sm-10">
+                                <input id="image5_edit"
+                                       name="image5"
+                                       type="file"
+                                       class="form-control"
+                                       onchange="display_images(this.files, this.name, 'js-product-images')"
+                                       autofocus>
+                            </div>
+                        </div>
                         <br>
                         <div class="js-product-images edit_product_images"></div>
 
@@ -292,6 +343,7 @@
                         <th> Product id</th>
                         <th> Product Name</th>
                         <th> Description</th>
+                        <th> Product SKU</th>
                         <th> Category</th>
                         <th> Image</th>
                         <th> Date</th>
@@ -343,15 +395,19 @@
 
             var description_input = document.querySelector("#description_edit");
             description_input.value = info.description;
-
+            
             var category_input = document.querySelector("#category_edit");
             category_input.value = info.category;
+            
+            var sku_input = document.querySelector("#sku_edit");
+            sku_input.value = info.sku;
 
             var product_image_input = document.querySelector(".js-product-images");
             product_image_input.innerHTML = `<img src ="<?= ROOT ?>${info.image}" />`;
             product_image_input.innerHTML += `<img src ="<?= ROOT ?>${info.image2}" />`;
             product_image_input.innerHTML += `<img src ="<?= ROOT ?>${info.image3}" />`;
             product_image_input.innerHTML += `<img src ="<?= ROOT ?>${info.image4}" />`;
+            product_image_input.innerHTML += `<img src ="<?= ROOT ?>${info.image5}" />`;
         }
 
         if (show_add_box.classList.contains("hide")) {
@@ -377,6 +433,9 @@
         }
         else if (name == "image4") {
             index = 3;
+        }
+        else if (name == "image5") {
+            index = 4;
         }
         var image_holder = document.querySelector("." +element);
 
@@ -404,6 +463,12 @@
             return;
         }
 
+        var sku_input = document.querySelector("#sku");
+        if (sku_input.value.trim() == "" || !isNaN(sku_input.value.trim())) {
+            alert("Please enter a valid SKU");
+            return;
+        }
+
         var image_input = document.querySelector("#image");
         if (image_input.files.length == 0) {
             alert("Please enter a valid image");
@@ -427,14 +492,19 @@
             data.append('image4', image4_input.files[0]);
         }
 
+        var image5_input = document.querySelector("#image5");
+        if (image5_input.files.length > 0) {
+            data.append('image5', image5_input.files[0]);
+        }
+
         data.append('name', product_input.value.trim());
         data.append('description', description_input.value.trim());
         data.append('category', category_input.value.trim());
+        data.append('sku', sku_input.value.trim());
         data.append('data_type', 'add_product');
         data.append('image', image_input.files[0]);
 
         send_data_files(data);
-        // location.reload();
     }
 
     function collect_edit_data(e) {
@@ -447,6 +517,12 @@
         var description_input = document.querySelector("#description_edit");
         if (description_input.value.trim() == "" || !isNaN(description_input.value.trim())) {
             alert("Please enter a valid description");
+            return;
+        }
+        
+        var sku_input = document.querySelector("#sku_edit");
+        if (sku_input.value.trim() == "" || !isNaN(sku_input.value.trim())) {
+            alert("Please enter a valid SKU");
             return;
         }
 
@@ -479,10 +555,15 @@
         if (image4_input.files.length > 0) {
             data.append('image4', image4_input.files[0]);
         }
+        var image5_input = document.querySelector("#image5_edit");
+        if (image5_input.files.length > 0) {
+            data.append('image5', image5_input.files[0]);
+        }
 
         data.append('name', product_input.value.trim());
         data.append('description', description_input.value.trim());
         data.append('category', category_input.value.trim());
+        data.append('sku', sku_input.value.trim());
         data.append('data_type', 'edit_product');
         data.append('id', EDIT_ID);
 

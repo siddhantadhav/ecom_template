@@ -14,6 +14,8 @@
     }
 </style>
 
+<?php error_reporting(E_ERROR | E_WARNING | E_PARSE);   ?>
+
 <div class="row mt">
     <div class="col-md-12">
         <div class="content-panel">
@@ -25,7 +27,8 @@
                         <th>Order ID</th>
                         <th>Client ID</th>
                         <th> Email</th>
-                        <th> Product ID</th>
+                        <th> Product Name</th>
+                        <th> Product SKU</th>
                         <th> QTY</th>
                         <th> Message</th>
                         <th> Date</th>
@@ -48,21 +51,33 @@
         if (show_message_box.classList.contains("hide")) {
             show_message_box.classList.remove("hide");
 
-            var contact_name = document.getElementById("contact_name");
-            contact_name.innerHTML = fname + " " + lname;
+            var contact_fname = document.getElementById("contact_fname");
+            contact_fname.innerHTML += fname + lname;
             var contact_city = document.getElementById("contact_city");
-            contact_name.innerHTML = city;
+            contact_city.innerHTML += city;
             var contact_phone = document.getElementById("contact_phone");
-            contact_phone.innerHTML = phone;
+            contact_phone.innerHTML += phone;
             var contact_email = document.getElementById("contact_email");
-            contact_email.innerHTML = email;
+            contact_email.innerHTML += email;
             var contact_subject = document.getElementById("contact_subject");
-            contact_subject.innerHTML = subject;
+            contact_subject.innerHTML += subject;
             var contact_message = document.getElementById("contact_message");
-            contact_message.innerHTML = message;
+            contact_message.innerHTML += message;
         }
         else {
             show_message_box.classList.add("hide");
+            var contact_fname = document.getElementById("contact_fname");
+            contact_fname.innerHTML = "";
+            var contact_city = document.getElementById("contact_city");
+            contact_city.innerHTML = "";
+            var contact_phone = document.getElementById("contact_phone");
+            contact_phone.innerHTML = "";
+            var contact_email = document.getElementById("contact_email");
+            contact_email.innerHTML = "";
+            var contact_subject = document.getElementById("contact_subject");
+            contact_subject.innerHTML = "";
+            var contact_message = document.getElementById("contact_message");
+            contact_message.innerHTML = "";
         }
 
     }

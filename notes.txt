@@ -38,11 +38,40 @@ Website
 2. Enquiry cart UI (Done)
 3. Enquiry cart information to Database (Done)
 4. Single product~	(Done)
-5. Footer
+5. Footer (Done)
+6. Work on responsiveness and footer
+7. Product and product detail page
 
 Admin panel
 1. Dashboard
-2. Displaying enquiries information 
+2. Displaying enquiries information  (Done)
 3. Slider Images/ Settings
 4. Manage users + login functionality
 6. Website backup
+7. Add SKU for product (Done)
+8. Add new product image  (Done)
+
+
+Product
+
+ID (auto)
+Description
+Category
+slug (auto)
+image (mandatory)
+array of tags
+
+default color -> chrome (first image)
+Rose Gold
+Matt Black
+Brushed Bronze
+Gold
+
+
+
+
+
+
+
+
+

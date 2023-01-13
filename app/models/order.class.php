@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 class Order {
     public function create($contact_id)
     {
@@ -27,19 +27,22 @@ class Order {
             foreach ($orders as $order) {
                 $product_details = $product->get_one_product($order->product_id);
                 $client_details = $contact->get_one_contact_id($order->client_id);
+                // show($client_details->fname);
+                // show($client_details->lname);
                 $result .= "<tr>";
                 $result .=
                     '<td>' . $order->id . '</td>' .
                     '<td>' . $order->client_id . '</td>' .
                     '<div class="show_message hide">'.
-                        '<p id = "contact_name"></p>'.
-                        '<p id = "contact_city"></p>'.
-                        '<p id = "contact_phone"></p>'.
-                        '<p id = "contact_email"></p>'.
-                        '<p id = "contact_subject"></p>'.
-                        '<p id = "contact_message"></p></div>'.
+                        '<p id = "contact_fname">Name: </p>'.
+                        '<p id = "contact_city">City: </p>'.
+                        '<p id = "contact_phone">Phone: </p>'.
+                        '<p id = "contact_email">Email: </p>'.
+                        '<p id = "contact_subject">Subject: </p>'.
+                        '<p id = "contact_message">Message: </p></div>'.
                     '<td style="cursor: pointer" onclick = "show_contact_message(`'.$client_details->fname.'`,` '.$client_details->lname.'`,` '.$client_details->city.'`,` '.$client_details->phone.'`,` '.$client_details->email.'`,` '.$client_details->subject.'`,` '.$client_details->message.'`)">' . $client_details->email . '</td>' .
                     '<td>' . $product_details->name . '</td>' .
+                    '<td>' . $product_details->sku . '</td>' .
                     '<td>' . $order->qty . '</td>' .
                     '<td>' . $order->item_message . '</td>' .
                     '<td>' . $order->date . '</td>' .

@@ -10,6 +10,7 @@ class Product
         $arr['name'] = ucwords($DATA->name);
         $arr['description'] = ucwords($DATA->description);
         $arr['category'] = ucwords($DATA->category);
+        $arr['sku'] = ucwords($DATA->sku);
         $arr['date'] = date("Y-m-d H:i:s");
         $arr['slug'] = $this->str_to_url($DATA->name);
 
@@ -21,6 +22,9 @@ class Product
         }
         if (!is_numeric($arr['category'])) {
             $_SESSION['error'] .= "Enter Valid Category";
+        }
+        if (!preg_match("/^[a-zA-Z \-,_]+$/", trim($arr['sku']))) {
+            $_SESSION['error'] .= "Enter Valid SKU";
         }
 
         //checking for unique slug
@@ -36,6 +40,7 @@ class Product
         $arr['image2'] = "";
         $arr['image3'] = "";
         $arr['image4'] = "";
+        $arr['image5'] = "";
 
         $allowed = array();
         $allowed[] = "image/jpeg";
@@ -68,7 +73,7 @@ class Product
         
 
         if (!isset($_SESSION['error']) || $_SESSION['error'] == "") {
-            $query = "insert into products (name, description, category, date, image, image2, image3, image4, slug) values (:name, :description, :category, :date, :image, :image2, :image3, :image4, :slug)";
+            $query = "insert into products (name, description, category, sku, date, image, image2, image3, image4, image5, slug) values (:name, :description, :category, :sku, :date, :image, :image2, :image3, :image4, :image5, :slug)";
             $check = $DB->write($query, $arr);
 
             if ($check) {
@@ -83,10 +88,12 @@ class Product
         $name = $data->name;
         $description = $data->description;
         $category = $data->category;
+        $sku = $data->sku;
         $arr['id'] = $id;
         $arr['name'] = $name;
         $arr['description'] = $description;
         $arr['category'] = $category;
+        $arr['sku'] = $sku;
         
         $image_string = "";
 
@@ -98,6 +105,9 @@ class Product
         }
         if (!is_numeric($arr['category'])) {
             $_SESSION['error'] .= "Enter Valid Category";
+        }
+        if (!preg_match("/^[a-zA-Z \-_,]+$/", trim($arr['description']))) {
+            $_SESSION['error'] .= "Enter Valid Description";
         }
 
         $allowed = array();
@@ -135,7 +145,7 @@ class Product
 
         if (!isset($_SESSION['error']) || $_SESSION['error'] == "") {
             $DB = Database::newInstance();
-            $query = "update products set name = :name, description = :description, category = :category $image_string where id = :id limit 1";
+            $query = "update products set name = :name, description = :description, category = :category, sku = :sku $image_string where id = :id limit 1";
             $DB->write($query, $arr);
         }
     }
@@ -183,10 +193,12 @@ class Product
                 $info['name'] = $cat_row->name;
                 $info['description'] = $cat_row->description;
                 $info['category'] = $cat_row->category;
+                $info['sku'] = $cat_row->sku;
                 $info['image'] = $cat_row->image;
                 $info['image2'] = $cat_row->image2;
                 $info['image3'] = $cat_row->image3;
                 $info['image4'] = $cat_row->image4;
+                $info['image5'] = $cat_row->image5;
                 $info = str_replace('"', "'", json_encode($info)) ;
                 $one_cat = $model->get_one($cat_row->category);
                 $result .= "<tr>";
@@ -194,6 +206,7 @@ class Product
                     <td><a href="basic_table.html#">'.$cat_row->id.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->name.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->description.'</a></td>
+                    <td><a href="basic_table.html#">'.$cat_row->sku.'</a></td>
                     <td><a href="basic_table.html#">'.$one_cat->category.'</a></td>
                     <td><a href="basic_table.html#"><img src ="'.ROOT.$cat_row->image.'" style="width:50px; height:50px" /></a></td>
                     <td><a href="basic_table.html#">'.$cat_row->date.'</a></td>

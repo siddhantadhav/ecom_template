@@ -11,7 +11,6 @@ Class Home extends Controller {
         // $data['ROWS'] = $ROWS;
         // $this->view("index", $data);
         $DB = Database::getInstance();
-
         $ROWS = $DB->read("select * from products");
         $data['page_title'] = "Home";
         $data['ROWS'] = $ROWS;
