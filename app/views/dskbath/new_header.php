@@ -20,6 +20,9 @@
 </head>
 
 <style>
+    body{
+        overflow-x: hidden;
+    }
     p {
         font-size: 20px;
         font-family: sans-serif;

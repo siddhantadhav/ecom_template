@@ -52,7 +52,7 @@
         <div class="content-panel">
             <table class="table table-striped table-advance table-hover">
                 <h4><i class="fa fa-angle-right"></i> Product  <button class="btn btn-primary btn-xs"
-                            onclick="show_add_new(event)"><i class="fa fa-plus"></i> Add New</button></h4>
+                            onclick="show_add_new(event)"><i class="fa fa-plus"></i> Quick Add New</button></h4>
                 <!-- add new product-->
                 <div class="add_new hide">
                     <h4 class="mb"><i class="fa fa-angle-right"></i>Add New Product</h4>

@@ -12,6 +12,8 @@ Class Product_detail extends Controller {
         // $CAT = $DB->read("select category from categories where id = :category", ['id' => $CAT->category]);
         $category = $DB->read("select category from categories where id = $CAT->category");
         $data['category'] = $category[0];
+        $category_class = $this->load_model('Category');
+        $data['categories'] = $category_class->get_all();
 
         $this->view("product_detail", $data);
     }

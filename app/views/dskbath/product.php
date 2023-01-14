@@ -241,6 +241,7 @@
                                             </h3>
                                             <h4 class="text-muted"
                                                 style="font-size: 1.2rem;"><?= $row->description ?></h4>
+                                            <h6 class="text-muted ">SKU: <?=$row->sku?></h6>
                                         </div>
                                     </div>
                                 </div>

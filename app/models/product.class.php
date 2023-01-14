@@ -17,13 +17,13 @@ class Product
         if (!preg_match("/^[a-zA-Z 0-9]+$/", trim($arr['name']))) {
             $_SESSION['error'] .= "Enter Valid Product Name";
         }
-        if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['description']))) {
+        if (!preg_match("/^[a-zA-Z .\-,]+$/", trim($arr['description']))) {
             $_SESSION['error'] .= "Enter Valid Description";
         }
         if (!is_numeric($arr['category'])) {
             $_SESSION['error'] .= "Enter Valid Category";
         }
-        if (!preg_match("/^[a-zA-Z \-,_]+$/", trim($arr['sku']))) {
+        if (!preg_match("/^[a-zA-Z0-9 \-,_]+$/", trim($arr['sku']))) {
             $_SESSION['error'] .= "Enter Valid SKU";
         }
 

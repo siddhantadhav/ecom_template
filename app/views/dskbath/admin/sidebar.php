@@ -36,6 +36,7 @@
                 </a>
                 <ul class="sub">
                     <li><a href="<?=ROOT?>admin/products">View Products</a></li>
+                    <li><a href="<?=ROOT?>admin/products/add">Add Products</a></li>
                 </ul>
             </li>
             <li class="sub-menu">

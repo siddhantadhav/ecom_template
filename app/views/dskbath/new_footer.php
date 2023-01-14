@@ -1,9 +1,5 @@
 <!-- Footer -->
 
-<style>
-
-</style>
-
 <footer class="bg-dark text-center text-white"
         style="width: 100vw;">
   <!-- Grid container -->
