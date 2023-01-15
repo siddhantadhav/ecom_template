@@ -5,15 +5,31 @@ class Product
     
     public function create($DATA, $FILES, $image_class = null)
     {
+        
         $_SESSION['error'] = "";
         $DB = Database::newInstance();
         $arr['name'] = ucwords($DATA->name);
         $arr['description'] = ucwords($DATA->description);
         $arr['category'] = ucwords($DATA->category);
         $arr['sku'] = ucwords($DATA->sku);
+
+        if(isset($DATA->variations) && $DATA->variations != 0){
+            $arr['variations'] = 1;
+        }
+        else{
+            $arr['variations'] = 0;
+        }
+
+        if(isset($DATA->variations) && $DATA->variations != 0){
+            $arr['color'] = $DATA->color;
+        }
+        else{
+            $arr['color'] = 0;
+        }
         $arr['date'] = date("Y-m-d H:i:s");
         $arr['slug'] = $this->str_to_url($DATA->name);
-
+        show($arr);
+        
         if (!preg_match("/^[a-zA-Z 0-9]+$/", trim($arr['name']))) {
             $_SESSION['error'] .= "Enter Valid Product Name";
         }
@@ -23,6 +39,9 @@ class Product
         if (!is_numeric($arr['category'])) {
             $_SESSION['error'] .= "Enter Valid Category";
         }
+        if (!is_numeric($arr['color'])) {
+            $_SESSION['error'] .= "Enter Valid Color";
+        }   
         if (!preg_match("/^[a-zA-Z0-9 \-,_]+$/", trim($arr['sku']))) {
             $_SESSION['error'] .= "Enter Valid SKU";
         }
@@ -33,36 +52,37 @@ class Product
         $query = "Select slug from products where slug = :slug limit 1";
         $check = $DB->read($query);
        if ($check) {
-            $arr['slug'] .= "-" .rand(0, 99999);
+           $arr['slug'] .= "-" .rand(0, 99999);
         }
-
+        
         $arr['image'] = "";
         $arr['image2'] = "";
         $arr['image3'] = "";
         $arr['image4'] = "";
         $arr['image5'] = "";
-
+        
+        
         $allowed = array();
         $allowed[] = "image/jpeg";
         $allowed[] = "image/jpg";
         $allowed[] = "image/png";
-
+        
         $size = 10;
         $size = ($size*1024*1024);
-
+        
         $folder = "upload/";
-
+        
         if(!file_exists($folder)){
             mkdir($folder, 0777, true);
         }
-
+        
         foreach($FILES as $key => $img_row) {
             if($img_row['error'] == 0 && in_array($img_row['type'], $allowed)) {
                 if($img_row['size'] < $size) {
                     $destination = $folder . $image_class->generate_filename(60)  . "." . substr($img_row['type'], strrpos($img_row['type'], '/') + 1);
                     move_uploaded_file($img_row['tmp_name'], $destination);
                     $arr[$key] = $destination;
-
+                    
                     $image_class->resize_image($destination, $destination, 1500, 1500);
                 }
                 else {
@@ -71,9 +91,9 @@ class Product
             }
         }
         
-
         if (!isset($_SESSION['error']) || $_SESSION['error'] == "") {
-            $query = "insert into products (name, description, category, sku, date, image, image2, image3, image4, image5, slug) values (:name, :description, :category, :sku, :date, :image, :image2, :image3, :image4, :image5, :slug)";
+            $query = "insert into products (name, description, category, sku,  image, image2, image3, image4, image5, variations, color, date, slug) values (:name, :description, :category, :sku,  :image, :image2, :image3, :image4, :image5, :variations, :color, :date, :slug)";
+            
             $check = $DB->write($query, $arr);
 
             if ($check) {

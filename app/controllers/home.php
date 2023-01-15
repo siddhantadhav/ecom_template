@@ -14,8 +14,8 @@ Class Home extends Controller {
         $ROWS = $DB->read("select * from products");
         $category_class = $this->load_model('Category');
         $data['categories'] = $category_class->get_all();
-        $data['page_title'] = "Home";
         $data['ROWS'] = $ROWS;
+        $data['page_title'] = "Home";
         $this->view("new_index", $data);
         
     }
