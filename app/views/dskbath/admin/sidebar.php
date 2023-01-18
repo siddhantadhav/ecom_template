@@ -10,8 +10,6 @@
                          width="60"></a></p>
             <h5 class="centered">Marcel Newman</h5>
 
-
-
             <li class="sub-menu">
                 <a href="<?=ROOT?>admin">
                     <i class="fa fa-desktop"></i>
@@ -51,24 +49,23 @@
                     <span>Orders</span>
                 </a>
             </li>
-            <li class="sub-menu">
+            <!-- <li class="sub-menu">
                 <a href="<?=ROOT?>admin/settings">
                     <i class="fa fa-cogs"></i>
                     <span>Settings</span>
-                </a>
-                <ul class="sub">
+                </a> -->
+                <!-- <ul class="sub"> -->
                     <!-- <li><a href="buttons.html">View Products</a></li> -->
-                    <li><a href="<?=ROOT?>admin/settings/slider_images">Slider Images</a></li>
-                </ul>
-            </li>
+                    <!-- <li><a href="<?=ROOT?>admin/settings/slider_images">Slider Images</a></li> -->
+                <!-- </ul>
+            </li> -->
             <li class="sub-menu">
                 <a href="<?=ROOT?>admin/users">
                     <i class="fa fa-user"></i>
                     <span>Manage Users</span>
                 </a>
                 <ul class="sub">
-                    <li><a href="<?=ROOT?>admin/users/add">Add Users</a></li>
-                    <li><a href="<?=ROOT?>admin/users/delete">Delete Users</a></li>
+                    <li><a href="<?=ROOT?>admin/users">View Users</a></li>
                 </ul>
             </li>
             <li class="sub-menu">

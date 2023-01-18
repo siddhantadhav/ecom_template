@@ -28,7 +28,6 @@ class Product
         }
         $arr['date'] = date("Y-m-d H:i:s");
         $arr['slug'] = $this->str_to_url($DATA->name);
-        show($arr);
         
         if (!preg_match("/^[a-zA-Z 0-9]+$/", trim($arr['name']))) {
             $_SESSION['error'] .= "Enter Valid Product Name";

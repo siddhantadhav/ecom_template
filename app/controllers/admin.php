@@ -2,14 +2,34 @@
 
 class Admin extends Controller
 {
+
     public function index()
     {
         // add login functionality
 
+        $DB = Database::getInstance();
+
+        $orders = $DB->read("select count(*) as all_orders from orders");
+        $data['orders'] = $orders[0];
+        
+        $contacts = $DB->read("select count(*) as all_contacts from contacts where ordered = 0");
+        $data['contacts'] = $contacts[0];
+
+        $contact = $this->load_model('Contact');
+        $data['enquiries_done'] = $contact->enquiry_done;
+        
+        $categories = $DB->read("select count(*) as all_categories from categories");
+        $data['categories'] = $categories[0];
+       
+        $products = $DB->read("select count(*) as all_products from products");
+        $data['products'] = $products[0];
+        
+        $users = $DB->read("select count(*) as all_users from users");
+        $data['users'] = $users[0];
 
 
         $data['page_title'] = "Admin";
-        $this->view("admin/index", $data);
+        $this->view("admin/login", $data);
     }
 
     public function categories()
@@ -41,16 +61,17 @@ class Admin extends Controller
             $param = addslashes($param);
 
             if ($param == "add") {
-
                 $DB = Database::getInstance();
                 $ROWS = $DB->read("select * from products");
                 $colors = $DB->read("select * from colors");
                 $category_class = $this->load_model('Category');
+
                 $data['categories'] = $category_class->get_all();
                 $data['ROWS'] = $ROWS;
                 $data['colors'] = $colors;
                 $data['page_title'] = "Admin";
                 $this->view("admin/product_add", $data);
+
                 return;
             }
         }
@@ -99,5 +120,20 @@ class Admin extends Controller
         $data['tbl_rows'] = $tbl_rows;
         $data['page_title'] = "Admin";
         $this->view("admin/orders", $data);
+    }
+    
+    public function users()
+    {
+        // add login functionality
+
+
+        $DB = Database::getInstance();
+        $users = $DB->read("select * from users");
+        $user = $this->load_model('User');
+        $tbl_rows = $user->make_table($users);
+
+        $data['tbl_rows'] = $tbl_rows;
+        $data['page_title'] = "Admin";
+        $this->view("admin/users", $data);
     }
 }

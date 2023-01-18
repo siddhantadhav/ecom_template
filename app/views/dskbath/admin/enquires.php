@@ -54,8 +54,69 @@
         else {
             show_message_box.classList.add("hide");
         }
+    }
+
+    function complete_contact(contact_id){
+        var data = new FormData();
+
+        data.append('id', contact_id);
+        data.append('data_type', 'complete_contact');
+
+        send_data(data);
 
     }
+    
+    function delete_contact(contact_id){
+        var data = new FormData();
+
+        data.append('id', contact_id);
+        data.append('data_type', 'remove_contact');
+
+        send_data(data);
+
+    }
+
+
+    function send_data(formdata) {
+            var ajax = new XMLHttpRequest();
+
+            ajax.addEventListener('readystatechange', function () {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    handle_result(ajax.responseText);
+                }
+
+            });
+            ajax.open("POST", "<?= ROOT ?>ajax_contact", true);
+            ajax.send(formdata);
+        }
+
+        function handle_result(result) {
+            console.log(result);
+            if (result != "") {
+                var obj = JSON.parse(result);
+                if (typeof obj.data_type != 'undefined') {
+                    if (obj.data_type == "complete_contact") {
+                        if (obj.message_type == "info") {
+                            alert(obj.message);
+                            window.location.reload();
+                        }
+                        else {
+                            obj.alert(obj.message);
+                        }
+                    }
+                    if (obj.data_type == "remove_contact") {
+                        if (obj.message_type == "info") {
+                            alert(obj.message);
+                            window.location.reload();
+                        }
+                        else {
+                            obj.alert(obj.message);
+                        }
+                    }
+                }
+
+            }
+        }
 </script>
 
 <?php $this->view("admin/footer", $data); ?>

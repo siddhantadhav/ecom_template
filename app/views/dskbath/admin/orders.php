@@ -9,18 +9,19 @@
         position: absolute;
         padding: 6px;
     }
+
     .hide {
         display: none;
     }
 </style>
 
-<?php error_reporting(E_ERROR | E_WARNING | E_PARSE);   ?>
+<?php error_reporting(E_ERROR | E_WARNING | E_PARSE); ?>
 
 <div class="row mt">
     <div class="col-md-12">
         <div class="content-panel">
             <table class="table table-striped table-advance table-hover">
-                <h4><i class="fa fa-angle-right"></i> Orders </h4> 
+                <h4><i class="fa fa-angle-right"></i> Orders </h4>
                 <hr>
                 <thead>
                     <tr>
@@ -37,7 +38,7 @@
                 </thead>
                 <tbody id="table_body">
                     <?php
-                        echo $tbl_rows;
+                    echo $tbl_rows;
                     ?>
                 </tbody>
             </table>
@@ -81,6 +82,57 @@
         }
 
     }
+
+    function remove_order(id, client_id) {
+        var data = new FormData();
+
+        data.append('id', id);
+        data.append('client_id', client_id);
+        data.append('data_type', 'remove_order');
+
+        send_data(data);
+    }
+
+    function send_data(formdata) {
+        var ajax = new XMLHttpRequest();
+
+        ajax.addEventListener('readystatechange', function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                handle_result(ajax.responseText);
+            }
+
+        });
+        ajax.open("POST", "<?= ROOT ?>ajax_contact", true);
+        ajax.send(formdata);
+    }
+
+    function handle_result(result) {
+            console.log(result);
+            if (result != "") {
+                var obj = JSON.parse(result);
+                if (typeof obj.data_type != 'undefined') {
+                    if (obj.data_type == "complete_contact") {
+                        if (obj.message_type == "info") {
+                            alert(obj.message);
+                            window.location.reload();
+                        }
+                        else {
+                            obj.alert(obj.message);
+                        }
+                    }
+                    if (obj.data_type == "remove_order") {
+                        if (obj.message_type == "info") {
+                            alert(obj.message);
+                            window.location.reload();
+                        }
+                        else {
+                            obj.alert(obj.message);
+                        }
+                    }
+                }
+
+            }
+        }
 </script>
 
 <?php $this->view("admin/footer", $data); ?>

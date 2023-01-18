@@ -7,6 +7,7 @@ Class Product extends Controller {
         $DB = Database::getInstance();
         $image_class = $this->load_model('Image');
         $ROWS = $DB->read("select * from products");
+        $colors = $DB->read("select * from colors");
         $data['page_title'] = "Products";
         if($ROWS) {
             foreach ($ROWS as $key => $row) {
@@ -19,6 +20,7 @@ Class Product extends Controller {
         $data['categories'] = $category_class->get_all();
         
         $data['ROWS'] = $ROWS;
+        $data['colors'] = $colors;
         $this->view("product", $data);
         
     }

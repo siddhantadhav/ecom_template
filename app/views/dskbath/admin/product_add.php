@@ -260,7 +260,6 @@
         data.append('sku', sku_input);
         data.append('data_type', 'add_product');
         data.append('image', image_input.files[0]);
-        data.append('variations', 0);
 
         // checking for variations
 
@@ -268,8 +267,7 @@
 
         if (document.querySelector('#has_variations').checked) {
             for (let i = 1; i <= variation_no; i++) {
-                data.set('variations', 1);
-                
+                data.append('variations', 1);
 
                 var var_color = document.querySelector(`#color${i}`);
                 var_color = var_color.value.trim();
@@ -295,8 +293,8 @@
 
                 send_data_files(variation_data);
             }
+            send_data_files(data);
         }
-        send_data_files(data);
 
     }
 

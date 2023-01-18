@@ -3,7 +3,6 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 class Order {
     public function create($contact_id)
     {
-        
         $client_id = (int) $contact_id;
         $DB = Database::newInstance();
 
@@ -19,6 +18,11 @@ class Order {
             }
         }
         return $check;        
+    }
+
+    public function remove_order($id){
+        $DB = Database::newInstance();
+        $DB->write("delete from orders where id = $id limit 1");
     }
 
     public function make_table($orders, $contact, $product) {
@@ -47,8 +51,8 @@ class Order {
                     '<td>' . $order->item_message . '</td>' .
                     '<td>' . $order->date . '</td>' .
                     '<td>'.
-                        '<button class="btn btn-primary btn-xs"><i class="fa fa-check"></i></button>'. ' ' .
-                        '<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button>'.
+                        '<button class="btn btn-primary btn-xs" onclick = "complete_order('.$order->id.')"><i class="fa fa-check"></i></button>'. ' ' .
+                        '<button class="btn btn-danger btn-xs" onclick = "remove_order('.$order->id.', '.$client_details->id.')"><i class="fa fa-trash-o"></i></button>'.
                     '</td>';  
                 $result .= "</tr>";
             }

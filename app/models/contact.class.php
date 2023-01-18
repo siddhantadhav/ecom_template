@@ -1,10 +1,8 @@
 <?php
-use LDAP\Result;
 
 class Contact
 {
-    public $completed_contacts = 0;
-
+    public $enquiry_done = 0;
     public function create($DATA)
     {
         $_SESSION['error'] = "";
@@ -58,6 +56,8 @@ class Contact
         }
     }
 
+    
+
     public function get_one_contact($email)
     {
         $DB = Database::newInstance();
@@ -70,6 +70,18 @@ class Contact
         $DB = Database::newInstance();
         $data = $DB->read("select * from contacts where id = '$id' limit 1");
         return $data[0];
+    }
+
+    public function remove_contact($id) {
+        $id = (int) $id;
+        $DB = Database::newInstance();
+        $DB->write("delete from contacts where id = $id limit 1");
+    }
+
+    public function complete_contact($id) {
+        $this->enquiry_done++;
+        echo($this->enquiry_done);
+        $this->remove_contact($id);
     }
 
     public function make_table($contacts)
@@ -90,7 +102,7 @@ class Contact
                     '<td>' . $contact->date . ' </td>' .
                     '<td>' .
                     '<button onclick = "complete_contact(' . $contact->id . ')" class="btn btn-primary btn-xs"><i class="fa fa-check"></i></button>' . ' ' .
-                    '<button onclick = "delete-contact(' . $contact->id . ')" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button>' .
+                    '<button onclick = "delete_contact(' . $contact->id . ')" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button>' .
                     '</td>';
 
                 $result .= "</tr>";
@@ -98,4 +110,5 @@ class Contact
         }
         return $result;
     }
+    
 }
