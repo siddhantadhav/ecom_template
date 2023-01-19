@@ -174,7 +174,7 @@
     }
 </style>
 <?php if ($ROW):?>
-    <div class="container bootdey">
+    <div class="container bootdey mb-5">
         <div class="col-md-12">
             <section class="panel">
                 <div class="panel-body">
@@ -183,9 +183,9 @@
                         <div class="col text-center">
                             <div class="pro-img-details">
                                 <img src="<?= ROOT . $ROW->image ?>"
-                                     alt=""style="height: 70vh; width: 100%">
+                                     alt=""style="height: 70vh;">
                             </div>
-                            <div class="row pro-img-list">
+                            <!-- <div class="row pro-img-list">
                                 <div class="col">
                                 <a href="#">
                                     <img class="img-fluid bottom"
@@ -216,19 +216,17 @@
                                          alt=""
                                          style="height: 15vh;">
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-md-3 gx-0 mt-5">
-                            <h4 class="pro-d-title">
-                                <a href="#"
-                                   class="">
-                                    <h2><?= $ROW->name ?></h2>
-                                </a>
-                            </h4>
+                                
+                                    <h2 class="display-6"><?= $ROW->name ?></h2>
+                                
+                           
                             <p class="text-muted"><?= $ROW->description ?></p>
                             <div class="product_meta">
                                 <span class="posted_in"> <strong>Categories:</strong> <a rel="tag"
-                                       href="#"><?= $category->category ?></a>
+                                       href="<?=ROOT .'product/category/'. $category->category?>"><?= $category->category ?></a>
                                 </span>
                             </div>
 

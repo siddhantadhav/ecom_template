@@ -169,7 +169,6 @@
                                                 </a>
                                             </div>
                                         </div>
-
                                     </div>
                                     <div class="col"
                                          style="height: 6vh;">

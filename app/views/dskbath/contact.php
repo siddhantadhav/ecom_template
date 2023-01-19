@@ -4,16 +4,22 @@
     input{
         margin: 1vh 0;
     }
+    @media only screen and (max-width: 900px) {
+        .contact-section{
+            margin-top: 0;;
+    }
+    }
+    
 </style>
 
 <body>
     <div class="container-fluid"
          style="height: 10vh; <!-- Add background image -->">
         <h1 class="text-center display-1" style="color: rgb(60, 183, 186)">Contact Us</h1></div>
-        <section >
+        <section class="contact-section">
             <div class="container-fluid" >
                 <div class="row">
-                    <div class="col-5" >
+                    <div class="col-lg-5 col-md-12" >
                         <img style="width: 100%;" src="<?=ASSETS . THEME?>images/contact/contact.jpeg" alt="" class="img-fluid">
                         <!-- <i class="fa fa-map-marker fa-4x"
                            aria-hidden="true"></i> -->

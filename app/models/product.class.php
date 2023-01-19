@@ -192,6 +192,7 @@ class Product
         return $data[0];
         
     }
+    
 
     public function get_one_product($id) {
         $id = (int) $id;
@@ -248,4 +249,5 @@ class Product
         return $url;
     }
 
+    
 }

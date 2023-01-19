@@ -36,8 +36,10 @@
                   continue;
                 } ?>
                 <li class="text-start">
-              <a href="#!"
-                 class="text-white text-decoration-none"><?=$category->category?></a>
+              <a href="<?=ROOT .'product/category/'. $category->category?>"
+                 class="text-white text-decoration-none"><?php
+                 $replaced_str = str_replace("_", " ", $category->category);
+                 echo $replaced_str?></a>
             </li>
               <?php endforeach; ?>
             <?php endif; ?>

@@ -26,7 +26,7 @@
 <section style="margin-top: 0;">
     <div class="container-fluid">
         <div class="row align-items-center">
-            <div class="col">
+            <div class="col-lg-6 col-md-12">
                 <h1 class="display-1"
                     style="color: rgb(36, 188, 189);">About Us</h1>
                 <h2 class="display-6"
@@ -41,15 +41,16 @@
             <div class="col">
 
                 <div class="row">
-                    <div class="col-1 gx-0"
-                         style="background-color: #eee; height:85vh;"></div>
+                    <div class="col-1 gx-0 d-none d-md-block d-lg-block d-xl-block"
+                         style="background-color: #eee; height:50em;"></div>
                     <div class="col gx-0"
                          style="">
                         <div style="background-color: #eee; height: 10vh; "></div>
                         <div>
                             <img src="<?= ASSETS . THEME ?>images/about/about_us_section_1.jpg"
                                  alt=""
-                                 class="img-fluid" style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;">
+                                 class="img-fluid"
+                                 style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;">
                         </div>
                     </div>
                 </div>
@@ -63,32 +64,36 @@
 <section>
     <div class="container-fluid">
         <div class="row align-items-center">
-            <div class="col">
-            <div class="row">
-            <div class="row">
-                <div class="col gx-0"
-                     style="">
-                    <div style="background-color: #eee; height: 10vh; "></div>
-                    <div>
-                        <img src="<?= ASSETS . THEME ?>images/about/about_us_section_2.jpeg"
-                             alt=""
-                             class="img-fluid" style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px; height: 100vh; width: 100%;"></div>
+            <div class="col-lg-6 col-md-12">
+
+                <div class="row">
+                    <div class="col gx-0"
+                         style="">
+                        <div style="background-color: #eee; height: 10vh; "></div>
+                        <div>
+                            <img src="<?= ASSETS . THEME ?>images/about/about_us_section_2.jpeg"
+                                 alt=""
+                                 class="img-fluid"
+                                 style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px; height: 100vh; width: 100%;">
+                        </div>
                     </div>
-                    <div class="col-1 gx-0"
+                    <div class="col-1 gx-0 d-none d-xl-block d-lg-block d-md-block"
                          style="background-color: #eee; height:90vh; z-index: -1;"></div>
                 </div>
-                </div>
-                
-                
+
+
+
             </div>
 
-            <div class="col">
+            <div class="col mt-5">
                 <span class="display-6"
                       style="background-color: rgb(36, 188, 189); color: white;">True facts </span>
                 <h2 class="display-4">Whats makes us different?</h2>
-                <p class="text-muted">DSK has created a niche for itself in the segment of bathroom fittings, making it today the
+                <p class="text-muted">DSK has created a niche for itself in the segment of bathroom fittings, making it
+                    today the
                     undisputed brand in the Indian Bathroom Fittings Market.</p>
-                <p class="text-muted">DSK has a wide range of bathroom products which are of High Standards, each of which has been
+                <p class="text-muted">DSK has a wide range of bathroom products which are of High Standards, each of
+                    which has been
                     designed and evolved through keen market study and 26 Years of Experience. All items are
                     designed
                     with meticulous importance to offer optimum convenience during bathroom planning. Our types
@@ -98,7 +103,7 @@
                     sleek, innovative and attractive products. Helping you make your bathroom experience the
                     best.</p>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                         <p id="counter">0</p>
                         <span style="font-size: 2.5rem; color: rgb(36, 188, 189);"> + Products</span>
                     </div>
@@ -120,10 +125,10 @@
                 style="color: white">For any further details or inquiries, Please contact Here!</h4>
         </div>
         <div class="col">
-            <a href="<?=ROOT?>contact">
-            <button type="button"
-                    class="btn btn-light"
-                    style="color: rgb(36, 188, 189)">Contact Us</button></a>
+            <a href="<?= ROOT ?>contact">
+                <button type="button"
+                        class="btn btn-light"
+                        style="color: rgb(36, 188, 189)">Contact Us</button></a>
         </div>
     </div>
     </div>

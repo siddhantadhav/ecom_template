@@ -64,6 +64,12 @@ class Category
         $data = $DB->read("select * from categories where id = $id");
         return $data[0];
     }
+    public function get_one_by_name($name)
+    {
+        $DB = Database::newInstance();
+        $data = $DB->read("SELECT * FROM categories WHERE category = '$name' LIMIT 1");
+        return $data[0];
+    }
     public function make_table($cats) 
     {
         $result = "";

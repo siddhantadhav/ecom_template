@@ -77,10 +77,4 @@ class Ajax_product extends Controller
 
         }
     }
-
-
-
-
-
-
 }

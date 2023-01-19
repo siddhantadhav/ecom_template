@@ -29,7 +29,7 @@ class Admin extends Controller
 
 
         $data['page_title'] = "Admin";
-        $this->view("admin/login", $data);
+        $this->view("admin/index", $data);
     }
 
     public function categories()

@@ -68,6 +68,7 @@ class Contact
     {
         $id = (int) $id;
         $DB = Database::newInstance();
+        
         $data = $DB->read("select * from contacts where id = '$id' limit 1");
         return $data[0];
     }

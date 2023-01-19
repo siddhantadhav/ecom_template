@@ -24,8 +24,10 @@
     /* animation */
 
     .pulse {
-        height: 25rem; width: 25rem; 
-        padding: 0; border-radius: 15em;
+        height: 25rem;
+        width: 25rem;
+        padding: 0;
+        border-radius: 15em;
         animation-duration: 0.5s;
         animation-iteration-count: 1;
     }
@@ -44,26 +46,32 @@
         }
     }
 
-    .card-section{
+    .card-section {
         margin-top: -20vh;
     }
 
     @media only screen and (max-width: 900px) {
-        .outer-circle{
+        .outer-circle {
             margin-bottom: 5vh;
         }
-    }
-    @media only screen and (max-width: 750px) {
-        .card-section{
+        .cc-section{
             margin-top: 0;
         }
     }
+
+    @media only screen and (max-width: 750px) {
+        .card-section {
+            margin-top: 0;
+        }
+    }
+
     @media only screen and (max-width: 450px) {
-        .pulse{
+        .pulse {
             height: 20rem;
             width: 20rem;
         }
-        .outer-circle{
+
+        .outer-circle {
             height: 22rem;
             width: 22rem;
         }
@@ -153,7 +161,7 @@
 <section>
     <div class="container-fluid">
         <div class="row align-items-center ">
-            <div class="col-lg-6 col-md-12 my-5">
+            <div class="col-lg-6 col-md-12 my-5 ">
                 <div class="d-none d-md-block d-lg-block d-xl-block"
                      style="height: 7em; background-color: #eee; width: 30em; margin: 0 auto"></div>
                 <img class="img-fluid""
@@ -164,7 +172,7 @@
                 <div class="d-none d-md-block d-lg-block d-xl-block"
                      style="height: 7em; background-color: #eee; width: 30em; margin: auto auto"></div>
             </div>
-            <div class="col"
+            <div class="col "
                  style="padding: 0 10vh ;">
                 <h2 class="display-4">An Innovative Approach</h2>
                 <p class="text-muted">DSK has a wide range of bathroom products which are of High Standards, each of
@@ -176,27 +184,27 @@
                     experience the best.</p>
                 <button class="button"><i class="fa fa-chevron-right"></i> Quote Products</button><br> <br>
                 <div class="row mt-5">
-                    <div class="col">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                         <p class="text-muted"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_01.png"
                                  style="height: 4vh;"
-                                 class="iimg-fluid"> Biggest Market</p>
+                                 class="img-fluid"> Biggest Market</p>
                         <p class="text-muted"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_02.png"
                                  style="height: 4vh;"
-                                 class="iimg-fluid"> Being The Best One</p>
+                                 class="img-fluid"> Being The Best One</p>
                         <p class="text-muted"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_04.png"
                                  style="height: 4vh;"
-                                 class="iimg-fluid"> Happy Customers</p>
+                                 class="img-fluid"> Happy Customers</p>
                     </div>
                     <div class="col">
                         <p class="text-muted"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_05.png"
                                  style="height: 4vh;"
-                                 class="iimg-fluid"> Professional Outlook</p>
+                                 class="img-fluid"> Professional Outlook</p>
                         <p class="text-muted"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_05.png"
                                  style="height: 4vh;"
-                                 class="iimg-fluid"> Innovative Technology</p>
+                                 class="img-fluid"> Innovative Technology</p>
                         <p class="text-muted"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_05.png"
                                  style="height: 4vh;"
-                                 class="iimg-fluid"> Elegant Design</p>
+                                 class="img-fluid"> Elegant Design</p>
                     </div>
                 </div>
             </div>
@@ -216,7 +224,8 @@
 
 
 
-<section class="card-section" style="">
+<section class="card-section"
+         style="">
     <div class="row align-items-center justify-content-center">
         <div class="col row justify-content-center">
             <div class="rounded-circle outer-circle row align-items-center justify-content-center"
@@ -278,10 +287,10 @@
 </section>
 
 
-<section>
+<section class="cc-section">
     <div class="container-fluid">
         <div class="row align-items-center justify-content-center">
-            <div class="col-lg-6 col-md-12 order-md-2 order-sm-2 my-5"
+            <div class="col-lg-6 col-md-12 my-5"
                  style="padding: 0 10vh ;">
                 <h2 class="display-4">Customer Centricity</h2>
                 <p class="text-muted">We render most high-grade experience to our customers. Providing the widest
@@ -289,7 +298,7 @@
                     we attempt to conceive customers great bathing experiences.</p>
                 <div class="row mt-3"
                      style="">
-                    <div class="col">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                         <h5 style="color: rgb(60, 183, 186);"
                             class="display-6">Our Goals</h5>
                         <p class="text-muted">Global Markets</p>

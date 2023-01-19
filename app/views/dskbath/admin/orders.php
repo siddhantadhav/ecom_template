@@ -68,17 +68,17 @@
         else {
             show_message_box.classList.add("hide");
             var contact_fname = document.getElementById("contact_fname");
-            contact_fname.innerHTML = "";
+            contact_fname.innerHTML = "Name: ";
             var contact_city = document.getElementById("contact_city");
-            contact_city.innerHTML = "";
+            contact_city.innerHTML = "City: ";
             var contact_phone = document.getElementById("contact_phone");
-            contact_phone.innerHTML = "";
+            contact_phone.innerHTML = "Phone: ";
             var contact_email = document.getElementById("contact_email");
-            contact_email.innerHTML = "";
+            contact_email.innerHTML = "Email: ";
             var contact_subject = document.getElementById("contact_subject");
-            contact_subject.innerHTML = "";
+            contact_subject.innerHTML = "Subject: ";
             var contact_message = document.getElementById("contact_message");
-            contact_message.innerHTML = "";
+            contact_message.innerHTML = "Message";
         }
 
     }
