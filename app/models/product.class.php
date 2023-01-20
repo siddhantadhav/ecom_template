@@ -12,6 +12,7 @@ class Product
         $arr['description'] = ucwords($DATA->description);
         $arr['category'] = ucwords($DATA->category);
         $arr['sku'] = ucwords($DATA->sku);
+        $arr['color'] = ($DATA->color);
 
         if(isset($DATA->variations) && $DATA->variations != 0){
             $arr['variations'] = 1;
@@ -20,12 +21,7 @@ class Product
             $arr['variations'] = 0;
         }
 
-        if(isset($DATA->variations) && $DATA->variations != 0){
-            $arr['color'] = $DATA->color;
-        }
-        else{
-            $arr['color'] = 0;
-        }
+        
         $arr['date'] = date("Y-m-d H:i:s");
         $arr['slug'] = $this->str_to_url($DATA->name);
         

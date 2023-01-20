@@ -185,54 +185,20 @@
                                 <img src="<?= ROOT . $ROW->image ?>"
                                      alt=""style="height: 70vh;">
                             </div>
-                            <!-- <div class="row pro-img-list">
-                                <div class="col">
-                                <a href="#">
-                                    <img class="img-fluid bottom"
-                                         src="<?= ROOT . $ROW->image2 ?>"
-                                         alt=""
-                                         style="height: 15vh;">
-                                </a>
-                                </div>
-                                <div class="col">
-                                <a href="#">
-                                    <img class="img-fluid bottom"
-                                         src="<?= ROOT . $ROW->image3 ?>"
-                                         alt=""
-                                         style="height: 15vh;">
-                                </a>
-                                </div>
-                                <div class="col">
-                                <a href="#">
-                                    <img class="img-fluid bottom"
-                                         src="<?= ROOT . $ROW->image4 ?>"
-                                         alt=""
-                                         style="height: 15vh;">
-                                </a>
-                                </div>
-                                <div class="col">
-                                <img class="img-fluid bottom"
-                                         src="<?= ROOT . $ROW->image5 ?>"
-                                         alt=""
-                                         style="height: 15vh;">
-                                </div>
-                            </div> -->
                         </div>
                         <div class="col gx-0 mt-5">
-                                
-                                    <h2 class="display-6"><?= $ROW->name;?></h2>
-                                
-                           
+                            <h2 class="display-6"><?= $ROW->name;?></h2>
                             <p class="text-muted"><?= $ROW->description ?></p>
                             <div class="product_meta">
                                 <span class="posted_in"> <strong>Category:</strong> <a rel="tag"
                                        href="<?=ROOT .'product/category/'. $category->category?>"><?= $category->category ?></a>
                                 </span>
-                                <span class="posted_in"> <strong>Color:</strong> <a rel="tag"
-                                       href="<?= ROOT .'product/color/'. $color->color ?>"><?php $replaced_str = str_replace("_", " ", $color->color); echo ucwords($replaced_str)  ?></a>
+                                <span class="posted_in"> <strong>Color:</strong> 
+                                    <a rel="tag" href="<?= ROOT .'product/color/'. $color->color ?>">
+                                        <?php $replaced_str = str_replace("_", " ", $color->color); echo ucwords($replaced_str)  ?>
+                                    </a>
                                 </span>
                             </div>
-
                             <div class="form-group">
                                 <label class="display-6" style="color: rgb(60, 183, 186);">Quantity</label>
                                 <input type="number"
@@ -242,9 +208,10 @@
                                        value="1"
                                        class="form-control quantity mt-3" style="border-radius: 10vh; width: 100%;">
                             </div>
-                                <button class="btn btn-round btn-danger button mt-3"
-                                        type="button" onclick="add_to_cart_pro_detail(event)"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                            
+                                <button class="btn btn-round btn-danger button mt-3" type="button" onclick="add_to_cart_pro_detail(event)">
+                                    <i class="fa fa-shopping-cart"></i> Add to Cart
+                                </button>  
+                            </div>
                         </div>
                     </div>
                     <div class="row mt-5">

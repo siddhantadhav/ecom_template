@@ -501,6 +501,7 @@
         data.append('description', description_input.value.trim());
         data.append('category', category_input.value.trim());
         data.append('sku', sku_input.value.trim());
+        data.append('color', 1);
         data.append('data_type', 'add_product');
         data.append('image', image_input.files[0]);
 

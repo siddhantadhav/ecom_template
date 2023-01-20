@@ -221,7 +221,7 @@
                                         <?php $replaced_stri = str_replace("_", " ", $color->color); echo ucwords($replaced_stri) ?>
                                     </span>
                                 </a>
-                            </li>
+                                </li>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </ul>

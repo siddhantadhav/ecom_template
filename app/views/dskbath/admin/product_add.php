@@ -117,7 +117,11 @@
                         <?php if (is_array($colors)): ?>
                             <?php foreach ($colors as $color): ?>
                                 <option value="<?= $color->id ?>">
-                                    <?= $color->color ?>
+                                    <?php 
+                                    if($color->color == 'chrome'){
+                                        continue;
+                                    }
+                                    echo $color->color;?>
                                 </option>
                             <?php endforeach; ?>
                         <?php endif; ?>
@@ -259,7 +263,9 @@
         data.append('category', category_input);
         data.append('sku', sku_input);
         data.append('data_type', 'add_product');
+        data.append('color', 1);
         data.append('image', image_input.files[0]);
+        // send_data_files(data);
 
         // checking for variations
 
@@ -271,7 +277,6 @@
 
                 var var_color = document.querySelector(`#color${i}`);
                 var_color = var_color.value.trim();
-                console.log(var_color);
 
                 var var_sku = document.querySelector(`#sku${i}`);
                 var_sku = var_sku.value.trim();
@@ -293,8 +298,8 @@
 
                 send_data_files(variation_data);
             }
-            send_data_files(data);
         }
+        send_data_files(data);
 
     }
 
