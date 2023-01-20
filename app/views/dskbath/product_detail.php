@@ -218,15 +218,18 @@
                                 </div>
                             </div> -->
                         </div>
-                        <div class="col-md-3 gx-0 mt-5">
+                        <div class="col gx-0 mt-5">
                                 
-                                    <h2 class="display-6"><?= $ROW->name ?></h2>
+                                    <h2 class="display-6"><?= $ROW->name;?></h2>
                                 
                            
                             <p class="text-muted"><?= $ROW->description ?></p>
                             <div class="product_meta">
-                                <span class="posted_in"> <strong>Categories:</strong> <a rel="tag"
+                                <span class="posted_in"> <strong>Category:</strong> <a rel="tag"
                                        href="<?=ROOT .'product/category/'. $category->category?>"><?= $category->category ?></a>
+                                </span>
+                                <span class="posted_in"> <strong>Color:</strong> <a rel="tag"
+                                       href="<?= ROOT .'product/color/'. $color->color ?>"><?php $replaced_str = str_replace("_", " ", $color->color); echo ucwords($replaced_str)  ?></a>
                                 </span>
                             </div>
 
@@ -239,11 +242,17 @@
                                        value="1"
                                        class="form-control quantity mt-3" style="border-radius: 10vh; width: 100%;">
                             </div>
-                            <p>
                                 <button class="btn btn-round btn-danger button mt-3"
-                                        type="button"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                            </p>
+                                        type="button" onclick="add_to_cart_pro_detail(event)"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                            
                         </div>
+                    </div>
+                    <div class="row mt-5">
+                        <h2 class="display-6 text-decoration-underline">Related Products</h2>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
                     </div>
                 </div>
             </section>
@@ -252,5 +261,11 @@
 <?php else: ?>
     <div>Product Not Found</div>    
 <?php endif; ?>
+
+<script>
+    function add_to_cart_pro_detail(e) {
+        alert("Sucessfully added to cart");
+    }
+</script>
 
 <?php $this->view("new_footer", $data); ?>

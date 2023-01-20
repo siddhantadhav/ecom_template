@@ -10,6 +10,8 @@
     <span><h2>Total Orders: <?= $orders->all_orders;?></h2></span>
     <span><h2>Total Enquires: <?=$contacts->all_contacts?></h2></span>
     <span><h2>Total Users: <?=$users->all_users?></h2></span>
+    <span><h2>Total Orders Filled: <?=$general_info->order_filled?></h2></span>
+    <span><h2>Total Enquires Answered: <?=$general_info->enquiry_answered?></h2></span>
 </div>
             
 

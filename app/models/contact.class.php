@@ -2,7 +2,13 @@
 
 class Contact
 {
-    public $enquiry_done = 0;
+    public function total_enquiry_answered() {
+        $DB = Database::newInstance();
+        $general_info = $DB->read("select * from general_info");
+        $general_info = $general_info[0];
+        $new_enquiry = $general_info->enquiry_answered + 1;
+        $DB->write("update general_info set enquiry_answered = $new_enquiry where id = 1");
+    }
     public function create($DATA)
     {
         $_SESSION['error'] = "";
@@ -79,12 +85,6 @@ class Contact
         $DB->write("delete from contacts where id = $id limit 1");
     }
 
-    public function complete_contact($id) {
-        $this->enquiry_done++;
-        echo($this->enquiry_done);
-        $this->remove_contact($id);
-    }
-
     public function make_table($contacts)
     {
         $result = "";
@@ -98,8 +98,9 @@ class Contact
                     '<td>' . $contact->city . '</td>' .
                     '<td>' . $contact->phone . '</td>' .
                     '<td>' . $contact->email . '</td>' .
-                    '<div class="show_message hide">'.'<p id = "contact_message"></p>'.'</div>'.
-                    '<td style="cursor: pointer" onclick = "show_contact_message(`' . $contact->message . '`)">' . $contact->subject . '</td>' .
+                    '<div class="show_message hide">'.'<p id = "contact_message"> Message : </p>'.
+                        '<button class="btn btn-danger" style="margin-top:20px" onclick = "show_contact_message(`' . $contact->message . '`)"> Cancel </button> '.'</div>'.
+                    '<td id = "" style="cursor: pointer" onclick = "show_contact_message(`' . $contact->message . '`)">' . $contact->subject . '</td>' .
                     '<td>' . $contact->date . ' </td>' .
                     '<td>' .
                     '<button onclick = "complete_contact(' . $contact->id . ')" class="btn btn-primary btn-xs"><i class="fa fa-check"></i></button>' . ' ' .

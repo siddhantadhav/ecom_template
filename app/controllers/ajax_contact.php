@@ -32,7 +32,8 @@ class Ajax_Contact extends Controller
                 }
             } 
             else if ($data->data_type == 'complete_contact') {
-                $check = $contact->complete_contact($data->id);
+                $contact->total_enquiry_answered();
+                $check = $contact->remove_contact($data->id);
 
                 $arr['message'] = "Successful";
                 $arr['message_type'] = "info";
@@ -63,6 +64,20 @@ class Ajax_Contact extends Controller
                 $arr['message'] = "Successful";
                 $arr['message_type'] = "info";
                 $arr['data_type'] = "complete_contact";
+
+                $contacts = $DB->read("select * from contacts where ordered = 1");
+                $contact->make_table($contacts);
+
+                echo json_encode($arr);
+            }
+            else if ($data->data_type == 'complete_order') {
+                $order->total_orders_filled();
+                $check = $contact->remove_contact($data->client_id);
+                $order->remove_order($data->id);
+
+                $arr['message'] = "Successful";
+                $arr['message_type'] = "info";
+                $arr['data_type'] = "complete_order";
 
                 $contacts = $DB->read("select * from contacts where ordered = 1");
                 $contact->make_table($contacts);

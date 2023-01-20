@@ -2,7 +2,7 @@
 
 class Admin extends Controller
 {
-
+    
     public function index()
     {
         // add login functionality
@@ -14,9 +14,6 @@ class Admin extends Controller
         
         $contacts = $DB->read("select count(*) as all_contacts from contacts where ordered = 0");
         $data['contacts'] = $contacts[0];
-
-        $contact = $this->load_model('Contact');
-        $data['enquiries_done'] = $contact->enquiry_done;
         
         $categories = $DB->read("select count(*) as all_categories from categories");
         $data['categories'] = $categories[0];
@@ -26,6 +23,9 @@ class Admin extends Controller
         
         $users = $DB->read("select count(*) as all_users from users");
         $data['users'] = $users[0];
+
+        $general_info = $DB->read("select * from general_info");
+        $data['general_info'] = $general_info[0];
 
 
         $data['page_title'] = "Admin";

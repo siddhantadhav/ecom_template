@@ -1,6 +1,14 @@
 <?php
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 class Order {
+    public function total_orders_filled() {
+        $DB = Database::newInstance();
+        $general_info = $DB->read("select * from general_info");
+        $general_info = $general_info[0];
+        $new_order = $general_info->order_filled + 1;
+        $DB->write("update general_info set order_filled = $new_order where id = 1");
+    }
+
     public function create($contact_id)
     {
         $client_id = (int) $contact_id;
@@ -18,6 +26,11 @@ class Order {
             }
         }
         return $check;        
+    }
+
+    public function get_all() {
+        $DB = Database::newInstance();
+        return $DB->read("select * from orders");
     }
 
     public function remove_order($id){
@@ -43,7 +56,8 @@ class Order {
                         '<p id = "contact_phone">Phone: </p>'.
                         '<p id = "contact_email">Email: </p>'.
                         '<p id = "contact_subject">Subject: </p>'.
-                        '<p id = "contact_message">Message: </p></div>'.
+                        '<p id = "contact_message">Message: </p>'.
+                        '<button class= "btn btn-danger" style="margin-top: 20px" onclick = "show_contact_message(`'.$client_details->fname.'`,` '.$client_details->lname.'`,` '.$client_details->city.'`,` '.$client_details->phone.'`,` '.$client_details->email.'`,` '.$client_details->subject.'`,` '.$client_details->message.'`)"> Cancel </button></div>'.
                     '<td style="cursor: pointer" onclick = "show_contact_message(`'.$client_details->fname.'`,` '.$client_details->lname.'`,` '.$client_details->city.'`,` '.$client_details->phone.'`,` '.$client_details->email.'`,` '.$client_details->subject.'`,` '.$client_details->message.'`)">' . $client_details->email . '</td>' .
                     '<td>' . $product_details->name . '</td>' .
                     '<td>' . $product_details->sku . '</td>' .
@@ -51,7 +65,7 @@ class Order {
                     '<td>' . $order->item_message . '</td>' .
                     '<td>' . $order->date . '</td>' .
                     '<td>'.
-                        '<button class="btn btn-primary btn-xs" onclick = "complete_order('.$order->id.')"><i class="fa fa-check"></i></button>'. ' ' .
+                        '<button class="btn btn-primary btn-xs" onclick = "complete_order('.$order->id.', '.$client_details->id.')"><i class="fa fa-check"></i></button>'. ' ' .
                         '<button class="btn btn-danger btn-xs" onclick = "remove_order('.$order->id.', '.$client_details->id.')"><i class="fa fa-trash-o"></i></button>'.
                     '</td>';  
                 $result .= "</tr>";

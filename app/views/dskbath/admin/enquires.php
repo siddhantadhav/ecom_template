@@ -13,6 +13,10 @@
     .hide {
         display: none;
     }
+
+    #contact_message{
+        font-size: large;
+    }
 </style>
 
 <div class="row mt">
@@ -46,13 +50,14 @@
 <script>
     function show_contact_message(msg) {
         var show_message_box = document.querySelector(".show_message");
+        var para = document.querySelector("#contact_message");
         if (show_message_box.classList.contains("hide")) {
             show_message_box.classList.remove("hide");
-            var para = document.querySelector("#contact_message");
-            para.innerHTML = msg;
+            para.innerHTML += msg;
         }
         else {
             show_message_box.classList.add("hide");
+            para.innerHTML = "Message : "
         }
     }
 

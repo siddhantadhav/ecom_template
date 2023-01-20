@@ -9,6 +9,9 @@
         position: absolute;
         padding: 6px;
     }
+    .show_message p{
+        font-size: large;
+    }
 
     .hide {
         display: none;
@@ -93,6 +96,16 @@
         send_data(data);
     }
 
+    function complete_order(id, client_id){
+        var data = new FormData();
+
+        data.append('id', id);
+        data.append('client_id', client_id);
+        data.append('data_type', 'complete_order');
+
+        send_data(data);
+    }
+
     function send_data(formdata) {
         var ajax = new XMLHttpRequest();
 
@@ -120,7 +133,16 @@
                             obj.alert(obj.message);
                         }
                     }
-                    if (obj.data_type == "remove_order") {
+                    else if (obj.data_type == "remove_order") {
+                        if (obj.message_type == "info") {
+                            alert(obj.message);
+                            window.location.reload();
+                        }
+                        else {
+                            obj.alert(obj.message);
+                        }
+                    }
+                    else if (obj.data_type == "complete_order") {
                         if (obj.message_type == "info") {
                             alert(obj.message);
                             window.location.reload();
