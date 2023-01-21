@@ -172,6 +172,9 @@
         border: 10px solid rgb(60, 183, 186);
         width: 50vw;
     }
+
+    /* related */
+    
 </style>
 <?php if ($ROW):?>
     <div class="container bootdey mb-5">
@@ -208,18 +211,40 @@
                                        value="1"
                                        class="form-control quantity mt-3" style="border-radius: 10vh; width: 100%;">
                             </div>
-                                <button class="btn btn-round btn-danger button mt-3" type="button" onclick="add_to_cart_pro_detail(event)">
+                                <button class="btn btn-round btn-danger button mt-3" type="button" onclick="add_to_cart_product_detail(<?=$ROW->id?>,event)">
                                     <i class="fa fa-shopping-cart"></i> Add to Cart
                                 </button>  
                             </div>
                         </div>
                     </div>
+
                     <div class="row mt-5">
                         <h2 class="display-6 text-decoration-underline">Related Products</h2>
-                        <div class="col"></div>
-                        <div class="col"></div>
-                        <div class="col"></div>
-                        <div class="col"></div>
+                        <div class="row justify-content-start">
+                            <?php foreach($related_products as $related_product): ?>
+                                <!-- Single Product -->
+                                <div class="col-3" style="border: 5px solid rgb(60, 183, 186); margin: 1vh;">
+                                <a href="<?= ROOT . "product_detail/" ?><?= $related_product->slug ?>">
+                                        <div id="product-1" class="single-product">
+                                            <div class="part-1">
+                                                <img class="img-fluid" src="<?= ROOT . $related_product->image ?>" alt="">
+                                    </a>
+                                    <hr style="border: 2px solid rgb(60, 183, 186);">
+                                    
+                                </div>
+
+                                <div class="part-2">
+                                    <h3 class="product-title text-muted"
+                                        style="font-size: 1.2rem;">
+                                        <?= $related_product->name ?>
+                                    </h3>
+                                    <h4 class="text-muted"
+                                        style="font-size: 1.2rem;"><?= $related_product->description ?></h4>
+                                    <h6 class="text-muted">SKU: <?= $related_product->sku ?></h6>
+                                </div>
+                            </div>
+                                </div>      
+                            <?php endforeach; ?>
                     </div>
                 </div>
             </section>
@@ -230,9 +255,33 @@
 <?php endif; ?>
 
 <script>
-    function add_to_cart_pro_detail(e) {
-        alert("Sucessfully added to cart");
+    function add_to_cart_product_detail(id,e) {
+        var cart_qty_product_detail_input = document.querySelector("#cart_qty_product_detail");
+        cart_qty_product_detail_input = cart_qty_product_detail_input.value.trim();
+        var data = new FormData();
+        data.append('id', id);
+        data.append('quantity', cart_qty_product_detail_input);
+        send_data(data);
     }
+
+    function send_data(formdata) {
+        var ajax = new XMLHttpRequest();
+
+        ajax.addEventListener('readystatechange', function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                handle_result(ajax.responseText);
+                        }
+
+        });
+        ajax.open("POST", "<?= ROOT ?>add_to_cart/add_to_cart_product_detail", true);
+        ajax.send(formdata);
+    }
+
+    function handle_result(result){
+        console.log(result);
+        alert('Successfully added to cart');
+    }
+
 </script>
 
 <?php $this->view("new_footer", $data); ?>

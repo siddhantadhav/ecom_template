@@ -42,13 +42,15 @@ class Product
         }
 
         //checking for unique slug
-        $slug_arr = array();
         $slug_arr['slug'] = $arr['slug'];
+        
         $query = "Select slug from products where slug = :slug limit 1";
-        $check = $DB->read($query);
-       if ($check) {
+        $check = $DB->read($query, $slug_arr);
+        
+        if ($check) {
            $arr['slug'] .= "-" .rand(0, 99999);
         }
+        
         
         $arr['image'] = "";
         $arr['image2'] = "";

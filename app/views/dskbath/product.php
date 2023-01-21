@@ -232,36 +232,27 @@
         </div>
 
         <div class="col py-3">
-            <section class="section-products"
-                     style="margin-top: 0; padding-top: 0;">
+            <section class="section-products" style="margin-top: 0; padding-top: 0;">
                 <div class="container">
                     <div class="row justify-content-center text-center">
                         <div class="col-md-8 col-lg-6">
-                            <h2 class="display-1 bold"
-                                style="text-decoration: underline;">All Products</h2>
+                            <h2 class="display-1 bold" style="text-decoration: underline;">All Products</h2>
                         </div>
                     </div>
                     <div class="row">
                         <!-- Single Product -->
                         <?php if (isset($ROWS) && is_array($ROWS)): ?>
                             <?php foreach ($ROWS as $row): ?>
-                                <div class="col-md-6 col-lg-4 col-xl-3"
-                                     style="border: 5px solid rgb(60, 183, 186); margin: 2vh;">
+                                <div class="col-md-6 col-lg-4 col-xl-3" style="border: 5px solid rgb(60, 183, 186); margin: 2vh;">
                                     <a href="<?= ROOT . "product_detail/" ?><?= $row->slug ?>">
-                                        <div id="product-1"
-                                             class="single-product">
+                                        <div id="product-1" class="single-product">
                                             <div class="part-1">
-                                                <img class="img-fluid"
-                                                     src="<?= ROOT . $row->image ?>"
-                                                     alt="">
+                                                <img class="img-fluid" src="<?= ROOT . $row->image ?>" alt="">
                                     </a>
                                     <hr style="border: 2px solid rgb(60, 183, 186);">
                                     <ul>
-                                        <li><a href="<?= ROOT ?>add_to_cart/<?= $row->id ?>"
-                                               onclick="send_alert(event)"
-                                               id="cart_btn"><i class="fa fa-shopping-cart"></i></a></li>
-                                        <li><a href="<?= ROOT . "product_detail/" ?><?= $row->slug ?>"><i
-                                                   class="fa fa-expand"></i></a></li>
+                                        <li><a href="<?= ROOT ?>add_to_cart/<?= $row->id ?>" onclick="send_alert(event)" id="cart_btn"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li><a href="<?= ROOT . "product_detail/" ?><?= $row->slug ?>"><i class="fa fa-expand"></i></a></li>
                                     </ul>
                                 </div>
 
@@ -275,16 +266,16 @@
                                     <h6 class="text-muted">SKU: <?= $row->sku ?></h6>
                                 </div>
                             </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-                <!-- Single Product -->
+                            </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </div>
+            <!-- Single Product -->
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
-    </section>
-</div>
-</div>
-</div>
+
 
 <script>
     function send_alert(e) {

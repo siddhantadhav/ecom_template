@@ -99,4 +99,41 @@ Class Add_to_cart extends Controller {
             $this->redirect_to = ROOT . "product";
         }
     }
+
+    public function add_to_cart_product_detail($data) {
+        $data = (object) $_POST;
+        $id = $data->id;
+        $quantity = $data->quantity;
+        show($data);
+        $DB = Database::getInstance();
+        $ROWS = $DB->read("select * from products where id = :id limit 1", ["id"=>$id]);
+        if($ROWS) {
+            $ROW = $ROWS[0];
+            if(isset($_SESSION['CART'])) {
+                $ids = array_column($_SESSION['CART'], "id");
+                if(in_array($ROW->id, $ids)){
+                    $key = array_search($ROW->id, $ids);
+                    $_SESSION['CART'][$key]['quantity'] += $quantity;
+                    $_SESSION['CART'][$key]['item_message'] = $_SESSION['CART'][$key]['item_message'];
+                    $_SESSION['CART'][$key]['client_id'] = $_SESSION['CART'][$key]['client_id'];
+                }
+                else{
+                    $arr = array();
+                    $arr['id'] = $ROW->id;
+                    $arr['quantity'] = $quantity;
+                    $arr['item_message'] = "";
+                    $arr['client_id'] = 0;
+                    $_SESSION['CART'][] = $arr;
+                }
+            }
+            else{
+                $arr = array();
+                $arr['id'] = $ROW->id;
+                $arr['quantity'] = $quantity;
+                $arr['item_message'] = "";
+                $arr['client_id'] = 0;
+                $_SESSION['CART'][] = $arr;
+            }
+        }
+    }
 }
