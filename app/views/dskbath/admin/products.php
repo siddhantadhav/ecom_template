@@ -95,7 +95,10 @@
                                     <?php if (is_array($categories)): ?>
                                         <?php foreach ($categories as $category): ?>
                                             <option value="<?= $category->id ?>">
-                                                <?= $category->category ?>
+                                                <?php
+                                                    $replaced_str = str_replace("_", " ", $category->category);
+                                                    echo $replaced_str 
+                                                ?>
                                             </option>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
@@ -240,7 +243,10 @@
                                     <?php if (is_array($categories)): ?>
                                         <?php foreach ($categories as $category): ?>
                                             <option value="<?= $category->id ?>">
-                                                <?= $category->category ?>
+                                                <?php
+                                                    $replaced_str = str_replace("_", " ", $category->category);
+                                                    echo $replaced_str 
+                                                ?>
                                             </option>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
@@ -504,6 +510,7 @@
         data.append('color', 1);
         data.append('data_type', 'add_product');
         data.append('image', image_input.files[0]);
+        data.append('variations', 0);
 
         send_data_files(data);
     }
@@ -533,9 +540,8 @@
             return;
         }
 
-
-
         var data = new FormData();
+        
         var image_input = document.querySelector("#image_edit");
         if (image_input.files.length > 0) {
             data.append('image', image_input.files[0]);

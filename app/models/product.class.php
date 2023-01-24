@@ -1,8 +1,7 @@
 <?php
 
 class Product
-{
-    
+{ 
     public function create($DATA, $FILES, $image_class = null)
     {
         
@@ -13,15 +12,7 @@ class Product
         $arr['category'] = ucwords($DATA->category);
         $arr['sku'] = ucwords($DATA->sku);
         $arr['color'] = ($DATA->color);
-
-        if(isset($DATA->variations) && $DATA->variations != 0){
-            $arr['variations'] = 1;
-        }
-        else{
-            $arr['variations'] = 0;
-        }
-
-        
+        $arr['variations'] = $DATA->variations;
         $arr['date'] = date("Y-m-d H:i:s");
         $arr['slug'] = $this->str_to_url($DATA->name);
         
@@ -88,6 +79,7 @@ class Product
             }
         }
         
+        
         if (!isset($_SESSION['error']) || $_SESSION['error'] == "") {
             $query = "insert into products (name, description, category, sku,  image, image2, image3, image4, image5, variations, color, date, slug) values (:name, :description, :category, :sku,  :image, :image2, :image3, :image4, :image5, :variations, :color, :date, :slug)";
             
@@ -97,8 +89,10 @@ class Product
                 return true;
             }
         }
+
         return false;
     }
+
     public function edit($data, $FILES, $image_class = null)
     {
         $id = $data->id;
@@ -167,6 +161,19 @@ class Product
         }
     }
 
+    public function parent_child($parents) {
+        $DB = Database::newInstance();
+        foreach($parents as $parent) {
+            // finding children
+            $children = $DB->read("SELECT * FROM products WHERE name = '$parent->name' AND description = '$parent->description' AND category = '$parent->category' AND variations = '2';
+            ");
+            foreach($children as $child){
+                $child->variations = $parent->id;
+                $DB->write("update products set variations = $parent->id where id = $child->id");
+            }
+        }
+    }
+
     public function delete($id)
     {
         $DB = Database::newInstance();
@@ -219,13 +226,14 @@ class Product
                 $info['image5'] = $cat_row->image5;
                 $info = str_replace('"', "'", json_encode($info)) ;
                 $one_cat = $model->get_one($cat_row->category);
+                $replaced_cat = str_replace("_", " ", $one_cat->category);
                 $result .= "<tr>";
                 $result .= '
                     <td><a href="basic_table.html#">'.$cat_row->id.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->name.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->description.'</a></td>
                     <td><a href="basic_table.html#">'.$cat_row->sku.'</a></td>
-                    <td><a href="basic_table.html#">'.$one_cat->category.'</a></td>
+                    <td><a href="basic_table.html#">'.$replaced_cat.'</a></td>
                     <td><a href="basic_table.html#"><img src ="'.ROOT.$cat_row->image.'" style="width:50px; height:50px" /></a></td>
                     <td><a href="basic_table.html#">'.$cat_row->date.'</a></td>
                     <td>

@@ -192,6 +192,7 @@
                         <div class="col gx-0 mt-5">
                             <h2 class="display-6"><?= $ROW->name;?></h2>
                             <p class="text-muted"><?= $ROW->description ?></p>
+                            <p class="text-muted">SKU: <?= $ROW->sku ?></p>
                             <div class="product_meta">
                                 <span class="posted_in"> <strong>Category:</strong> <a rel="tag"
                                        href="<?=ROOT .'product/category/'. $category->category?>"><?= $category->category ?></a>
@@ -224,11 +225,11 @@
                             <?php foreach($related_products as $related_product): ?>
                                 <!-- Single Product -->
                                 <div class="col-3" style="border: 5px solid rgb(60, 183, 186); margin: 1vh;">
-                                <a href="<?= ROOT . "product_detail/" ?><?= $related_product->slug ?>">
+                                <a href="<?= ROOT . "product_detail/" ?><?= $related_product->slug ?>" class="text-decoration-none">
                                         <div id="product-1" class="single-product">
                                             <div class="part-1">
                                                 <img class="img-fluid" src="<?= ROOT . $related_product->image ?>" alt="">
-                                    </a>
+                                    
                                     <hr style="border: 2px solid rgb(60, 183, 186);">
                                     
                                 </div>
@@ -242,8 +243,9 @@
                                         style="font-size: 1.2rem;"><?= $related_product->description ?></h4>
                                     <h6 class="text-muted">SKU: <?= $related_product->sku ?></h6>
                                 </div>
-                            </div>
-                                </div>      
+                                </div>
+                            </a>
+                            </div>      
                             <?php endforeach; ?>
                     </div>
                 </div>

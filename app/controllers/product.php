@@ -4,10 +4,11 @@ class Product extends Controller
 {
     public function index()
     {
-
-
         $DB = Database::getInstance();
+        
         $image_class = $this->load_model('Image');
+        $category_class = $this->load_model('Category');
+
         $ROWS = $DB->read("select * from products");
         $colors = $DB->read("select * from colors");
         $data['page_title'] = "Products";
@@ -17,13 +18,34 @@ class Product extends Controller
                 $ROWS[$key]->image = $image_class->get_thumb_post($ROWS[$key]->image);
             }
         }
-
-        $category_class = $this->load_model('Category');
+        
         $data['categories'] = $category_class->get_all();
         foreach ($data['categories'] as $cat) {
             $cat->category = str_replace(' ', '_', $cat->category);
         }
 
+        $parents_children = array();
+
+        foreach($ROWS as $row){
+            if ($row->variations == 1){
+                $parent_child = array();
+                array_push($parent_child ,$row);
+                foreach ($ROWS as $child){
+                    if($child->variations == $row->id) {
+                        array_push($parent_child, $child);
+                    }
+                }
+                array_push($parents_children, $parent_child);
+            }
+        }
+        // show($parents_children);
+        foreach($parents_children as $pc) {
+            show(count($pc));
+        }
+
+        $data['parent_child'] = $parents_children;
+
+        
         $data['ROWS'] = $ROWS;
         $data['colors'] = $colors;
         $this->view("product", $data);

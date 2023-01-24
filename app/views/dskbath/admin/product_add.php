@@ -265,15 +265,15 @@
         data.append('data_type', 'add_product');
         data.append('color', 1);
         data.append('image', image_input.files[0]);
-        // send_data_files(data);
-
+        
         // checking for variations
-
+        
         var variation_radio = document.querySelector('#has_variations').checked;
-
+        
         if (document.querySelector('#has_variations').checked) {
+            data.append('variations', 1);
+
             for (let i = 1; i <= variation_no; i++) {
-                data.append('variations', 1);
 
                 var var_color = document.querySelector(`#color${i}`);
                 var_color = var_color.value.trim();
@@ -293,14 +293,16 @@
                 variation_data.append('sku', var_sku);
                 variation_data.append('data_type', 'add_product');
                 variation_data.append('image', var_image);
-                variation_data.append('variations', 1);
+                variation_data.append('variations', 2);
                 variation_data.append('color', var_color);
-
+                
                 send_data_files(variation_data);
             }
         }
+        else{
+            data.append('variations', 0);
+        }
         send_data_files(data);
-
     }
 
     function send_data_files(formdata) {

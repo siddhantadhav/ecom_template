@@ -70,6 +70,7 @@ class Admin extends Controller
                 $data['ROWS'] = $ROWS;
                 $data['colors'] = $colors;
                 $data['page_title'] = "Admin";
+                
                 $this->view("admin/product_add", $data);
 
                 return;

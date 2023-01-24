@@ -11,6 +11,7 @@ class Ajax_product extends Controller
             $data = file_get_contents("php://input");
             $data = json_decode($data);
         }
+
   
         if (is_object($data) && isset($data->data_type)) {
             $DB = Database::getInstance();
@@ -21,6 +22,10 @@ class Ajax_product extends Controller
             if ($data->data_type == 'add_product') {
 
                 $check = $product->create($data, $_FILES, $image_class);
+                if($check){
+                    $parents = $DB->read("select * from products where variations = 1");
+                    $product->parent_child($parents);
+                }
                 if ($_SESSION['error'] != "") {
                     $arr['message'] = $_SESSION['error'];
                     $_SESSION['error'] = "";

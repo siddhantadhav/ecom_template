@@ -6,14 +6,14 @@ class Category
     public function create($DATA)
     {
         $DB = Database::newInstance();
-        $arr['category'] = ucwords($DATA->category);
+        $arr['category'] = ucwords(str_replace(" ", "_",$DATA->category));
         if($DATA->parent == "") {
             $arr['parent'] = 0;
         }
         else {
             $arr['parent'] = (int)($DATA->parent);
         }
-        if (!preg_match("/^[a-zA-Z ]+$/", trim($arr['category']))) {
+        if (!preg_match("/^[a-zA-Z _]+$/", trim($arr['category']))) {
             $_SESSION['error'] = "Enter Valid Category Name";
         }
        
@@ -85,11 +85,14 @@ class Category
                         $parent = $cat_row2->category;
                     };
                 }
+                $replaced_str = str_replace("_", " ", $cat_row->category);
+                $replaced_str_parent = str_replace("_", " ", $parent);
+
 
                 $result .= "<tr>";
                 $result .= '
-                    <td><a href="basic_table.html#">'.$cat_row->category.'</a></td>
-                    <td><a href="basic_table.html#">'.$parent.'</a></td>
+                    <td><a href="basic_table.html#">'.$replaced_str.'</a></td>
+                    <td><a href="basic_table.html#">'.$replaced_str_parent.'</a></td>
                     <td><span onclick = "disable_row('.$args.')" class="label label-info label-mini" style ="cursor: pointer; background-color:'.$color.';">'.$cat_row->disabled.'</span></td>
                     <td>
                         <button onclick = "show_edit_category('.$edit_args.', event)" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>

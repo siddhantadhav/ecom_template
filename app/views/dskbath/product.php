@@ -257,20 +257,44 @@
                                 </div>
 
                                 <div class="part-2">
-                                    <h3 class="product-title text-muted"
-                                        style="font-size: 1.2rem;">
-                                        <?= $row->name ?>
-                                    </h3>
-                                    <h4 class="text-muted"
-                                        style="font-size: 1.2rem;"><?= $row->description ?></h4>
+                                    <h3 class="product-title text-muted" style="font-size: 1.2rem;"><?= $row->name ?></h3>
+                                    <h4 class="text-muted" style="font-size: 1.2rem;"><?= $row->description ?></h4>
                                     <h6 class="text-muted">SKU: <?= $row->sku ?></h6>
+                                    <?php if($row->variations >= 1): ?>
+                                        <?php // foreach ($parent_child as $pc): ?> 
+                                             <!-- find all variations from array -->
+                                            <?php // foreach($pc as $pc1): ?>
+                                                <?php // if($pc1->id == $row->id): {
+                                                    // $count_col = (count($pc));
+                                                    // break;
+                                                    // }
+                                                ?> 
+                                                
+                                            <?php //endforeach; ?>    
+                                        <?php //endforeach; ?>
+                                        
+                                        <?php foreach($parent_child as $pc): ?>
+                                            <?php foreach($pc as $mini_pc): ?>
+                                                <?php if($mini_pc->id == $row->id) {
+                                                    $count_col = (count($pc));
+                                                    break;
+                                                } ?>  
+                                            <?php endforeach; ?>
+                                        <?php endforeach; ?>
+                                        <div>
+                                            <?php for($i=0; $i<$count_col; $i++): ?>
+                                                <span class="dot " style="background-color: black;"></span>
+                                            <?php endfor ?>
+                                        <?php show($pc) ?>
+                                        </div>                
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             </div>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </div>
-            <!-- Single Product -->
+                    <!-- Single Product -->
                     </div>
                 </div>
             </section>
