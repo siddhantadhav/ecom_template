@@ -1,3 +1,18 @@
+<style>
+  .footer-cat{
+    padding-left: 11vh;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .footer-cat{
+      padding-left: 0;
+    }
+    .footer-cat-head{
+      text-align: start;
+    }
+  
+}
+</style>
 <!-- Footer -->
 
 <footer class="bg-dark text-center text-white"
@@ -11,7 +26,7 @@
       <!--Grid row-->
       <div class="row justify-content-start">
         <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0 mt-5">
           <div style="background-color: white; width: 15vh;">
             <img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png"
                  alt=""
@@ -26,10 +41,10 @@
         <!--Grid column-->
 
         <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Product Categories</h5>
-          <ul class="list-unstyled mb-0"
-              style="padding-left: 11vh;">
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0 mt-5">
+          <h5 class="text-uppercase footer-cat-head">Product Categories</h5>
+          <ul class="list-unstyled mb-0 footer-cat"
+              style="">
             <?php if (isset($categories) && is_array($categories)): ?>
               <?php foreach ($categories as $category):
                 if ($category->parent > 0) {
@@ -49,7 +64,7 @@
         <!--Grid column-->
 
         <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0 mt-5">
           <h5 class="text-uppercase text-start">Contact Us</h5>
           <p class="text-start">Factory:</p>
           <p class="text-start">DSK Bath Solutions, GIDC Phase 3, Dared, Jamnagar, Gujrat-361004.</p>

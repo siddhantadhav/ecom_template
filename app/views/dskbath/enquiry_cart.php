@@ -134,10 +134,10 @@
                         <?php foreach ($ROWS as $key => $row): ?>
                             <div class="container-fluid">
                                 <div class="row align-items-center">
-                                    <div class="col">
-                                        <img src="<?= $row->image ?>" class="img-fluid" alt="">
+                                    <div class="col-lg-3 col-md-6 col-sm-6">
+                                        <img src="<?= $row->image ?>" class="img-fluid" alt="" style="min-height: 10vh; max-height: 15vh;">
                                     </div>
-                                    <div class="col">
+                                    <div class="col-lg-3 col-md-6 col-sm-6">
                                         <div class="d-flex flex-row">
                                             <div class="p-2">
                                                 <a href="<?= ROOT ?>add_to_cart/sub_quantity/<?= $row->id ?>">
@@ -166,7 +166,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col" style="height: 6vh;">
+                                    <div class="col-lg-3 col-md-6 col-sm-6 mt-3" style="height: 6vh;">
                                         <input type="text"
                                                name="item_message"
                                                id="item_message"
@@ -174,7 +174,7 @@
                                                onchange="cart_item_message(<?= $row->id ?>, this.value)"
                                                placeholder="Message">
                                     </div>
-                                    <div class="col"
+                                    <div class="col-lg-3 col-md-6 col-sm-6 mt-3"
                                          style="height: 6vh;">
                                         <a href="<?= ROOT ?>add_to_cart/remove/<?= $row->id ?>">
                                             <button type="button"
@@ -257,71 +257,6 @@
         </div>
     </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-8 col-md-6 col-sm-12"></div>
-            <div class="col">
-            <div class="mb-3">
-                    <div class="row">
-                        <div class="col">
-                            <label for="fname"
-                                   class="form-label">First Name</label>
-                            <input type="text"
-                                   class="form-control"
-                                   id="fname"
-                                   name="fname"
-                                   placeholder="John">
-                        </div>
-                        <div class="col">
-                            <label for="lname"
-                                   class="form-label">Last Name</label>
-                            <input type="text"
-                                   class="form-control"
-                                   id="lname"
-                                   name="lname"
-                                   placeholder="Doe">
-                        </div>
-                    </div>
-
-
-                    <label for="email"
-                           class="form-label">Email address</label>
-                    <input type="email"
-                           class="form-control"
-                           id="email"
-                           placeholder="name@example.com">
-                    <label for="phone"
-                           class="form-label">Contact Number</label>
-                    <input type="text"
-                           class="form-control"
-                           id="phone"
-                           placeholder="+91 XXXXX XXXXX">
-                    <label for="city"
-                           class="form-label">City</label>
-                    <input type="text"
-                           class="form-control"
-                           id="city"
-                           placeholder="Mumbai">
-                    <label for="subject"
-                           class="form-label">Subject</label>
-                    <input type="text"
-                           class="form-control"
-                           id="subject"
-                           placeholder="Subject">
-                    <label for="message"
-                           class="form-label">Message</label>
-                    <textarea type="text"
-                              class="form-control"
-                              id="message"
-                              placeholder="Message">
-                </textarea>
-                </div>
-                <button class="btn btn-dark teal-btn button"
-                        type="submit"
-                        onclick="collect_cart_data(event)">Submit Enquiry</button>
-            </div>
-            </div>
-    </div>
     <script>
         function cart_item_message(id, message) {
             var data = new FormData();
