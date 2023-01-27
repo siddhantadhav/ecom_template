@@ -156,19 +156,18 @@
 </div>
 
 <div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-12">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
                 <span class="fs-5 d-sm-inline text-black " ><h2 class="display-5">Categories</h2> </span>
-                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
-                            id="menu">
-                            <?php if (isset($categories) && is_array($categories)): ?>
-                                <?php foreach ($categories as $category):
-                                    if ($category->parent > 0) {
-                                        continue;
-                                    }
-                                    $parents = array_column($categories, "parent");?>
-                                
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <?php if (isset($categories) && is_array($categories)): ?>
+                            <?php foreach ($categories as $category):
+                                if ($category->parent > 0) {
+                                    continue;
+                                }
+                                $parents = array_column($categories, "parent");?>
+                            
                                 <!-- Category with child  -->
                                 <li>
                                     <a href="<?=in_array($category->id, $parents) ? '#' . $category->category : ROOT .'product/category/'. $category->category?>" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-black" 
@@ -196,9 +195,9 @@
                                     </ul>
                                     <?php endif; ?>
                                 </li>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </ul>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </ul>
                 <hr>
             </div>
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
@@ -225,21 +224,18 @@
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </ul>
-
                 <hr>
-
             </div>
         </div>
-
-        <div class="col py-3">
-            <section class="section-products" style="margin-top: 0; padding-top: 0;">
+        <div class="col">
+        <section class="section-products" style="margin-top: 0; padding-top: 0;">
                 <div class="container">
                     <div class="row justify-content-center text-center">
                         <div class="col-md-8 col-lg-6">
                             <h2 class="display-1 bold" style="text-decoration: underline;">All Products</h2>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row justify-content-center">
                         <!-- Single Product -->
                         <?php if (isset($ROWS) && is_array($ROWS)): ?>
                             <?php foreach ($ROWS as $row): ?>
@@ -255,39 +251,10 @@
                                         <li><a href="<?= ROOT . "product_detail/" ?><?= $row->slug ?>"><i class="fa fa-expand"></i></a></li>
                                     </ul>
                                 </div>
-
                                 <div class="part-2">
                                     <h3 class="product-title text-muted" style="font-size: 1.2rem;"><?= $row->name ?></h3>
                                     <h4 class="text-muted" style="font-size: 1.2rem;"><?= $row->description ?></h4>
                                     <h6 class="text-muted">SKU: <?= $row->sku ?></h6>
-                                    <?php if($row->variations >= 1): ?>
-                                        <?php // foreach ($parent_child as $pc): ?> 
-                                             <!-- find all variations from array -->
-                                            <?php // foreach($pc as $pc1): ?>
-                                                <?php // if($pc1->id == $row->id): {
-                                                    // $count_col = (count($pc));
-                                                    // break;
-                                                    // }
-                                                ?> 
-                                                
-                                            <?php //endforeach; ?>    
-                                        <?php //endforeach; ?>
-                                        
-                                        <?php foreach($parent_child as $pc): ?>
-                                            <?php foreach($pc as $mini_pc): ?>
-                                                <?php if($mini_pc->id == $row->id) {
-                                                    $count_col = (count($pc));
-                                                    break;
-                                                } ?>  
-                                            <?php endforeach; ?>
-                                        <?php endforeach; ?>
-                                        <div>
-                                            <?php for($i=0; $i<$count_col; $i++): ?>
-                                                <span class="dot " style="background-color: black;"></span>
-                                            <?php endfor ?>
-                                        <?php show($pc) ?>
-                                        </div>                
-                                    <?php endif; ?>
                                 </div>
                             </div>
                             </div>
@@ -295,11 +262,12 @@
                         <?php endif; ?>
                     </div>
                     <!-- Single Product -->
-                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
         </div>
-
+    </div>
+</div>
 
 <script>
     function send_alert(e) {

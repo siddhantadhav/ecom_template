@@ -38,14 +38,8 @@ class Product extends Controller
                 array_push($parents_children, $parent_child);
             }
         }
-        // show($parents_children);
-        foreach($parents_children as $pc) {
-            show(count($pc));
-        }
 
         $data['parent_child'] = $parents_children;
-
-        
         $data['ROWS'] = $ROWS;
         $data['colors'] = $colors;
         $this->view("product", $data);
