@@ -157,7 +157,8 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-2 col-md-3 col-sm-12">
+        <div class="col-lg-2 col-md-3 col-sm-12" id="sidebar_collapse">
+            <!-- category -->
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
                 <span class="fs-5 d-sm-inline text-black " ><h2 class="display-5">Categories</h2> </span>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
@@ -200,6 +201,7 @@
                     </ul>
                 <hr>
             </div>
+            <!-- color -->
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
                 <a href="/"
                    class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none text-black ">
@@ -227,8 +229,10 @@
                 <hr>
             </div>
         </div>
+
+        <!-- product -->
         <div class="col">
-        <section class="section-products" style="margin-top: 0; padding-top: 0;">
+            <section class="section-products" style="margin-top: 0; padding-top: 0;">
                 <div class="container">
                     <div class="row justify-content-center text-center">
                         <div class="col-md-8 col-lg-6">
@@ -262,9 +266,9 @@
                         <?php endif; ?>
                     </div>
                     <!-- Single Product -->
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
         </div>
     </div>
 </div>

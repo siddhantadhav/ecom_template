@@ -116,7 +116,7 @@
 
 <div class="container-fluid mt-5 p-3 rounded cart">
     <div class="row no-gutters">
-        <div class="col-md-8">
+        <div class="col-md-8 col-sm-12">
             <div class="product-details mr-2">
                 <a href="<?= ROOT ?>product">
                     <div class="d-flex flex-row align-items-center"><i class="fa fa-long-arrow-left"></i><span
@@ -135,17 +135,13 @@
                             <div class="container-fluid">
                                 <div class="row align-items-center">
                                     <div class="col">
-                                        <img src="<?= $row->image ?>"
-                                             class="img-fluid"
-                                             alt=""
-                                             style="height: 10vh;">
+                                        <img src="<?= $row->image ?>" class="img-fluid" alt="">
                                     </div>
                                     <div class="col">
                                         <div class="d-flex flex-row">
                                             <div class="p-2">
                                                 <a href="<?= ROOT ?>add_to_cart/sub_quantity/<?= $row->id ?>">
-                                                    <button type="button"
-                                                            class="btn btn-dark btn-sm teal-btn">
+                                                    <button type="button" class="btn btn-dark btn-sm teal-btn">
                                                         <i class="fa fa-minus"></i>
                                                     </button>
                                                 </a>
@@ -170,8 +166,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col"
-                                         style="height: 6vh;">
+                                    <div class="col" style="height: 6vh;">
                                         <input type="text"
                                                name="item_message"
                                                id="item_message"
@@ -260,6 +255,72 @@
                         onclick="collect_cart_data(event)">Submit Enquiry</button>
             </div>
         </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-md-6 col-sm-12"></div>
+            <div class="col">
+            <div class="mb-3">
+                    <div class="row">
+                        <div class="col">
+                            <label for="fname"
+                                   class="form-label">First Name</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="fname"
+                                   name="fname"
+                                   placeholder="John">
+                        </div>
+                        <div class="col">
+                            <label for="lname"
+                                   class="form-label">Last Name</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="lname"
+                                   name="lname"
+                                   placeholder="Doe">
+                        </div>
+                    </div>
+
+
+                    <label for="email"
+                           class="form-label">Email address</label>
+                    <input type="email"
+                           class="form-control"
+                           id="email"
+                           placeholder="name@example.com">
+                    <label for="phone"
+                           class="form-label">Contact Number</label>
+                    <input type="text"
+                           class="form-control"
+                           id="phone"
+                           placeholder="+91 XXXXX XXXXX">
+                    <label for="city"
+                           class="form-label">City</label>
+                    <input type="text"
+                           class="form-control"
+                           id="city"
+                           placeholder="Mumbai">
+                    <label for="subject"
+                           class="form-label">Subject</label>
+                    <input type="text"
+                           class="form-control"
+                           id="subject"
+                           placeholder="Subject">
+                    <label for="message"
+                           class="form-label">Message</label>
+                    <textarea type="text"
+                              class="form-control"
+                              id="message"
+                              placeholder="Message">
+                </textarea>
+                </div>
+                <button class="btn btn-dark teal-btn button"
+                        type="submit"
+                        onclick="collect_cart_data(event)">Submit Enquiry</button>
+            </div>
+            </div>
     </div>
     <script>
         function cart_item_message(id, message) {

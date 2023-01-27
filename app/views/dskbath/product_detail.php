@@ -186,7 +186,7 @@
                         <div class="col-lg-10 col-md-12 text-center">
                             <div class="pro-img-details">
                                 <img src="<?= ROOT . $ROW->image ?>"
-                                     alt=""style="height: 70vh;" class="img-fluid">
+                                     alt="" class="img-fluid">
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-12 mt-5">
@@ -218,38 +218,36 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="row mt-5">
-                        <h2 class="display-6 text-decoration-underline">Related Products</h2>
-                        <div class="row justify-content-start">
-                            <?php foreach($related_products as $related_product): ?>
-                                <!-- Single Product -->
-                                <div class="col-lg-3 col-md-6 col-sm-12" style="border: 5px solid rgb(60, 183, 186); margin: 1vh;">
-                                    <a href="<?= ROOT . "product_detail/" ?><?= $related_product->slug ?>" class="text-decoration-none">
-                                        <div id="product-1" class="single-product">
-                                            <div class="part-1">
-                                                <img class="img-fluid" src="<?= ROOT . $related_product->image ?>" alt="">
-                                    <hr style="border: 2px solid rgb(60, 183, 186);">
-                                </div>
-
-                                <div class="part-2">
-                                    <h3 class="product-title text-muted"
-                                        style="font-size: 1.2rem;">
-                                        <?= $related_product->name ?>
-                                    </h3>
-                                    <h4 class="text-muted"
-                                        style="font-size: 1.2rem;"><?= $related_product->description ?></h4>
-                                    <h6 class="text-muted">SKU: <?= $related_product->sku ?></h6>
-                                </div>
-                                </div>
-                            </a>
-                            </div>      
-                            <?php endforeach; ?>
-                    </div>
                 </div>
             </section>
+            <div class="row mt-5">
+                <h2 class="display-6 text-decoration-underline">Related Products</h2>
+                <div class="row justify-content-start">
+                    <?php foreach($related_products as $related_product): ?>
+                        <!-- Single Product -->
+                        <div class="col-lg-3 col-md-6 col-sm-12" style="border: 5px solid rgb(60, 183, 186); margin: 1vh;">
+                            <a href="<?= ROOT . "product_detail/" ?><?= $related_product->slug ?>" class="text-decoration-none">
+                                <div id="product-1" class="single-product">
+                                    <div class="part-1">
+                                        <img class="img-fluid" src="<?= ROOT . $related_product->image ?>" alt="">
+                                        <hr style="border: 2px solid rgb(60, 183, 186);">
+                                        <div class="part-2">
+                                            <h3 class="product-title text-muted"
+                                                style="font-size: 1.2rem;">
+                                                <?= $related_product->name ?>
+                                            </h3>
+                                            <h4 class="text-muted"
+                                                style="font-size: 1.2rem;"><?= $related_product->description ?></h4>
+                                            <h6 class="text-muted">SKU: <?= $related_product->sku ?></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>      
+                    <?php endforeach; ?>
+                </div>
+            </div>
         </div>
-    </div>
 <?php else: ?>
     <div>Product Not Found</div>    
 <?php endif; ?>

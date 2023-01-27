@@ -84,43 +84,6 @@
 
 <body>
     <header>
-        <!-- <nav class="navbar navbar-expand-lg bg-light mx-auto me-auto">
-            <div class="container-fluid">
-                <a class="navbar-brand"
-                   href=""><img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png"
-                         alt=""
-                         srcset=""
-                         class="img-fluid"
-                         style="max-height:10vh"></a>
-                <div class="collapse navbar-collapse justify-content-end"
-                     id="navbarNavDropdown">
-                    <ul class="navbar-nav " style="">
-                        <li class="nav-item">
-                            <a class="nav-link "
-                               aria-current="page"
-                               href="<?= ROOT ?>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               href="<?= ROOT . "about" ?>"><i class="fa fa-info-circle" aria-hidden="true"></i> About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               href="<?= ROOT . "product" ?>"><i class="fa fa-info-circle" aria-hidden="true"></i> Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               href="<?= ROOT . "contact" ?>"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               href="<?= ROOT . "enquiry_cart" ?>"><i class="fa fa-commenting" aria-hidden="true"></i> Enquiry</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav> -->
-
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand"
                href="<?=ROOT?>"><img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png"
@@ -167,5 +130,5 @@
     </header>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
