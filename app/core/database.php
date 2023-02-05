@@ -5,8 +5,8 @@ Class Database{
     public static $conn;
     public function __construct() {
        try{
-            $string = DB_TYPE . ":host=" .DB_HOST . ";dbname=" . DB_NAME;
-            self::$conn = new PDO($string, "root", "Adhav@0306");
+            $string = DB_TYPE . ":host=" .DB_HOST . ";port=3307;dbname=" . DB_NAME;
+            self::$conn = new PDO($string, "root");
        }
        catch (PDOException $e){
             die($e->getMessage());

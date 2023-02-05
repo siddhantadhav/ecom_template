@@ -27,7 +27,6 @@ class Admin extends Controller
         $general_info = $DB->read("select * from general_info");
         $data['general_info'] = $general_info[0];
 
-
         $data['page_title'] = "Admin";
         $this->view("admin/index", $data);
     }

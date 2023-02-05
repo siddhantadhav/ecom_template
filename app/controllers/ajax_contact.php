@@ -63,7 +63,7 @@ class Ajax_Contact extends Controller
 
                 $arr['message'] = "Successful";
                 $arr['message_type'] = "info";
-                $arr['data_type'] = "complete_contact";
+                $arr['data_type'] = "remove_order";
 
                 $contacts = $DB->read("select * from contacts where ordered = 1");
                 $contact->make_table($contacts);
