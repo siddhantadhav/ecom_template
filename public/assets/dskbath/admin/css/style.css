@@ -413,8 +413,8 @@ ul.sidebar-menu li a.active i {
 }
 
 .black-bg {
-    background: #ffd777;
-    border-bottom: 1px solid #c9aa5f;
+    background: rgb(39 189 190);;
+    border-bottom: 1px solid rgb(30, 146, 146);
 }
 
 .wrapper {
