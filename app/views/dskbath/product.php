@@ -262,6 +262,15 @@
                                     <h4 class="text-muted" style="font-size: 1.2rem;"><?= $row->description ?></h4>
                                     <h6 class="text-muted">SKU: <?= $row->sku ?></h6>
                                 </div>
+                                <div>
+                                    <?php if($row->variations >0): ?> 
+                                        <?php $variations = $this->get_color_variations($row); ?>
+                                        <?php foreach ($variations as $varcolor): ?>
+                                            <span class = 'dot' style="background-color : rgb(<?=$varcolor[0]->red?>, <?=$varcolor[0]->green?>, <?=$varcolor[0]->blue?>)"></span>
+                                            
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                             </div>
                             <?php endforeach; ?>

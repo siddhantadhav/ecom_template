@@ -123,4 +123,28 @@ class Product extends Controller
         return $color_name[0];
     }
 
+    public function get_variations($product){
+        $DB = Database::newInstance();
+        $variations = $DB->read("SELECT * FROM `products` WHERE (name = '$product->name') AND (description = '$product->description') AND (category = $product->category);");
+        foreach($variations as $key => $value){
+            if($value->id == $product->id){
+                unset($variations[$key]);
+            }
+        }
+        return ($variations);
+    }
+
+    public function get_color_variations($product){
+        $variations = $this->get_variations($product);
+        $DB = Database::newInstance();
+        $color_variation = array();
+        foreach($variations as $variation){
+            $color = $DB->read("SELECT * FROM colors WHERE id = $variation->color");
+            array_push($color_variation, $color);
+        }
+        return($color_variation);
+    }
+
+    
+
 }
