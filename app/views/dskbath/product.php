@@ -266,8 +266,8 @@
                                     <?php if($row->variations >0): ?> 
                                         <?php $variations = $this->get_color_variations($row); ?>
                                         <?php foreach ($variations as $varcolor): ?>
-                                            <span class = 'dot' style="background-color : rgb(<?=$varcolor[0]->red?>, <?=$varcolor[0]->green?>, <?=$varcolor[0]->blue?>)"></span>
-                                            
+                                            <?php $var_product = $this->get_slug_variations($row->name, $varcolor[0]->id);?>
+                                                <a href = "<?= ROOT . 'product_detail/'?><?=$var_product[0]->slug?>"> <span class = 'dot' style="background-color : rgb(<?=$varcolor[0]->red?>, <?=$varcolor[0]->green?>, <?=$varcolor[0]->blue?>)"></span> </a>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
                                 </div>
@@ -281,6 +281,7 @@
                 </div>
             </section>
         </div>
+        <!-- product end -->
     </div>
 </div>
 

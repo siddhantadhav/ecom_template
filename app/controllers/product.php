@@ -145,6 +145,10 @@ class Product extends Controller
         return($color_variation);
     }
 
-    
+    public function get_slug_variations($product_name, $color_id){
+        $DB = Database::newInstance();
+        $var_product = $DB->read("SELECT * FROM `products` WHERE name = '$product_name' AND color = $color_id;");
+        return $var_product;
+    }
 
 }
