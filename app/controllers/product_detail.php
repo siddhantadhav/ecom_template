@@ -30,4 +30,32 @@ Class Product_detail extends Controller {
 
         $this->view("product_detail", $data);
     }
+
+    public function get_variations($product){
+        $DB = Database::newInstance();
+        $variations = $DB->read("SELECT * FROM `products` WHERE (name = '$product->name') AND (description = '$product->description') AND (category = $product->category);");
+        foreach($variations as $key => $value){
+            if($value->id == $product->id){
+                unset($variations[$key]);
+            }
+        }
+        return ($variations);
+    }
+
+    public function get_color_variations($product){
+        $variations = $this->get_variations($product);
+        $DB = Database::newInstance();
+        $color_variation = array();
+        foreach($variations as $variation){
+            $color = $DB->read("SELECT * FROM colors WHERE id = $variation->color");
+            array_push($color_variation, $color);
+        }
+        return($color_variation);
+    }
+
+    public function get_slug_variations($product_name, $color_id){
+        $DB = Database::newInstance();
+        $var_product = $DB->read("SELECT * FROM `products` WHERE name = '$product_name' AND color = $color_id;");
+        return $var_product;
+    }
 }

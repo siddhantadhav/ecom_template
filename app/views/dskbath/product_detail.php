@@ -174,6 +174,14 @@
     }
 
     /* related */
+
+    .dot {
+        height: 25px;
+        width: 25px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+    }
     
 </style>
 <?php if ($ROW):?>
@@ -202,6 +210,18 @@
                                         <?php $replaced_str = str_replace("_", " ", $color->color); echo ucwords($replaced_str)  ?>
                                     </a>
                                 </span>
+                            </div>
+                            <div>
+                                <p>Available Colors: </p>
+                                <?php if($ROW->variations > 0): ?>
+                                    <?php $variations = $this->get_color_variations($ROW);?>
+                                    <?php foreach($variations as $variation): ?>
+                                        <?php $var_product = $this->get_slug_variations($ROW->name, $variation[0]->id); ?>
+                                        <a href = "<?= ROOT . 'product_detail/'?><?=$var_product[0]->slug?>">
+                                            <span class = 'dot' style="background-color : rgb(<?=$variation[0]->red?>, <?=$variation[0]->green?>, <?=$variation[0]->blue?>)"></span>
+                                        </a>
+                                    <?php endforeach;?>    
+                                <?php endif;?>
                             </div>
                             <div class="form-group">
                                 <label class="display-6" style="color: rgb(60, 183, 186);">Quantity</label>
