@@ -4,12 +4,18 @@ class Product extends Controller
 {
     public function index()
     {
+        // Pagination Formula
+        $limit = 2;
+        $page_number = isset($_GET['pg']) ? (int)$_GET['pg'] : 1 ;
+        $page_number = $page_number < 1 ? 1 : $page_number;
+        $offset = ($page_number - 1) * $limit;
+
         $DB = Database::getInstance();
         
         $image_class = $this->load_model('Image');
         $category_class = $this->load_model('Category');
 
-        $ROWS = $DB->read("select * from products");
+        $ROWS = $DB->read("SELECT * FROM `products` LIMIT $limit OFFSET $offset;");
         $colors = $DB->read("select * from colors");
         $data['page_title'] = "Products";
         if ($ROWS) {
@@ -57,7 +63,7 @@ class Product extends Controller
         if (is_object($check)) {
             $cat_id = $check->id;
         }
-        $ROWS = $DB->read("select * from products where category = $cat_id");
+        $ROWS = $DB->read("select * from products where category = $cat_id limit $limit offest $offset");
         if (isset($sub_cat) && $sub_cat != "") {
             $check = $category_class->get_one_by_name($sub_cat);
             if (is_object($check)) {
@@ -150,5 +156,7 @@ class Product extends Controller
         $var_product = $DB->read("SELECT * FROM `products` WHERE name = '$product_name' AND color = $color_id;");
         return $var_product;
     }
+
+    
 
 }
