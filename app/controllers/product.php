@@ -6,9 +6,7 @@ class Product extends Controller
     {
         // Pagination Formula
         $limit = 2;
-        $page_number = isset($_GET['pg']) ? (int)$_GET['pg'] : 1 ;
-        $page_number = $page_number < 1 ? 1 : $page_number;
-        $offset = ($page_number - 1) * $limit;
+        $offset = Page::get_offset($limit);
 
         $DB = Database::getInstance();
         
@@ -56,9 +54,7 @@ class Product extends Controller
     {
         // Pagination Formula
         $limit = 2;
-        $page_number = isset($_GET['pg']) ? (int)$_GET['pg'] : 1 ;
-        $page_number = $page_number < 1 ? 1 : $page_number;
-        $offset = ($page_number - 1) * $limit;
+        $offset = Page::get_offset($limit);
 
         $DB = Database::getInstance();
         $image_class = $this->load_model('Image');

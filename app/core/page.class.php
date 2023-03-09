@@ -1,6 +1,47 @@
 <?php
 
 class Page {
+    public static function get_offset($limit) {
+        $limit = (int) $limit;
+
+        $page_number = isset($_GET['pg']) ? (int)$_GET['pg'] : 1 ;
+        $page_number = $page_number < 1 ? 1 : $page_number;
+        return ($page_number - 1) * $limit;
+    }
+
+    public static function show_links()
+    {   
+        ?>
+        <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                    <a class="page-link" href="<?=self::links()->prev?>" tabindex="-1">Previous</a>
+                    </li>
+                    <?php
+                        $max = self::links()->current + 3;
+                        $cur = (self::links()->current > 3) ? self::links()->current -3 : 1;
+                    ?>
+                    <?php for ($i=$cur; $i < $max; $i++): ?>
+                        <li class="page-item <?=self::links()->current == $i?'active':'' ?>"><a class="page-link" href="<?=self::generate($i);?>"><?=$i?></a></li>
+                    <?php endfor; ?>
+                    <li class="page-item">
+                    <a class="page-link" href="<?=self::links()->next?>">Next</a>
+                    </li>
+                </ul>
+                </nav>
+                <?php
+    }
+
+    public static function generate($number){
+        $number = (int) $number;
+        $query_string = str_replace("url=", "", $_SERVER['QUERY_STRING']);
+        $current_link =  ROOT . $query_string;     
+        if (!strstr($query_string, "pg=")) {
+            $current_link .= "&pg=1";
+        }
+
+        return preg_replace("/pg=[^&?=]+/", "pg=". $number, $current_link);
+    }
 
     public static function links(){
         $links = (object) [];
