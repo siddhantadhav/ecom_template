@@ -9,7 +9,7 @@ Categories
 4. Bath fittings
 	a. Matrix
 	b. Qube
-	c.Capsule
+	c. Capsule
 	d. Flow
 	e. Loop
 	f. Fusion
@@ -20,8 +20,8 @@ Categories
 	k. Cross
 	l. Curve
 	m. Deluxe
-	n. Mouth Operating Round/ Square
-	o.Mixer Accessories
+	n. Mouth Operating Round/ Square ..
+	o. Mixer Accessories
 	p. Spout
 5. Allied products
 6. Drainers
