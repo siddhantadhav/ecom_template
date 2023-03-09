@@ -2,7 +2,7 @@
 
 class Page {
 
-    private static function links(){
+    public static function links(){
         $links = (object) [];
         $links->prev = "";
         $links->next = "";

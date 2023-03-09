@@ -157,6 +157,5 @@ class Product extends Controller
         return $var_product;
     }
 
-    
 
 }

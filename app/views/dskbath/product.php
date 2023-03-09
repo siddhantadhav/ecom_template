@@ -277,30 +277,23 @@
                         <?php endif; ?>
                     </div>
                     <!-- Single Product -->
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <?php show(Page::links()->next);?>
-                                <a class="page-link" href="<?=Page::links()->prev?>" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                </li>
-                                <li class="page-item <?= (Page::links()->current == 1)?'active': ''?>"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item <?= (Page::links()->current == 2)?'active': ''?>"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item <?= (Page::links()->current == 3)?'active': ''?>"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                <a class="page-link" href="<?=Page::links()->next?>" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                </div>
+                <!-- pagination -->
+                <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                    <a class="page-link" href="<?=Page::links()->prev?>" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item <?=Page::links()->current == 1?'active':'' ?>"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item <?=Page::links()->current == 2?'active':'' ?>"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item <?=Page::links()->current == 3?'active':'' ?>"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                    <a class="page-link" href="<?=Page::links()->next?>">Next</a>
+                    </li>
+                </ul>
+                </nav>
                 </div>
             </section>
-            
         </div>
         <!-- product end -->
         
