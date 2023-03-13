@@ -159,7 +159,80 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-2 col-md-3 col-sm-12" id="sidebar_collapse">
+        <a class="d-lg-none d-md-none text-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" style="color: rgb(24 149 150);"><i class="fa fa-2x fa-sliders"></i></a>
+
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title display-6" id="offcanvasWithBothOptionsLabel" style="">Categories</h2>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start align-items-sm-start" id="menu">
+                        <?php if (isset($categories) && is_array($categories)): ?>
+                            <?php foreach ($categories as $category):
+                                if ($category->parent > 0) {
+                                    continue;
+                                }
+                                $parents = array_column($categories, "parent");?>
+                            
+                                <!-- Category with child  -->
+                                <li>
+                                    <a href="<?=in_array($category->id, $parents) ? '#' . $category->category : ROOT .'product/category/'. $category->category?>" data-bs-toggle="collapse"  aria-expanded="false" class="nav-link px-0 align-middle text-black"
+                                    <?php if(!in_array($category->id, $parents)): ?> 
+                                        onclick = "window.open(this.href,'_self')"
+                                    <?php endif; ?> > 
+                                    <?php $replaced_str = str_replace('_', ' ', $category->category);
+                                        echo ucwords($replaced_str);
+                                    ?>
+                                    <?php if(in_array($category->id, $parents)): ?>
+                                        <span class="ms-1 d-none d-sm-inline">  </span><i class="fa fa-plus"></i>
+                                    <?php endif; ?>
+                                    </a>
+
+                                    <?php if(in_array($category->id, $parents)): ?>
+                                    <ul class="collapse nav flex-column ms-1" id="<?=$category->category?>" data-bs-parent="#menu">  
+                                        <li class="w-100">
+                                            <a href="<?=ROOT .'product/category/'. $category->category?>" class="nav-link px-0 "> <span class="d-sm-inline text-black">All Products</span></a>
+                                            <?php foreach ($categories as $sub_cat): ?>
+                                                <?php if ($sub_cat->parent == $category->id): ?>
+                                                    <a href="<?=ROOT .'product/category/'. $category->category.'/'.$sub_cat->category?>" class="nav-link px-0 text-black"> <span class="d-sm-inline"><?php $sub_cat->category = str_replace('_', ' ', $sub_cat->category); echo ucwords($sub_cat->category)?></span></a>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        </li>
+                                    </ul>
+                                    <?php endif; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </ul>
+
+                    <a href="/"
+                   class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none text-black ">
+                    <span class="fs-5 d-sm-inline sidebar_heading"><h2 class="display-5">Colors</h2></span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start align-items-sm-start"
+                    id="menu">
+                    <?php if (isset($colors) && is_array($colors)): ?>
+                        <?php foreach ($colors as $color): ?>
+                            <li>
+                                <a href="<?= ROOT .'product/color/'. $color->color ?>"
+                                   data-bs-toggle="collapse"
+                                   onclick = "window.open(this.href,'_self')"
+                                   class="nav-link px-0 align-middle text-black">
+                                   
+                                   <span class="dot " style="background-color: rgb(<?=$color->red?>, <?=$color->green?>, <?=$color->blue?>);"></span>
+                                    <span class="ms-1 d-sm-inline align-self-start">
+                                        <?php $replaced_stri = str_replace("_", " ", $color->color); echo strtoupper($replaced_stri) ?>
+                                    </span>
+                                </a>
+                                </li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </ul>
+        </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-12 d-none d-lg-block d-md-block" id="sidebar_collapse">
             <!-- category -->
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
                 <span class="fs-5 d-sm-inline text-black " ><h2 class="display-5">Categories</h2> </span>
@@ -173,12 +246,12 @@
                             
                                 <!-- Category with child  -->
                                 <li>
-                                    <a href="<?=in_array($category->id, $parents) ? '#' . $category->category : ROOT .'product/category/'. $category->category?>" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-black" 
+                                    <a href="<?=in_array($category->id, $parents) ? '#' . $category->category : ROOT .'product/category/'. $category->category?>" data-bs-toggle="collapse"  aria-expanded="false" class="nav-link px-0 align-middle text-black"
                                     <?php if(!in_array($category->id, $parents)): ?> 
                                         onclick = "window.open(this.href,'_self')"
-                                    <?php endif; ?>> 
+                                    <?php endif; ?> > 
                                     <?php $replaced_str = str_replace('_', ' ', $category->category);
-                                        echo strtoupper($replaced_str);
+                                        echo ucwords($replaced_str);
                                     ?>
                                     <?php if(in_array($category->id, $parents)): ?>
                                         <span class="ms-1 d-none d-sm-inline">  </span><i class="fa fa-plus"></i>
@@ -186,12 +259,12 @@
                                     </a>
 
                                     <?php if(in_array($category->id, $parents)): ?>
-                                    <ul class="collapse show nav flex-column ms-1" id="<?=$category->category?>" data-bs-parent="#menu">  
+                                    <ul class="collapse nav flex-column ms-1" id="<?=$category->category?>" data-bs-parent="#menu">  
                                         <li class="w-100">
                                             <a href="<?=ROOT .'product/category/'. $category->category?>" class="nav-link px-0 "> <span class="d-sm-inline text-black">All Products</span></a>
                                             <?php foreach ($categories as $sub_cat): ?>
                                                 <?php if ($sub_cat->parent == $category->id): ?>
-                                                    <a href="<?=ROOT .'product/category/'. $category->category.'/'.$sub_cat->category?>" class="nav-link px-0 text-black"> <span class="d-sm-inline"><?php $sub_cat->category = str_replace('_', ' ', $sub_cat->category); echo strtoupper($sub_cat->category)?></span></a>
+                                                    <a href="<?=ROOT .'product/category/'. $category->category.'/'.$sub_cat->category?>" class="nav-link px-0 text-black"> <span class="d-sm-inline"><?php $sub_cat->category = str_replace('_', ' ', $sub_cat->category); echo ucwords($sub_cat->category)?></span></a>
                                                 <?php endif; ?>
                                             <?php endforeach; ?>
                                         </li>
@@ -231,6 +304,8 @@
                 <hr>
             </div>
         </div>
+
+        
 
         <!-- product -->
         <div class="col">
@@ -289,6 +364,9 @@
         
     </div>
 </div>
+
+
+
 
 <script>
     function send_alert(e) {

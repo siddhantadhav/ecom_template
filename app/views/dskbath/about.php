@@ -140,7 +140,7 @@
     function updated() {
         var count = document.getElementById("counter");
         count.innerHTML = ++upto;
-        if (upto === 1000) {
+        if (upto === 999) {
             clearInterval(counts);
         }
     }

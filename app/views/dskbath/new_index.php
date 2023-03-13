@@ -182,7 +182,7 @@
                     types of equipment have been gifting a world of elegant bathroom accessories with its
                     high-quality range of sleek, innovative and attractive products. Helping you make your bathroom
                     experience the best.</p>
-                <button class="button"><i class="fa fa-chevron-right"></i> Quote Products</button><br> <br>
+                    <a href="<?=ROOT?>product"><button class="button"><i class="fa fa-chevron-right"></i> Quote Products</button><br><br></a>
                 <div class="row mt-5">
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <p class="text-muted"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_01.png"
