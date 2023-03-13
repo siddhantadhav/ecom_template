@@ -163,11 +163,11 @@
 
         <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
         <div class="offcanvas-header">
+            <h2 class="offcanvas-title display-6" id="offcanvasWithBothOptionsLabel" style="">Categories</h2>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <h2 class="offcanvas-title display-6" id="offcanvasWithBothOptionsLabel" style="">Categories</h2>
-            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start align-items-sm-start" id="menu">
                         <?php if (isset($categories) && is_array($categories)): ?>
                             <?php foreach ($categories as $category):
                                 if ($category->parent > 0) {
@@ -205,11 +205,12 @@
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </ul>
+
                     <a href="/"
                    class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none text-black ">
                     <span class="fs-5 d-sm-inline sidebar_heading"><h2 class="display-5">Colors</h2></span>
                 </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start align-items-sm-start"
                     id="menu">
                     <?php if (isset($colors) && is_array($colors)): ?>
                         <?php foreach ($colors as $color): ?>
