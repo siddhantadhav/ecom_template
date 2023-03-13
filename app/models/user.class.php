@@ -9,7 +9,7 @@ class User {
 
     }
     public function get_user($url){
-
+        
     }
     public function make_table($users) {
         $result = "";

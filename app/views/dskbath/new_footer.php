@@ -54,7 +54,7 @@
               <a href="<?=ROOT .'product/category/'. $category->category?>"
                  class="text-white text-decoration-none"><?php
                  $replaced_str = str_replace("_", " ", $category->category);
-                 echo $replaced_str?></a>
+                 echo strtoupper($replaced_str)?></a>
             </li>
               <?php endforeach; ?>
             <?php endif; ?>

@@ -178,7 +178,7 @@
                                         onclick = "window.open(this.href,'_self')"
                                     <?php endif; ?>> 
                                     <?php $replaced_str = str_replace('_', ' ', $category->category);
-                                        echo $replaced_str;
+                                        echo strtoupper($replaced_str);
                                     ?>
                                     <?php if(in_array($category->id, $parents)): ?>
                                         <span class="ms-1 d-none d-sm-inline">  </span><i class="fa fa-plus"></i>
@@ -191,7 +191,7 @@
                                             <a href="<?=ROOT .'product/category/'. $category->category?>" class="nav-link px-0 "> <span class="d-sm-inline text-black">All Products</span></a>
                                             <?php foreach ($categories as $sub_cat): ?>
                                                 <?php if ($sub_cat->parent == $category->id): ?>
-                                                    <a href="<?=ROOT .'product/category/'. $category->category.'/'.$sub_cat->category?>" class="nav-link px-0 text-black"> <span class="d-sm-inline"><?php $sub_cat->category = str_replace('_', ' ', $sub_cat->category); echo $sub_cat->category?></span></a>
+                                                    <a href="<?=ROOT .'product/category/'. $category->category.'/'.$sub_cat->category?>" class="nav-link px-0 text-black"> <span class="d-sm-inline"><?php $sub_cat->category = str_replace('_', ' ', $sub_cat->category); echo strtoupper($sub_cat->category)?></span></a>
                                                 <?php endif; ?>
                                             <?php endforeach; ?>
                                         </li>
@@ -221,7 +221,7 @@
                                    
                                    <span class="dot " style="background-color: rgb(<?=$color->red?>, <?=$color->green?>, <?=$color->blue?>);"></span>
                                     <span class="ms-1 d-sm-inline align-self-start">
-                                        <?php $replaced_stri = str_replace("_", " ", $color->color); echo ucwords($replaced_stri) ?>
+                                        <?php $replaced_stri = str_replace("_", " ", $color->color); echo strtoupper($replaced_stri) ?>
                                     </span>
                                 </a>
                                 </li>
@@ -277,11 +277,16 @@
                         <?php endif; ?>
                     </div>
                     <!-- Single Product -->
-                    </div>
+                </div>
+                <!-- pagination -->
+                <?php Page::show_links()?>
+
+                
                 </div>
             </section>
         </div>
         <!-- product end -->
+        
     </div>
 </div>
 
