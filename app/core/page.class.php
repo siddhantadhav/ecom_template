@@ -15,17 +15,17 @@ class Page {
         <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
                     <li class="page-item">
-                    <a class="page-link" href="<?=self::links()->prev?>" tabindex="-1">Previous</a>
+                    <a class="page-link" href="<?=self::links()->prev?>" tabindex="-1" style="color:rgb(36, 188, 189); font-weight: bold">Previous</a>
                     </li>
                     <?php
                         $max = self::links()->current + 3;
                         $cur = (self::links()->current > 3) ? self::links()->current -3 : 1;
                     ?>
                     <?php for ($i=$cur; $i < $max; $i++): ?>
-                        <li class="page-item <?=self::links()->current == $i?'active':'' ?>"><a class="page-link" href="<?=self::generate($i);?>"><?=$i?></a></li>
+                        <li class="page-item <?=self::links()->current == $i?'active':'' ?>" ><a class="page-link" href="<?=self::generate($i);?>" style="color:rgb(36, 188, 189); font-weight: bold"><?=$i?></a></li>
                     <?php endfor; ?>
                     <li class="page-item">
-                    <a class="page-link" href="<?=self::links()->next?>">Next</a>
+                    <a class="page-link" href="<?=self::links()->next?>" style="color:rgb(36, 188, 189); font-weight: bold">Next</a>
                     </li>
                 </ul>
                 </nav>

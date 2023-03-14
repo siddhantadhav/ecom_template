@@ -46,7 +46,7 @@
 
     .button {
         /* width: 140px; */
-        height: 5vh;
+        /* height: 5vh; */
         padding: 2vh;
         font-family: sans-serif;
         font-size: 11px;
@@ -62,6 +62,7 @@
         cursor: pointer;
         outline: none;
         float: left;
+        
     }
 
     .button:hover {
@@ -104,23 +105,23 @@
             <div class="collapse navbar-collapse justify-content-end"
                  id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item text-end pe-3 active">
                         <a class="nav-link"
                            href="<?= ROOT ?>"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item text-end pe-3">
                         <a class="nav-link"
                            href="<?= ROOT . "about" ?>"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item text-end pe-3">
                         <a class="nav-link"
                            href="<?= ROOT . "product" ?>"><i class="fa fa-info-circle" aria-hidden="true"></i> Product</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item text-end pe-3">
                         <a class="nav-link"
                            href="<?= ROOT . "enquiry_cart" ?>"><i class="fa fa-commenting" aria-hidden="true"></i> Enquiry Cart</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item text-end pe-3">
                         <a class="nav-link"
                            href="<?= ROOT . "contact" ?>"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a>
                     </li>

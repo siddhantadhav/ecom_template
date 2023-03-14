@@ -2,6 +2,17 @@
   .footer-cat{
     padding-left: 11vh;
   }
+
+  .footer-cat li a{
+    color: white
+  }
+
+  .footer-cat li a:hover{
+    
+      box-shadow: 0px 15px 20px rgba(36, 188, 189, 0.4);
+      color: rgb(36, 188, 189);;;
+      transform: translateY(-7px);
+  }
   
   @media only screen and (max-width: 1200px) {
     .footer-cat{
@@ -52,9 +63,9 @@
                 } ?>
                 <li class="text-start">
               <a href="<?=ROOT .'product/category/'. $category->category?>"
-                 class="text-white text-decoration-none"><?php
+                 class=" text-decoration-none"><?php
                  $replaced_str = str_replace("_", " ", $category->category);
-                 echo strtoupper($replaced_str)?></a>
+                 echo ucwords($replaced_str)?></a>
             </li>
               <?php endforeach; ?>
             <?php endif; ?>

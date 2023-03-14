@@ -146,7 +146,9 @@
         display: inline-block;
     }
 
-    
+    .page-item .active{
+    background-color: rgb(36, 188, 189);
+}    
     
 </style>
 

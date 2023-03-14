@@ -133,12 +133,14 @@
                     Our Company offers a wide range of Shower Solutions, Bath Fittings, Kitchen Solutions, Allied
                     Products, Sinks and Bath Accessories.
                 </p>
-                <button class="button">Download Brochure <i class="fa fa-download"></i></button>
+                <div class="container-fluid d-flex justify-content-center">
+                    <button class="button">Download Brochure <i class="fa fa-download"></i></button>
+                </div>
             </div>
             <div class="col">
                 <div class="row">
                     <div class="col-1 gx-0 d-none d-md-block d-lg-block d-xl-block"
-                         style="background-color: #eee; height:50em;"></div>
+                         style="background-color: #eee;"></div>
                     <div class="col gx-0"
                          style="">
                         <div class="d-none d-md-block d-lg-block d-xl-block"
@@ -182,7 +184,9 @@
                     types of equipment have been gifting a world of elegant bathroom accessories with its
                     high-quality range of sleek, innovative and attractive products. Helping you make your bathroom
                     experience the best.</p>
-                    <a href="<?=ROOT?>product"><button class="button"><i class="fa fa-chevron-right"></i> Quote Products</button><br><br></a>
+                    <div class="container-fluid d-flex justify-content-center">
+                        <a href="<?=ROOT?>product"><button class="button"><i class="fa fa-chevron-right"></i> Quote Products</button><br><br></a>
+                    </div>
                 <div class="row mt-5">
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <p class="text-muted"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_01.png"

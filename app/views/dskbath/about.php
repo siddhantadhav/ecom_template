@@ -42,7 +42,7 @@
 
                 <div class="row">
                     <div class="col-1 gx-0 d-none d-md-block d-lg-block d-xl-block"
-                         style="background-color: #eee; height:50em;"></div>
+                         style="background-color: #eee;"></div>
                     <div class="col gx-0"
                          style="">
                         <div style="background-color: #eee; height: 10vh; "></div>
@@ -58,8 +58,6 @@
         </div>
     </div>
 </section>
-
-
 
 <section>
     <div class="container-fluid">
@@ -119,7 +117,7 @@
 
 <section style="background-color: rgb(36, 188, 189)">
     <div class="row align-items-center justifty-content-center"
-         style="height: 7vh;">
+         style="padding: 2vh">
         <div class="col-7 ">
             <h4 class="text-end"
                 style="color: white">For any further details or inquiries, Please contact Here!</h4>
