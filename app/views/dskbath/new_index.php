@@ -140,7 +140,7 @@
             <div class="col">
                 <div class="row">
                     <div class="col-1 gx-0 d-none d-md-block d-lg-block d-xl-block"
-                         style="background-color: #eee;"></div>
+                         style="background-color: #eee; margin-bottom: 10vh;"></div>
                     <div class="col gx-0"
                          style="">
                         <div class="d-none d-md-block d-lg-block d-xl-block"

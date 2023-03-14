@@ -22,7 +22,8 @@ class Page {
                         $cur = (self::links()->current > 3) ? self::links()->current -3 : 1;
                     ?>
                     <?php for ($i=$cur; $i < $max; $i++): ?>
-                        <li class="page-item <?=self::links()->current == $i?'active':'' ?>" ><a class="page-link" href="<?=self::generate($i);?>" style="color:rgb(36, 188, 189); font-weight: bold"><?=$i?></a></li>
+                        <li class="page-item <?=self::links()->current == $i?'active':'' ?>"><a class="page-link" href="<?=self::generate($i);?>" 
+                        style="color:rgb(36, 188, 189); font-weight: bold;<?=self::links()->current == $i? 'background-color: rgb(36, 188, 189); color: white; border: 1px solid rgb(36, 188, 189)': '' ?>"><?=$i?></a></li>
                     <?php endfor; ?>
                     <li class="page-item">
                     <a class="page-link" href="<?=self::links()->next?>" style="color:rgb(36, 188, 189); font-weight: bold">Next</a>
