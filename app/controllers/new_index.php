@@ -2,6 +2,7 @@
 
 Class New_index extends Controller {
     public function index() {
+        show($_POST);
         $DB = Database::getInstance();
 
         $ROWS = $DB->read("select * from products");

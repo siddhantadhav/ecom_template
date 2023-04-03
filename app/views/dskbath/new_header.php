@@ -20,7 +20,13 @@
 </head>
 
 <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
     body{
+        padding: 1vh 0;
         overflow-x: hidden;
     }
     p {

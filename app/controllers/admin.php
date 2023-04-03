@@ -4,11 +4,19 @@ class Admin extends Controller
 {
     
     public function index()
-    {
-        // add login functionality
-
+    {   
         $DB = Database::getInstance();
 
+        if(!isset($_SESSION['USER'])){
+            $this->view("admin/login");
+            $users = $DB->read("select * from users");
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            
+            die;
+        }
+
+        
         $orders = $DB->read("select count(*) as all_orders from orders");
         $data['orders'] = $orders[0];
         
