@@ -14,7 +14,6 @@
 	            <br>
 				<input type="password" name="password" class="form-control" placeholder="Password">
 				<br>
-		        
 				<button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
 	        </div>
 	    </form>	

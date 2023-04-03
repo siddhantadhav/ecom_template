@@ -12,31 +12,61 @@ class Admin extends Controller
             $users = $DB->read("select * from users");
             $username = $_POST['username'];
             $password = $_POST['password'];
-            
-            die;
+            foreach ($users as $user) {
+                if($user->username == $username){
+                    if($user->password == $password){
+                        $_SESSION['USER'] = $user->id;
+
+                        //
+                        $orders = $DB->read("select count(*) as all_orders from orders");
+                        $data['orders'] = $orders[0];
+                        
+                        $contacts = $DB->read("select count(*) as all_contacts from contacts where ordered = 0");
+                        $data['contacts'] = $contacts[0];
+                        
+                        $categories = $DB->read("select count(*) as all_categories from categories");
+                        $data['categories'] = $categories[0];
+                    
+                        $products = $DB->read("select count(*) as all_products from products");
+                        $data['products'] = $products[0];
+                        
+                        $users = $DB->read("select count(*) as all_users from users");
+                        $data['users'] = $users[0];
+
+                        $general_info = $DB->read("select * from general_info");
+                        $data['general_info'] = $general_info[0];
+
+                        $data['page_title'] = "Admin";
+                        $this->view("admin/index", $data);
+                    }
+                } 
+                else{
+                    echo "Unsucessful";
+                }
+            }
         }
 
         
-        $orders = $DB->read("select count(*) as all_orders from orders");
-        $data['orders'] = $orders[0];
+        // $orders = $DB->read("select count(*) as all_orders from orders");
+        // $data['orders'] = $orders[0];
         
-        $contacts = $DB->read("select count(*) as all_contacts from contacts where ordered = 0");
-        $data['contacts'] = $contacts[0];
+        // $contacts = $DB->read("select count(*) as all_contacts from contacts where ordered = 0");
+        // $data['contacts'] = $contacts[0];
         
-        $categories = $DB->read("select count(*) as all_categories from categories");
-        $data['categories'] = $categories[0];
+        // $categories = $DB->read("select count(*) as all_categories from categories");
+        // $data['categories'] = $categories[0];
        
-        $products = $DB->read("select count(*) as all_products from products");
-        $data['products'] = $products[0];
+        // $products = $DB->read("select count(*) as all_products from products");
+        // $data['products'] = $products[0];
         
-        $users = $DB->read("select count(*) as all_users from users");
-        $data['users'] = $users[0];
+        // $users = $DB->read("select count(*) as all_users from users");
+        // $data['users'] = $users[0];
 
-        $general_info = $DB->read("select * from general_info");
-        $data['general_info'] = $general_info[0];
+        // $general_info = $DB->read("select * from general_info");
+        // $data['general_info'] = $general_info[0];
 
-        $data['page_title'] = "Admin";
-        $this->view("admin/index", $data);
+        // $data['page_title'] = "Admin";
+        // $this->view("admin/index", $data);
     }
 
     public function categories()
