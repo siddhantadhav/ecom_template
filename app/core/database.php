@@ -1,22 +1,12 @@
 <?php
 
-
 Class Database{
 
     public static $conn;
     public function __construct() {
-    // For Hosting
-    //     try{
-    //         $string = DB_TYPE . ":host=" .DB_HOST . ";port=3306;dbname=" . DB_NAME;
-    //         self::$conn = new PDO($string, DB_USER, DB_PASSWORD);
-    //    }
-    //    catch (PDOException $e){
-    //         die($e->getMessage());
-    //    }
-        
        try{
             $string = DB_TYPE . ":host=" .DB_HOST . ";port=3306;dbname=" . DB_NAME;
-            self::$conn = new PDO($string, "root");
+            self::$conn = new PDO($string, DB_USER, DB_PASSWORD);
        }
        catch (PDOException $e){
             die($e->getMessage());

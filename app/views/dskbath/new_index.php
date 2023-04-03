@@ -75,6 +75,10 @@
             height: 22rem;
             width: 22rem;
         }
+        
+        .sec-para{
+            padding: 0 5vh !important; ;
+        }
     }
 </style>
 
@@ -122,7 +126,7 @@
     <div class="container-fluid"
          style="">
         <div class="row align-items-center">
-            <div class="col-lg-6 col-md-12 my-5"
+            <div class="col-lg-6 col-md-12 my-5 sec-para"
                  style="padding: 0 10vh ;">
                 <h2 class="display-4">Unfold Luxurious Experience</h2>
                 <p class="text-muted">
@@ -174,7 +178,7 @@
                 <div class="d-none d-md-block d-lg-block d-xl-block"
                      style="height: 7em; background-color: #eee; width: 30em; margin: auto auto"></div>
             </div>
-            <div class="col "
+            <div class="col sec-para"
                  style="padding: 0 10vh ;">
                 <h2 class="display-4">An Innovative Approach</h2>
                 <p class="text-muted">DSK has a wide range of bathroom products which are of High Standards, each of
@@ -294,7 +298,7 @@
 <section class="cc-section">
     <div class="container-fluid">
         <div class="row align-items-center justify-content-center">
-            <div class="col-lg-6 col-md-12 my-5"
+            <div class="col-lg-6 col-md-12 my-5 sec-para"
                  style="padding: 0 10vh ;">
                 <h2 class="display-4">Customer Centricity</h2>
                 <p class="text-muted">We render most high-grade experience to our customers. Providing the widest

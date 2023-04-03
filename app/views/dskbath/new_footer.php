@@ -42,7 +42,7 @@
             <img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png"
                  alt=""
                  class="img-fluid"
-                 style=" height: 10vh; ">
+                 style=" height: 10vh;padding-top: 3vh; ">
           </div>
           <p class="text-start"
              style="color: #eee;">DSK has wide range of bathroom products which are of High Standards, each of which has

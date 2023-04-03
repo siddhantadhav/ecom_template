@@ -35,12 +35,77 @@
 
 
     .nav-item {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .nav-link {
         color: rgb(60, 183, 186);
     }
+    
+    /*______________________*/
+    
+    nav {
+         width: 100%;
+         margin: 0 auto;
+         background: #fff;
+         padding: 50px 0;
+          box-shadow: 0px 5px 0px #dedede;
+        }
+   nav ul {
+          list-style: none;
+          text-align: center;
+       }
+  nav ul li {
+          display: inline-block;
+        }
+ nav ul li a {
+          display: block;
+          padding: 15px;
+          text-decoration: none;
+          color: #aaa;
+          font-weight: 100;
+           text-transform: uppercase;
+          margin: 0 10px;
+        }
+    nav ul li a,
+    nav ul li a:after,
+    nav ul li a:before {
+            transition: all .5s;
+         }
+    nav ul li a:hover {
+          color: #2596be;
+         }
+
+    nav.shift ul li a {
+      position:relative;
+     z-index: 1;
+    }
+   nav.shift ul li a:hover {
+       color: #27bdbe;
+   }
+    nav.shift ul li a:after {
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         bottom: 0;
+          right: 0;
+         margin: auto;
+         width: 100%;
+         height: 1px;
+         content: '.';
+         color: transparent;
+         background: #ffffff;
+         visibility: none;
+         opacity: 0;
+         z-index: -1;
+    }
+    nav.shift ul li a:hover:after {
+       opacity: 1;
+     visibility: visible;
+     height: 100%;
+    }
+    
 
     /* button */
 
@@ -85,13 +150,13 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shift">
             <a class="navbar-brand"
                href="<?=ROOT?>"><img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png"
                          alt=""
                          srcset=""
                          class="img-fluid"
-                         style="max-height:10vh"></a>
+                         style="max-height:10vh; margin-left: 20%;"></a>
             <button class="navbar-toggler"
                     type="button"
                     data-toggle="collapse"
