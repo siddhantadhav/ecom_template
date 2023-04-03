@@ -6,7 +6,11 @@ Class Database{
     public function __construct() {
        try{
             $string = DB_TYPE . ":host=" .DB_HOST . ";port=3306;dbname=" . DB_NAME;
-            self::$conn = new PDO($string, DB_USER, DB_PASSWORD);
+            // for server
+            // self::$conn = new PDO($string, DB_USER, DB_PASSWORD);
+
+            // for localhost
+            self::$conn = new PDO($string, DB_USER);
        }
        catch (PDOException $e){
             die($e->getMessage());
