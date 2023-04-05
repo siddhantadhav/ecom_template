@@ -3,8 +3,6 @@
 <style>
 	
 </style>
-
-
 <div id="login-page">
 	<div class="container">  	
 	    <form class="form-login" action="" method="post">

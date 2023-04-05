@@ -2,71 +2,42 @@
 
 class Admin extends Controller
 {
-    
-    public function index()
-    {   
+    public function index() {   
+        
         $DB = Database::getInstance();
-
-        if(!isset($_SESSION['USER'])){
+        if(isset($_SESSION['USER'])){
+            
+            $orders = $DB->read("select count(*) as all_orders from orders");
+            $data['orders'] = $orders[0];
+            
+            $contacts = $DB->read("select count(*) as all_contacts from contacts where ordered = 0");
+            $data['contacts'] = $contacts[0];
+            
+            $categories = $DB->read("select count(*) as all_categories from categories");
+            $data['categories'] = $categories[0];
+        
+            $products = $DB->read("select count(*) as all_products from products");
+            $data['products'] = $products[0];
+            
+            $users = $DB->read("select count(*) as all_users from users");
+            $data['users'] = $users[0];
+            $general_info = $DB->read("select * from general_info");
+            $data['general_info'] = $general_info[0];
+            $data['page_title'] = "Admin";
+            $this->view("admin/index", $data);
+        }
+        else{
             $this->view("admin/login");
-            $users = $DB->read("select * from users");
+            
             $username = $_POST['username'];
             $password = $_POST['password'];
-            foreach ($users as $user) {
-                if($user->username == $username){
-                    if($user->password == $password){
-                        $_SESSION['USER'] = $user->id;
+            
+            // Check into database for values
+            
+            $loggedIn = $DB->read("SELECT * FROM users WHERE username = 'developerCM3'");
+            show($loggedIn);
 
-                        //
-                        $orders = $DB->read("select count(*) as all_orders from orders");
-                        $data['orders'] = $orders[0];
-                        
-                        $contacts = $DB->read("select count(*) as all_contacts from contacts where ordered = 0");
-                        $data['contacts'] = $contacts[0];
-                        
-                        $categories = $DB->read("select count(*) as all_categories from categories");
-                        $data['categories'] = $categories[0];
-                    
-                        $products = $DB->read("select count(*) as all_products from products");
-                        $data['products'] = $products[0];
-                        
-                        $users = $DB->read("select count(*) as all_users from users");
-                        $data['users'] = $users[0];
-
-                        $general_info = $DB->read("select * from general_info");
-                        $data['general_info'] = $general_info[0];
-
-                        $data['page_title'] = "Admin";
-                        $this->view("admin/index", $data);
-                    }
-                } 
-                else{
-                    echo "Unsucessful";
-                }
-            }
-        }
-
-        
-        // $orders = $DB->read("select count(*) as all_orders from orders");
-        // $data['orders'] = $orders[0];
-        
-        // $contacts = $DB->read("select count(*) as all_contacts from contacts where ordered = 0");
-        // $data['contacts'] = $contacts[0];
-        
-        // $categories = $DB->read("select count(*) as all_categories from categories");
-        // $data['categories'] = $categories[0];
-       
-        // $products = $DB->read("select count(*) as all_products from products");
-        // $data['products'] = $products[0];
-        
-        // $users = $DB->read("select count(*) as all_users from users");
-        // $data['users'] = $users[0];
-
-        // $general_info = $DB->read("select * from general_info");
-        // $data['general_info'] = $general_info[0];
-
-        // $data['page_title'] = "Admin";
-        // $this->view("admin/index", $data);
+        }        
     }
 
     public function categories()
@@ -86,6 +57,8 @@ class Admin extends Controller
         $data['page_title'] = "Admin";
 
         $this->view("admin/categories", $data);
+
+
     }
 
     public function products($param = "")
