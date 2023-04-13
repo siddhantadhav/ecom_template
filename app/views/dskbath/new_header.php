@@ -26,9 +26,10 @@
     }
 
     body{
-        padding: 1vh 0;
+        padding: 0;
         overflow-x: hidden;
     }
+    
     p {
         font-size: 20px;
         font-family: sans-serif;
@@ -37,8 +38,6 @@
     section {
         margin-top: 10vh;
     }
-
-
 
     .nav-item {
         font-size: 1.2rem;

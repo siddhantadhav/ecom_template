@@ -72,7 +72,7 @@
                             <img src="<?= ASSETS . THEME ?>images/about/about_us_section_2.jpeg"
                                  alt=""
                                  class="img-fluid"
-                                 style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px; height: 100vh; width: 100%;">
+                                 style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px; width: 100%;">
                         </div>
                     </div>
                     <div class="col-1 gx-0 d-none d-xl-block d-lg-block d-md-block"
