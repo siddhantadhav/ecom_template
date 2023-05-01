@@ -14,8 +14,8 @@ class Page {
         ?>
         <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                    <a class="page-link" href="<?=self::links()->prev?>" tabindex="-1" style="color:rgb(36, 188, 189); font-weight: bold">Previous</a>
+                    <li class="page-item" style="<?= self::links()->current == 1 ? 'display:none' : '' ?>">
+                        <a class="page-link" href="<?=self::links()->prev?>" tabindex="-1" style="color:rgb(36, 188, 189); font-weight: bold">Previous</a>
                     </li>
                     <?php
                         $max = self::links()->current + 3;

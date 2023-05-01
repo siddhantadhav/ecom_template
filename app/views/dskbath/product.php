@@ -151,7 +151,7 @@
 </style>
 
 <div class="">
-    <img style="height: 80vh; width: 100%;"
+    <img style="width: 100%;"
          src="<?= ASSETS . THEME ?>images/home/slider/ambience.jpg"
          alt=""
          class="img-fluid">
