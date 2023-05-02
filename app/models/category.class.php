@@ -30,6 +30,8 @@ class Category
     }
     public function edit($data)
     {
+        
+        // die;
         $DB = Database::newInstance();
         if($data->parent != 0){
             $arr['parent'] = $data->parent;
@@ -39,9 +41,10 @@ class Category
         }
         $arr['id'] =  $data->id;
         $arr['category'] = $data->category;
+        // die;
         
         $query = "update categories set category = '$data->category', parent = $data->parent where id = $data->id limit 1";
-        $DB->write($query, $arr);
+        $DB->write($query);
     }
 
     public function delete($id)
