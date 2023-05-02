@@ -1,17 +1,6 @@
 <?php
 
 class User {
-    public function new_user($POST){
-
-    }
-
-    public function login($POST){
-
-    }
-    
-    public function get_user($url){
-        
-    }
     public function make_table($users) {
         $result = "";
         if(is_array($users)) {
@@ -29,5 +18,18 @@ class User {
             }
         }
         return $result;
+    }
+
+    public function new_login($username, $password){
+        $DB = Database::newInstance();
+        $users = $DB->read("select * from users");
+        foreach ($users as $user){
+            if($user->username == $username){
+                if($user->password == $password){
+                    return $user;
+                }
+            }
+        }
+        return false;
     }
 }

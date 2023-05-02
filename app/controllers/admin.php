@@ -10,6 +10,7 @@ class Admin extends Controller{
                 $user = $this->load_model('User');
                 $check_login = $user->new_login($_POST['username'], $_POST['password']);
                 if(is_object($check_login)){
+                    $_SESSION['USER'] = $check_login;
                     $this->index();
                 }
             }
@@ -49,6 +50,7 @@ class Admin extends Controller{
                 $user = $this->load_model('User');
                 $check_login = $user->new_login($_POST['username'], $_POST['password']);
                 if(is_object($check_login)){
+                    $_SESSION['USER'] = $check_login;
                     $this->categories();
                 }
             }
@@ -80,6 +82,7 @@ class Admin extends Controller{
                 $user = $this->load_model('User');
                 $check_login = $user->new_login($_POST['username'], $_POST['password']);
                 if(is_object($check_login)){
+                    $_SESSION['USER'] = $check_login;
                     $this->products();
                 }
             }
@@ -132,6 +135,7 @@ class Admin extends Controller{
                 $user = $this->load_model('User');
                 $check_login = $user->new_login($_POST['username'], $_POST['password']);
                 if(is_object($check_login)){
+                    $_SESSION['USER'] = $check_login;
                     $this->enquires();
                 }
             }
@@ -160,6 +164,7 @@ class Admin extends Controller{
                 $user = $this->load_model('User');
                 $check_login = $user->new_login($_POST['username'], $_POST['password']);
                 if(is_object($check_login)){
+                    $_SESSION['USER'] = $check_login;
                     $this->orders();
                 }
             }
@@ -189,6 +194,7 @@ class Admin extends Controller{
                 $user = $this->load_model('User');
                 $check_login = $user->new_login($_POST['username'], $_POST['password']);
                 if(is_object($check_login)){
+                    $_SESSION['USER'] = $check_login;
                     $this->users();
                 }
             }
