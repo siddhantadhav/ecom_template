@@ -363,6 +363,7 @@
                             name="lname"
                             placeholder="Doe">
                     </div>
+                </div>
                     <label for="email"
                            class="form-label">Email address</label>
                     <input type="email"
@@ -394,7 +395,7 @@
                               id="message"
                               placeholder="Message">
                     </textarea>
-                </div>
+                
                 <button class="btn btn-dark teal-btn button mt-3"
                         type="submit"
                         onclick="collect_cart_data(event)">Submit Enquiry
