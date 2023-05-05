@@ -9,7 +9,7 @@ class User {
                 $result .=
                     '<td>' . $user->id . '</td>' .
                     '<td>' . $user->username . '</td>' .
-                    '<td>' . $user->user_email . '</td>' .
+                    '<td>' . $user->email . '</td>' .
                     '<td>'.
                         '<button class="btn btn-primary btn-xs" onclick = "complete_order('.$user->id.')"><i class="fa fa-check"></i></button>'. ' ' .
                         '<button class="btn btn-danger btn-xs" onclick = "remove_order('.$user->id.')"><i class="fa fa-trash-o"></i></button>'.

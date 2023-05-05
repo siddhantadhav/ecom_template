@@ -33,6 +33,8 @@ class Page {
                 <?php
     }
 
+// Testing with Git on CPanel
+
     public static function generate($number){
         $number = (int) $number;
         $query_string = str_replace("url=", "", $_SERVER['QUERY_STRING']);

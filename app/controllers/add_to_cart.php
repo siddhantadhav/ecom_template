@@ -63,6 +63,9 @@ Class Add_to_cart extends Controller {
                 # code...
                 if($item['id'] == $id) {
                     $_SESSION['CART'][$key]['quantity'] -= 1;
+                    if($_SESSION['CART'][$key]['quantity']<1){
+                        $this->remove($id);
+                    }
                     break;
                 }
             }
