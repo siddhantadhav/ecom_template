@@ -247,9 +247,9 @@
                          style="width: 25%; height: 25%; border-radius: 50%; margin: 0 auto; ">
 
                     <h5 style="background-color :; height: 1.4em;"
-                        class="my-3 display-4 text-white p-2">Unique Elements</h5>
+                        class="my-3 display-4 text-white">Unique Elements</h5>
 
-                    <p class="card-text text-white p-5">Venture into a world of smooth and modernity with magnum products
+                    <p class="card-text text-white p-2">Venture into a world of smooth and modernity with magnum products
                         from the worlds finest gathering.</p>
                 </div>
             </div>
@@ -266,9 +266,9 @@
                          style="width: 25%; height: 25%; border-radius: 50%; margin: 0 auto; ">
 
                     <h5 style="background-color :; height: 1.4em;"
-                        class="my-3 display-4 text-white p-2">Beautiful Design</h5>
+                        class="my-3 display-4 text-white">Beautiful Design</h5>
 
-                    <p class="card-text text-white p-5">An ideal mix of smooth shapes, clean lines, and agile bends made
+                    <p class="card-text text-white p-2">An ideal mix of smooth shapes, clean lines, and agile bends made
                         particularly to glitz up bathing ranges</p>
                 </div>
             </div>
@@ -286,9 +286,9 @@
                          style="width: 25%; height: 25%; border-radius: 50%; margin: 0 auto; ">
 
                     <h5 style="height: 1.4em;"
-                        class="my-4 justify-content-center display-4 text-white p-2">Trendy Components</h5>
+                        class="my-4 justify-content-center display-4 text-white">Trendy Components</h5>
 
-                    <p class="card-text text-white p-5">The designs from this collection endeavor to carry you closer to
+                    <p class="card-text text-white p-2">The designs from this collection endeavor to carry you closer to
                         your desires and love for flawlessness.</p>
                 </div>
             </div>
