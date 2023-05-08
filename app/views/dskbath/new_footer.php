@@ -104,10 +104,9 @@
                   class="img-fluid"
                   style=" height: 15vh; padding-top: 3vh; ">
             </div>
-            <p
-             style="color:black;">DSK has wide range of bathroom products which are of High Standards, each of which has
+            <p class="text-muted">DSK has wide range of bathroom products which are of High Standards, each of which has
             been designed and evolved through keen market study and 26 Years of Experience.</p>
-          <a href="<?= ROOT ?>about"><button class="button button-footer" style="float: none;">Know More</button> <br></button></a>
+          <a href="<?= ROOT ?>about"><button class="button" style="float: none;">Know More</button> <br></button></a>
         </div>
         <!--Grid column-->
 
@@ -115,15 +114,15 @@
         <div class="col-lg-4 col-md-12 col-sm-12 footerrow" style="background-color: #E5E5E5;">
           <h5 class="text-uppercase footer-cat-head pb-3 pt-3">Product Categories</h5>
             <ul class="list-unstyled mb-0 footer-cat"
-                style="color:black;">
+                style="">
                <?php if (isset($categories) && is_array($categories)): ?>
                  <?php foreach ($categories as $category):
                   if ($category->parent > 0) {
                     continue;
                   } ?>
-                  <li class="pb-1">
+                  <li class="pb-">
                  <a href="<?=ROOT .'product/category/'. $category->category?>"
-                  class=" text-decoration-none"><?php
+                  class=" text-decoration-none text-muted"><?php
                   $replaced_str = str_replace("_", " ", $category->category);
                   echo ucwords($replaced_str)?></a>
                  </li>
@@ -134,11 +133,11 @@
         <!--Grid column-->
 
         <!--Grid column-->
-        <div class="col-lg-4 col-md-12 col-sm-12"  style="background-color:rgba(238,238,238,255);">
+        <div class="col-lg-4 col-md-12 col-sm-12 pb-2"  style="background-color:rgba(238,238,238,255);">
           <h5 class="text-uppercase pt-3 pb-3">Contact Us</h5>
-          <p class="" style="color:black;">Factory:</p>
-          <p class="" style="color:black;">DSK Bath Solutions, GIDC Phase 3, Dared, Jamnagar, Gujrat-361004.</p>
-          <p class="" style="color:black;">Phone: 07021632636</p>
+          <p class="text-muted" style="">Factory:</p>
+          <p class="text-muted" style="">DSK Bath Solutions, GIDC Phase 3, Dared, Jamnagar, Gujrat-361004.</p>
+          <p class="text-muted" style="">Phone: 07021632636</p>
            <div class="social">
               <h1>Follow us</h1>
               <div class="Social-media">
