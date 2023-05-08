@@ -1,0 +1,77 @@
+Categories
+
+1. Shower Solutions
+	a. Ceiling Shower
+	b. Diverters
+	c. Body Jets and Shower Rails
+2. Overhead Showers
+3. Hand Showers
+4. Bath fittings
+	a. Matrix
+	b. Qube
+	c. Capsule
+	d. Flow
+	e. Loop
+	f. Fusion
+	g. Onyx
+	h. Classic
+	i. Live
+	j. Prime
+	k. Cross
+	l. Curve
+	m. Deluxe
+	n. Mouth Operating Round/ Square ..
+	o. Mixer Accessories
+	p. Spout
+5. Allied products
+6. Drainers
+7. Kitchen Solutions
+8. Accessories
+9. Automatic Pressure Pumps
+
+
+
+Tasks
+
+Website
+1. Send contact us data to database (Done)
+2. Enquiry cart UI (Done)
+3. Enquiry cart information to Database (Done)
+4. Single product~	(Done)
+5. Footer (Done)
+6. Work on responsiveness and footer
+7. Product and product detail page
+
+Admin panel
+1. Dashboard
+2. Displaying enquiries information  (Done)
+3. Slider Images/ Settings
+4. Manage users + login functionality
+6. Website backup
+7. Add SKU for product (Done)
+8. Add new product image  (Done)
+
+
+Product
+
+ID (auto)
+Description
+Category
+slug (auto)
+image (mandatory)
+array of tags
+
+default color -> chrome (first image)
+Rose Gold
+Matt Black
+Brushed Bronze
+Gold
+
+
+
+
+
+
+
+
+

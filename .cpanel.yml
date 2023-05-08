@@ -1,0 +1,4 @@
+deployment:
+    tasks:
+        - export DEPLOYPATH=/home/creatrzy/testing.dskbath.com/
+        - /bin/cp - R * $DEPLOYPATH
