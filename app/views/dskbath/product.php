@@ -256,7 +256,7 @@
                             
                                 <!-- Category with child  -->
                                 <li>
-                                    <a href="<?=in_array($category->id, $parents) ? '#' . $category->category : ROOT .'product/category/'. $category->category?>" data-bs-toggle="collapse"  aria-expanded="false" class="nav-link px-0 align-middle text-black"
+                                    <a href="<?=in_array($category->id, $parents) ? '#' . $category->category : ROOT .'product/category/'. $category->category?>" data-bs-toggle="collapse"  aria-expanded="false" class="nav-link px-0 align-middle text-muted"
                                     <?php if(!in_array($category->id, $parents)): ?> 
                                         onclick = "window.open(this.href,'_self')"
                                     <?php endif; ?> > 
