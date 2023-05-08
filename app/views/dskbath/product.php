@@ -202,7 +202,7 @@
                                     <?php if(in_array($category->id, $parents)): ?>
                                     <ul class="collapse nav flex-column ms-1" id="<?=$category->category?>" data-bs-parent="#menu">  
                                         <li class="w-100">
-                                            <a href="<?=ROOT .'product/category/'. $category->category?>" class="nav-link px-0 "> <span class="d-sm-inline text-black display-2">All Products</span></a>
+                                            <a href="<?=ROOT .'product/category/'. $category->category?>" class="nav-link px-0 display-2"> <span class="d-sm-inline text-black">All Products</span></a>
                                             <?php foreach ($categories as $sub_cat): ?>
                                                 <?php if ($sub_cat->parent == $category->id): ?>
                                                     <a href="<?=ROOT .'product/category/'. $category->category.'/'.$sub_cat->category?>" class="nav-link px-0 text-black"> <span class="d-sm-inline"><?php $sub_cat->category = str_replace('_', ' ', $sub_cat->category); echo ucwords($sub_cat->category)?></span></a>
@@ -228,7 +228,7 @@
                                 <a href="<?= ROOT .'product/color/'. $color->color ?>"
                                    data-bs-toggle="collapse"
                                    onclick = "window.open(this.href,'_self')"
-                                   class="nav-link px-0 align-middle text-black">
+                                   class="nav-link px-0 align-middle text-muted">
                                    
                                    <span class="dot " style="background-color: rgb(<?=$color->red?>, <?=$color->green?>, <?=$color->blue?>);"></span>
                                     <span class="ms-1 d-sm-inline align-self-start">
@@ -256,7 +256,7 @@
                             
                                 <!-- Category with child  -->
                                 <li>
-                                    <a href="<?=in_array($category->id, $parents) ? '#' . $category->category : ROOT .'product/category/'. $category->category?>" data-bs-toggle="collapse"  aria-expanded="false" class="nav-link px-0 align-middle text-muted"
+                                    <a href="<?=in_array($category->id, $parents) ? '#' . $category->category : ROOT .'product/category/'. $category->category?>" data-bs-toggle="collapse"  aria-expanded="false" class="nav-link px-0 align-middle text-black"
                                     <?php if(!in_array($category->id, $parents)): ?> 
                                         onclick = "window.open(this.href,'_self')"
                                     <?php endif; ?> > 

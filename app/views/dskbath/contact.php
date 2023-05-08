@@ -42,8 +42,8 @@
                                         </div>
                                         <div class="text">
                                         <p class="" style="">Visit our location</p>
-                                        <h3 class="text-muted">DSK Bath Solutions, GIDC Phase 3,
-                                            Dared, Jamnagar, Gujrat-361004.</h3>
+                                        <p class="text-muted">DSK Bath Solutions, GIDC Phase 3,
+                                            Dared, Jamnagar, Gujrat-361004.</p>
                                         </div>
                                     </li>
                                     <li class="contact pb-5" style="border-bottom: solid rgb(36, 188, 189)">
@@ -52,7 +52,7 @@
                                         </div>
                                     <div>
                                        <p>Have any questions?</p>
-                                       <h3 class="text-muted">Phone: <a href="tel: +917021632636">07021632636</a></h3>
+                                       <p>Phone: <a href="tel: +917021632636" class="text-muted">07021632636</a></p>
                                     </div>
                                     </li>
                                 </ul>

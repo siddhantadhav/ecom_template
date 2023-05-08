@@ -50,6 +50,11 @@
         font-family: 'Lora', serif;
     }
 
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+
     section {
         margin-top: 10vh;
     }

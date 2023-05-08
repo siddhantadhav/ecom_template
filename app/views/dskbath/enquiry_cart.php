@@ -258,12 +258,12 @@
             </div>
         </div>
     </div> -->
-
-    <div class="container-fluid rounded cart">
+a
+    <div class="container-fluid rounded cart p-3">
         <div class="row mt-3 mb-3">
             <!-- cart -->
             <div class="col-lg-8 col-md-12">
-                <h6 class="display-4 text-center" style="color:#24bcbd">Shopping Cart</h6>
+                <h6 class="display-2 text-center" style="color:#24bcbd">Shopping Cart</h6>
                 <div class="text-center mb-4">
                     <?php if($ROWS): ?>
                         <span>You have <?= count($ROWS) ?> items in your cart</span>
