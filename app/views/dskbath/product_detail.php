@@ -189,7 +189,7 @@
         <div class="col-md-12">
             <section class="panel">
                 <div class="panel-body">
-                    <h1 class="text-center display-4" style="color: rgb(60, 183, 186);">Product Details | <?=$ROW->name?></h1>
+                    <h1 class="text-center display-2" style="color: rgb(60, 183, 186);">Product Details | <?=$ROW->name?></h1>
                     <div class="row">
                         <div class="col-lg-10 col-md-12 text-center">
                             <div class="pro-img-details">
@@ -198,7 +198,7 @@
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-12 mt-5">
-                            <h2 class="display-6"><?= $ROW->name;?></h2>
+                            <h2 class="display-5"><?= $ROW->name;?></h2>
                             <p class="text-muted"><?= $ROW->description ?></p>
                             <p class="text-muted">SKU: <?= $ROW->sku ?></p>
                             <div class="product_meta">
@@ -224,7 +224,7 @@
                                 <?php endif;?>
                             </div>
                             <div class="form-group">
-                                <label class="display-6" style="color: rgb(60, 183, 186);">Quantity</label>
+                                <label class="display-5" style="color: rgb(60, 183, 186);">Quantity</label>
                                 <input type="number"
                                        placeholder=""
                                        name="cart_qty_product_detail"
@@ -241,7 +241,7 @@
                 </div>
             </section>
             <div class="row mt-5">
-                <h2 class="display-6 text-decoration-underline">Related Products</h2>
+                <h2 class="display-4 text-decoration-underline">Related Products</h2>
                 <div class="row justify-content-start">
                     <?php foreach($related_products as $related_product): ?>
                         <!-- Single Product -->
