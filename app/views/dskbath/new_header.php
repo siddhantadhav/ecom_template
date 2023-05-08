@@ -46,7 +46,7 @@
     }
     
     p {
-        font-size: 1.3vw;
+        font-size: 18px;
         font-family: 'Lora', serif;
     }
 
@@ -229,30 +229,27 @@
 
     .display-1{
         font-weight: 700;
-        font-size: 3.3vw;
+        font-size: 3.1rem;
     }
     .display-2{
         font-weight: 600;
-        font-size: 3vw;
+        font-size: 2.9rem;
     }
     .display-3{
         font-weight: 500;
-        font-size: 2vw;
+        font-size: 2.7rem;
     }
     .display-4{
         font-weight: 400;
-        font-size: 1.8vw;
+        font-size: 2.5rem;
     }
     .display-5{
         
-        font-size: 1.6vw;
+        font-size: 2.3rem;
     }
     .display-6{
         
-        font-size: 1.4vw;
-    }
-    .txt{
-        font-size: 1vw;
+        font-size: 2.1rem;
     }
 </style>
 </style>
@@ -260,7 +257,7 @@
 <body>
     <header>
           <!-- Copyright -->
-  <div class="p-3 text-black display-6"
+  <div class="p-3 text-black"
        style="background-color: rgb(36, 188, 189,0.5);">
       <i class="bi bi-geo-alt-fill"></i> <span>DSK Bath Solutions, GIDC Phase 3, Dared, Jamnagar, Gujrat-361004</span>
       <a href="tel: +917021632636" style="text-decoration: none; color:black; float:right;"> <i class="bi bi-telephone-plus-fill"></i> <span> 07021632636 </span></a>
@@ -285,7 +282,7 @@
 
             <div class="collapse navbar-collapse justify-content-end"
                  id="navbarSupportedContent" style="padding-right: 5%;">
-                <ul class="navbar-nav ml-auto  display-5">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item text-end active">
                         <a class="nav-link navbtn"
                            href="<?= ROOT ?>"> Home <span class="sr-only">(current)</span></a>
