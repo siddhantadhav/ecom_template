@@ -9,12 +9,12 @@
 
     #counter {
         color: rgb(36, 188, 189);
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     #counter_cleint {
         color: rgb(36, 188, 189);
-        font-size: 5rem;
+        font-size: 4rem;
     }
 </style>
 <div>
@@ -30,10 +30,10 @@
                 <h1 class="display-2"
                     style="color: rgb(36, 188, 189);" data-aos="fade-up"
      data-aos-duration="1000">About Us</h1>
-                <h2 class="display-5"
+                <h2 class="display-3"
                     style="color: rgb(110, 110, 110);" data-aos="fade-up"
      data-aos-duration="1000">Introduction To Our Core Purpose</h2>
-                <p class="display-5"
+                <p class="display-4"
                    style="color: rgb(36, 188, 189);" data-aos="fade-up"
      data-aos-duration="1000">Enthusiastically endeavor and enhance customer's quality of life.
                 </p>
@@ -90,10 +90,10 @@
             </div>
 
             <div class="col mt-5">
-                <span class="display-5"
+                <span class="display-4"
                       style="background-color: rgb(36, 188, 189); color: white;" data-aos="fade-up"
      data-aos-duration="1000">True facts </span>
-                <h2 class="display-4" data-aos="fade-up"
+                <h2 class="display-3" data-aos="fade-up"
      data-aos-duration="1000">Whats makes us different?</h2>
                 <p class="text-muted" data-aos="fade-up"
      data-aos-duration="1000">DSK has created a niche for itself in the segment of bathroom fittings, making it
