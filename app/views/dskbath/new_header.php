@@ -267,13 +267,13 @@
       <a href="tel: +917021632636" style="text-decoration: none; color:black; float:right;"> <i class="bi bi-telephone-plus-fill"></i> <span> 07021632636 </span></a>
   </div>
   <!-- Copyright -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shift p-2">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shift p-3">
             <a class="navbar-brand"
                href="<?=ROOT?>"><img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png"
                          alt=""
                          srcset=""
                          class="img-fluid"
-                         style="max-height:10vh; margin-left: 20%;"></a>
+                         style="max-height:10vh;"></a>
             <button class="navbar-toggler"
                     type="button"
                     data-toggle="collapse"
