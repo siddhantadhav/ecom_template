@@ -27,15 +27,26 @@
         color: #444444;
     }
 
-    .section-products .single-product {
+    /* .section-products .single-product {
         margin-bottom: 26px;
+    } */
+
+    .section-products .product-box {
+        border: 2px solid rgb(60, 183, 186);
+        transition: all .5s ease-in-out;
+    }
+
+    .section-products .product-box:hover {
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+        /* border: none; */
+        transform: scale(1.05);
     }
 
     .section-products .single-product .part-1 {
         position: relative;
         height: 290px;
         max-height: 290px;
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
         overflow: hidden;
     }
 
@@ -109,7 +120,7 @@
     }
 
     .section-products .single-product .part-1 ul li a:hover {
-        color: #fe302f;
+        color: #24bcbd;
     }
 
     .section-products .single-product .part-2 .product-title {
@@ -160,10 +171,9 @@
 <div class="container-fluid">
     <div class="row">
         <a class="d-lg-none d-md-none text-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" style="color: rgb(24 149 150);"><i class="fa fa-2x fa-sliders"></i></a>
-
         <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
         <div class="offcanvas-header">
-            <h2 class="offcanvas-title display-6" id="offcanvasWithBothOptionsLabel" style="">Categories</h2>
+            <h2 class="offcanvas-title display-5" id="offcanvasWithBothOptionsLabel" style="">Categories</h2>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -192,7 +202,7 @@
                                     <?php if(in_array($category->id, $parents)): ?>
                                     <ul class="collapse nav flex-column ms-1" id="<?=$category->category?>" data-bs-parent="#menu">  
                                         <li class="w-100">
-                                            <a href="<?=ROOT .'product/category/'. $category->category?>" class="nav-link px-0 "> <span class="d-sm-inline text-black">All Products</span></a>
+                                            <a href="<?=ROOT .'product/category/'. $category->category?>" class="nav-link px-0 display-2"> <span class="d-sm-inline text-black">All Products</span></a>
                                             <?php foreach ($categories as $sub_cat): ?>
                                                 <?php if ($sub_cat->parent == $category->id): ?>
                                                     <a href="<?=ROOT .'product/category/'. $category->category.'/'.$sub_cat->category?>" class="nav-link px-0 text-black"> <span class="d-sm-inline"><?php $sub_cat->category = str_replace('_', ' ', $sub_cat->category); echo ucwords($sub_cat->category)?></span></a>
@@ -218,7 +228,7 @@
                                 <a href="<?= ROOT .'product/color/'. $color->color ?>"
                                    data-bs-toggle="collapse"
                                    onclick = "window.open(this.href,'_self')"
-                                   class="nav-link px-0 align-middle text-black">
+                                   class="nav-link px-0 align-middle text-muted">
                                    
                                    <span class="dot " style="background-color: rgb(<?=$color->red?>, <?=$color->green?>, <?=$color->blue?>);"></span>
                                     <span class="ms-1 d-sm-inline align-self-start">
@@ -235,7 +245,7 @@
         <div class="col-lg-2 col-md-3 col-sm-12 d-none d-lg-block d-md-block" id="sidebar_collapse">
             <!-- category -->
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
-                <span class="fs-5 d-sm-inline text-black " ><h2 class="display-5">Categories</h2> </span>
+                <span class="fs-5 d-sm-inline text-black " ><h2 class="display-4">Categories</h2> </span>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         <?php if (isset($categories) && is_array($categories)): ?>
                             <?php foreach ($categories as $category):
@@ -246,7 +256,7 @@
                             
                                 <!-- Category with child  -->
                                 <li>
-                                    <a href="<?=in_array($category->id, $parents) ? '#' . $category->category : ROOT .'product/category/'. $category->category?>" data-bs-toggle="collapse"  aria-expanded="false" class="nav-link px-0 align-middle text-black"
+                                    <a href="<?=in_array($category->id, $parents) ? '#' . $category->category : ROOT .'product/category/'. $category->category?>" data-bs-toggle="collapse"  aria-expanded="false" class="nav-link px-0 align-middle text-muted"
                                     <?php if(!in_array($category->id, $parents)): ?> 
                                         onclick = "window.open(this.href,'_self')"
                                     <?php endif; ?> > 
@@ -280,7 +290,7 @@
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
                 <a href="/"
                    class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none text-black ">
-                    <span class="fs-5 d-sm-inline sidebar_heading"><h2 class="display-5">Colors</h2></span>
+                    <span class="fs-5 d-sm-inline sidebar_heading"><h2 class="display-4">Colors</h2></span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                     id="menu">
@@ -290,7 +300,7 @@
                                 <a href="<?= ROOT .'product/color/'. $color->color ?>"
                                    data-bs-toggle="collapse"
                                    onclick = "window.open(this.href,'_self')"
-                                   class="nav-link px-0 align-middle text-black">
+                                   class="nav-link px-0 align-middle text-muted">
                                    
                                    <span class="dot " style="background-color: rgb(<?=$color->red?>, <?=$color->green?>, <?=$color->blue?>);"></span>
                                     <span class="ms-1 d-sm-inline align-self-start">
@@ -313,14 +323,14 @@
                 <div class="container">
                     <div class="row justify-content-center text-center">
                         <div class="col-md-8 col-lg-6">
-                            <h2 class="display-1 bold" style="text-decoration: underline;">All Products</h2>
+                            <h2 class="display-2">All Products</h2>
                         </div>
                     </div>
                     <div class="row justify-content-center">
                         <!-- Single Product -->
                         <?php if (isset($ROWS) && is_array($ROWS)): ?>
                             <?php foreach ($ROWS as $row): ?>
-                                <div class="col-md-6 col-lg-4 col-xl-3" style="border: 5px solid rgb(60, 183, 186); margin: 2vh;">
+                                <div class="col-md-6 col-lg-4 col-xl-3 product-box" style="margin: 2vh; padding:0px;">
                                     <a href="<?= ROOT . "product_detail/" ?><?= $row->slug ?>">
                                         <div id="product-1" class="single-product">
                                             <div class="part-1">
@@ -332,12 +342,12 @@
                                         <li><a href="<?= ROOT . "product_detail/" ?><?= $row->slug ?>"><i class="fa fa-expand"></i></a></li>
                                     </ul>
                                 </div>
-                                <div class="part-2">
+                                <div class="part-2" style="padding:12px">
                                     <h3 class="product-title text-muted" style="font-size: 1.2rem;"><?= $row->name ?></h3>
                                     <h4 class="text-muted" style="font-size: 1.2rem;"><?= $row->description ?></h4>
                                     <h6 class="text-muted">SKU: <?= $row->sku ?></h6>
                                 </div>
-                                <div>
+                                <div style="padding:12px">
                                     <?php if($row->variations >0): ?> 
                                         <?php $variations = $this->get_color_variations($row); ?>
                                         <?php foreach ($variations as $varcolor): ?>
