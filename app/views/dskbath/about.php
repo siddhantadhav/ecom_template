@@ -27,20 +27,25 @@
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12">
-                <h1 class="display-1"
-                    style="color: rgb(36, 188, 189);">About Us</h1>
-                <h2 class="display-6"
-                    style="color: rgb(110, 110, 110);">Introduction To Our Core Purpose</h2>
-                <p class="display-6"
-                   style="color: rgb(36, 188, 189);">Enthusiastically endeavor and enhance customer's quality of life.
+                <h1 class="display-2"
+                    style="color: rgb(36, 188, 189);" data-aos="fade-up"
+     data-aos-duration="1000">About Us</h1>
+                <h2 class="display-5"
+                    style="color: rgb(110, 110, 110);" data-aos="fade-up"
+     data-aos-duration="1000">Introduction To Our Core Purpose</h2>
+                <p class="display-5"
+                   style="color: rgb(36, 188, 189);" data-aos="fade-up"
+     data-aos-duration="1000">Enthusiastically endeavor and enhance customer's quality of life.
                 </p>
-                <p class="text-muted medium">We have constantly invigorated and realigned our business technique
+                <p class="text-muted medium" data-aos="fade-up"
+     data-aos-duration="1000">We have constantly invigorated and realigned our business technique
                     tuned in to the changing desires of clients to reveal technology-driven Innovative products,
                     born out of meticulous research and market bits of knowledge.</p>
             </div>
-            <div class="col">
+            <div class="col" data-aos="fade-left"
+     data-aos-duration="1000">
 
-                <div class="row">
+                <div class="row mt-5">
                     <div class="col-1 gx-0 d-none d-md-block d-lg-block d-xl-block"
                          style="background-color: #eee; margin-bottom: 10vh;"></div>
                     <div class="col gx-0"
@@ -62,7 +67,8 @@
 <section>
     <div class="container-fluid">
         <div class="row align-items-center">
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-6 col-md-12" data-aos="fade-right"
+     data-aos-duration="1000">
 
                 <div class="row">
                     <div class="col gx-0"
@@ -76,7 +82,7 @@
                         </div>
                     </div>
                     <div class="col-1 gx-0 d-none d-xl-block d-lg-block d-md-block"
-                         style="background-color: #eee; height:90vh; z-index: -1;"></div>
+                         style="background-color: #eee; z-index: -1; margin-bottom:10vh;"></div>
                 </div>
 
 
@@ -84,13 +90,17 @@
             </div>
 
             <div class="col mt-5">
-                <span class="display-6"
-                      style="background-color: rgb(36, 188, 189); color: white;">True facts </span>
-                <h2 class="display-4">Whats makes us different?</h2>
-                <p class="text-muted">DSK has created a niche for itself in the segment of bathroom fittings, making it
+                <span class="display-5"
+                      style="background-color: rgb(36, 188, 189); color: white;" data-aos="fade-up"
+     data-aos-duration="1000">True facts </span>
+                <h2 class="display-4" data-aos="fade-up"
+     data-aos-duration="1000">Whats makes us different?</h2>
+                <p class="text-muted" data-aos="fade-up"
+     data-aos-duration="1000">DSK has created a niche for itself in the segment of bathroom fittings, making it
                     today the
                     undisputed brand in the Indian Bathroom Fittings Market.</p>
-                <p class="text-muted">DSK has a wide range of bathroom products which are of High Standards, each of
+                <p class="text-muted" data-aos="fade-up"
+     data-aos-duration="1000">DSK has a wide range of bathroom products which are of High Standards, each of
                     which has been
                     designed and evolved through keen market study and 26 Years of Experience. All items are
                     designed
@@ -101,11 +111,13 @@
                     sleek, innovative and attractive products. Helping you make your bathroom experience the
                     best.</p>
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <p id="counter">0</p>
+                    <div class="col-lg-6 col-md-6 col-sm-12" data-aos="zoom-in"
+     data-aos-duration="1000">
+                        <p id="counter" >0</p>
                         <span style="font-size: 2.5rem; color: rgb(36, 188, 189);"> + Products</span>
                     </div>
-                    <div class="col">
+                    <div class="col" data-aos="zoom-in"
+     data-aos-duration="1000">
                         <p id="counter_cleint">0</p>
                         <span style="font-size: 2.5rem; color: rgb(36, 188, 189)"> + Client Works</span>
                     </div>
@@ -155,4 +167,8 @@
 
 </script>
 
+<script>
+  AOS.init();
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <?php $this->view("new_footer", $data); ?>

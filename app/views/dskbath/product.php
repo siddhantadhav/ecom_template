@@ -27,15 +27,26 @@
         color: #444444;
     }
 
-    .section-products .single-product {
+    /* .section-products .single-product {
         margin-bottom: 26px;
+    } */
+
+    .section-products .product-box {
+        border: 2px solid rgb(60, 183, 186);
+        transition: all .5s ease-in-out;
+    }
+
+    .section-products .product-box:hover {
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+        /* border: none; */
+        transform: scale(1.05);
     }
 
     .section-products .single-product .part-1 {
         position: relative;
         height: 290px;
         max-height: 290px;
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
         overflow: hidden;
     }
 
@@ -109,7 +120,7 @@
     }
 
     .section-products .single-product .part-1 ul li a:hover {
-        color: #fe302f;
+        color: #24bcbd;
     }
 
     .section-products .single-product .part-2 .product-title {
@@ -160,10 +171,9 @@
 <div class="container-fluid">
     <div class="row">
         <a class="d-lg-none d-md-none text-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" style="color: rgb(24 149 150);"><i class="fa fa-2x fa-sliders"></i></a>
-
         <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
         <div class="offcanvas-header">
-            <h2 class="offcanvas-title display-6" id="offcanvasWithBothOptionsLabel" style="">Categories</h2>
+            <h2 class="offcanvas-title display-5" id="offcanvasWithBothOptionsLabel" style="">Categories</h2>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -313,14 +323,14 @@
                 <div class="container">
                     <div class="row justify-content-center text-center">
                         <div class="col-md-8 col-lg-6">
-                            <h2 class="display-1 bold" style="text-decoration: underline;">All Products</h2>
+                            <h2 class="display-2">All Products</h2>
                         </div>
                     </div>
                     <div class="row justify-content-center">
                         <!-- Single Product -->
                         <?php if (isset($ROWS) && is_array($ROWS)): ?>
                             <?php foreach ($ROWS as $row): ?>
-                                <div class="col-md-6 col-lg-4 col-xl-3" style="border: 5px solid rgb(60, 183, 186); margin: 2vh;">
+                                <div class="col-md-6 col-lg-4 col-xl-3 product-box" style="margin: 2vh; padding:0px;">
                                     <a href="<?= ROOT . "product_detail/" ?><?= $row->slug ?>">
                                         <div id="product-1" class="single-product">
                                             <div class="part-1">
@@ -332,12 +342,12 @@
                                         <li><a href="<?= ROOT . "product_detail/" ?><?= $row->slug ?>"><i class="fa fa-expand"></i></a></li>
                                     </ul>
                                 </div>
-                                <div class="part-2">
+                                <div class="part-2" style="padding:12px">
                                     <h3 class="product-title text-muted" style="font-size: 1.2rem;"><?= $row->name ?></h3>
                                     <h4 class="text-muted" style="font-size: 1.2rem;"><?= $row->description ?></h4>
                                     <h6 class="text-muted">SKU: <?= $row->sku ?></h6>
                                 </div>
-                                <div>
+                                <div style="padding:12px">
                                     <?php if($row->variations >0): ?> 
                                         <?php $variations = $this->get_color_variations($row); ?>
                                         <?php foreach ($variations as $varcolor): ?>

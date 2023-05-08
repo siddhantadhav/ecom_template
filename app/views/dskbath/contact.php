@@ -8,27 +8,61 @@
         .contact-section{
             margin-top: 0;;
     }
+}
+@media only screen and (max-width: 992px) {
+        .contact{
+            border-bottom:none;
+         }
     }
     
 </style>
 
 <body>
+<div>
+     <img style="width: 100%;" src="<?=ASSETS . THEME?>images/contact/contact-us1.jpg" alt="" class="img-fluid">
+</div>
     <div class="container-fluid"
          style="height: 10vh; <!-- Add background image -->">
-        <h1 class="text-center display-1" style="color: rgb(60, 183, 186)">Contact Us</h1></div>
+        <h1 class="text-center display-2" style="color: rgb(60, 183, 186)">Contact Us</h1></div>
         <section class="contact-section">
-            <div class="container-fluid" >
+            <div class="container" >
                 <div class="row">
-                    <div class="col-lg-5 col-md-12" >
-                        <img style="width: 100%;" src="<?=ASSETS . THEME?>images/contact/contact.jpeg" alt="" class="img-fluid">
+                    <div class="col-lg-5 col-md-12" style="margin-right: 45px;" >
+                    <p class="" style="">Get in Tocuh with us</p>
+                    <h2 class="pb-3">Contact with the Team</h2>
+
                         <!-- <i class="fa fa-map-marker fa-4x"
                            aria-hidden="true"></i> -->
-                        <h2 class="display-6" style="">Factory</h2>
-                        <p class="text-muted">DSK Bath Solutions, GIDC Phase 3,
-                            Dared, Jamnagar, Gujrat-361004.</p>
-                        <p class="text-muted">Phone: <a href="tel: +917021632636">07021632636</a></p>
+
+                           <div class="contact-info-list">
+                                <ul style="list-style: none; margin: 0; padding: 0;">
+                                    <li  class="pb-5" style="position: relative; display: block; margin-bottom: 20px; border-bottom:solid rgb(36, 188, 189);">
+                                        <div class="icon">
+                                        <span style="color:rgb(36, 188, 189);"><img src="<?= ASSETS . THEME ?>images/icons/location-icon.png" style="height: 5vh; " class="img-fluid"></span>
+                                        </div>
+                                        <div class="text">
+                                        <p class="" style="">Visit our location</p>
+                                        <h3 class="text-muted">DSK Bath Solutions, GIDC Phase 3,
+                                            Dared, Jamnagar, Gujrat-361004.</h3>
+                                        </div>
+                                    </li>
+                                    <li class="contact pb-5" style="border-bottom: solid rgb(36, 188, 189)">
+                                    <div class="icon" styele=" ">
+                                        <span><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page-03.png" style="height: 5vh;" class="img-fluid"></span>
+                                        </div>
+                                    <div>
+                                       <p>Have any questions?</p>
+                                       <h3 class="text-muted">Phone: <a href="tel: +917021632636">07021632636</a></h3>
+                                    </div>
+                                    </li>
+                                </ul>
+                           </div>
+                          <div>
+                          </div>
                     </div>
-                    <div class="col">
+                    <div class="col p-5" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;background-color: rgba(238,238,238,255);;border-top: 15px solid rgb(36, 188, 189);">
+                       <h6 class="text-center" style="">Write Message</h6>
+                       <h2 class="text-center">Send a Message</h2>
                         <div class="row">
                             <div class="col">
                                 <input type="text"
