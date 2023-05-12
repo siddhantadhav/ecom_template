@@ -20,7 +20,7 @@
   }
 
   .social h1 {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: normal;
     font-size: 25px;
     letter-spacing: 4px;

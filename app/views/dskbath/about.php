@@ -19,7 +19,14 @@
     .btn:hover{
         background-color: white;
         border-color:white;
-        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;   }
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;   
+    }
+    @media only screen and (max-width: 768px) {
+        .query-txt, .query-btn{
+            display: grid;
+            justify-content: center;
+        }
+    }
 </style>
 <div>
     <img src="<?= ASSETS . THEME ?>images/about/about_us_banner.jpg"
@@ -132,14 +139,14 @@
 </section>
 
 <section style="background-color: rgb(36, 188, 189)">
-    <div class="row align-items-center justifty-content-center"
+    <div class="row"
          style="padding: 2vh">
-        <div class="col-8 ">
-            <h4 class="text-end"
+        <div class="col-lg-8 col-md-12 col-sm-12">
+            <h4 class="text-end query-txt"
                 style="color: white">For any further details or inquiries, Please contact Here!</h4>
         </div>
-        <div class="col">
-            <a href="<?= ROOT ?>contact">
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <a href="<?= ROOT ?>contact" class="query-btn">
                 <button type="button"
                         class="btn btn-light"
                         style="color: rgb(36, 188, 189)">Contact Us</button></a>

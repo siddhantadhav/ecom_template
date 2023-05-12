@@ -30,24 +30,22 @@
 </head>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
-    /* @import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@200;300;400;500;600;700&display=swap'); */
-    @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
     *{
         margin: 0;
         padding: 0;
-        
+        font-family: 'Poppins', sans-serif;
     }
 
     body{
         padding: 0;
         overflow-x: hidden;
-        font-family: 'Lora', serif;
+        font-family: 'Poppins', sans-serif;
     }
     
     p {
         font-size: 18px;
-        font-family: 'Lora', serif;
+       font-family: 'Poppins', sans-serif;
     }
 
     a{
@@ -155,7 +153,7 @@
         /* width: 140px; */
         /* height: 5vh; */
         padding: 2vh;
-        font-family: sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 2.5px;

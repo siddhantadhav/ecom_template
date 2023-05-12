@@ -76,28 +76,28 @@
                     <span class="display-4 px-2 py-2" style="color:#ffffff; background-color:#24bcbd;">Send a
                         Message</span>
                     <div class="row pt-4">
-                        <div class="col">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <input type="text" id="fname" class="form-control" placeholder="First name"
                                 aria-label="First name" required autofocus>
                         </div>
-                        <div class="col">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <input type="text" id="lname" class="form-control" placeholder="Last name"
                                 aria-label="Last name" required>
                         </div>
-                        <div class="col">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <input type="phone" id="phone" class="form-control" placeholder="Contact Number"
                                 aria-label="Contact Number" required>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <input type="text" id="city" class="form-control" placeholder="City" aria-label="City">
                         </div>
-                        <div class="col">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <input type="email" id="email" class="form-control" placeholder="Email" aria-label="Email"
                                 required>
                         </div>
-                        <div class="col">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <input type="text" id="subject" class="form-control" placeholder="Subject"
                                 aria-label="Subject">
                         </div>
