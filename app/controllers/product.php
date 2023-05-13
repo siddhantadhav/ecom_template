@@ -5,7 +5,7 @@ class Product extends Controller
     public function index()
     {
         // Pagination Formula
-        $limit = 2;
+        $limit = 12;
         $offset = Page::get_offset($limit);
 
         $DB = Database::getInstance();
