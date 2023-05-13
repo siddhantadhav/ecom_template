@@ -246,7 +246,7 @@
                          alt="..."
                          style="width: 25%; height: 25%; border-radius: 50%; margin: 0 auto; ">
 
-                    <h5 style="background-color :; height: 1.4em; font-size: 2.3rem;"
+                    <h5 style="background-color :; height: 1.4em;"
                         class=" display-4 text-white">Unique Elements</h5>
 
                     <p class="card-text text-white p-2">Venture into a world of smooth and modernity with magnum products
@@ -265,7 +265,7 @@
                          alt="..."
                          style="width: 25%; height: 25%; border-radius: 50%; margin: 0 auto; ">
 
-                    <h5 style="background-color :; height: 1.4em; font-size: 2.3rem;"
+                    <h5 style="background-color :; height: 1.4em;"
                         class=" display-4 text-white">Beautiful Design</h5>
 
                     <p class="card-text text-white p-2">An ideal mix of smooth shapes, clean lines, and agile bends made
@@ -285,7 +285,7 @@
                          alt="..."
                          style="width: 25%; height: 25%; border-radius: 50%; margin: 0 auto; ">
 
-                    <h5 style="height: 1.4em; font-size: 2.3rem;"
+                    <h5 style="height: 1.4em;"
                         class=" justify-content-center display-4 text-white">Trendy Components</h5>
 
                     <p class="card-text text-white p-2" style="margin-top: 1.5rem;">The designs from this collection endeavor to carry you closer to
@@ -308,7 +308,7 @@
      data-aos-duration="1000">We render most high-grade experience to our customers. Providing the widest variety of elements we attempt to conceive customers great bathing experiences.</p>
                 <div class="row mt-3" style="">
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                        <h5 style="color: rgb(60, 183, 186);" class="display-6" data-aos="fade-up"
+                        <h5 style="color: rgb(60, 183, 186);" class="display-5" data-aos="fade-up"
      data-aos-duration="1000">Our Goals</h5>
                         <p class="text-muted" data-aos="fade-up"
      data-aos-duration="1000">Global Markets</p>
@@ -318,7 +318,7 @@
      data-aos-duration="1000">Happy Customers</p>
                     </div>
                     <div class="col">
-                        <h5 style="color: rgb(60, 183, 186);" class="display-6" data-aos="fade-up"
+                        <h5 style="color: rgb(60, 183, 186);" class="display-5" data-aos="fade-up"
      data-aos-duration="1000">Field Of Works</h5>
                         <p class="text-muted" data-aos="fade-up"
      data-aos-duration="1000">Kitchen</p>

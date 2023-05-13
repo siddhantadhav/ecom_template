@@ -4,6 +4,10 @@
     input {
         margin: 1vh 0;
     }
+    .contact-info{
+        display: grid;
+        place-items: center;
+    }
 
     @media only screen and (max-width: 900px) {
         .contact-section {
@@ -15,6 +19,12 @@
     @media only screen and (max-width: 992px) {
         .contact {
             border-bottom: none;
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        .contact-form {
+            margin-top: 30px;
         }
     }
 </style>
@@ -29,72 +39,65 @@
     <section class="contact-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-12" style="margin-right: 45px;">
-                    <p class="" style="">Get in Tocuh with us</p>
-                    <h2 class="pb-3">Contact with the Team</h2>
-
-                    <!-- <i class="fa fa-map-marker fa-4x"
-                           aria-hidden="true"></i> -->
-
+                <div class="col-lg-5 col-md-12 contact-info" style="margin-right: 45px;">                    
                     <div class="contact-info-list">
+                    <span class="display-4 px-2"
+                        style="color:#ffffff; background-color:#24bcbd;">Get in Tocuh with us</span>
                         <ul style="list-style: none; margin: 0; padding: 0;">
-                            <li class="pb-5"
+                            <li class=""
                                 style="position: relative; display: block; margin-bottom: 20px; border-bottom:solid rgb(36, 188, 189);">
-                                <div class="icon d-flex">
+                                <div class="icon d-flex mt-4">
                                     <span style="color:rgb(36, 188, 189);"><img
                                             src="<?= ASSETS . THEME ?>images/icons/location-icon.png"
-                                            style="height: 5vh; " class="img-fluid"></span>
-                                            <p class="" style="">Visit our location</p>
+                                            style="height: 30px; " class="img-fluid"></span>
+                                    <p class="" style="">Visit our location</p>
                                 </div>
                                 <div class="text">
-                                    
                                     <p class="text-muted">DSK Bath Solutions, GIDC Phase 3,
                                         Dared, Jamnagar, Gujrat-361004.</p>
                                 </div>
                             </li>
-                            <li class="contact pb-5" style="border-bottom: solid rgb(36, 188, 189)">
+                            <li class="contact" style="border-bottom: solid rgb(36, 188, 189)">
                                 <div class="icon d-flex" styele=" ">
                                     <span><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page-03.png"
-                                            style="height: 5vh;" class="img-fluid"></span>
-                                            <p>Have any questions?</p>
+                                            style="height: 30px;" class="img-fluid"></span>
+                                    <p>Have any questions?</p>
                                 </div>
                                 <div>
-                                    
                                     <p>Phone: <a href="tel: +917021632636" class="text-muted">07021632636</a></p>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                    <div>
-                    </div>
                 </div>
-                <div class="col p-5"
+                <div class="col p-5 contact-form"
                     style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;background-color: rgba(238,238,238,255);;border-top: 15px solid rgb(36, 188, 189);">
-                    <h6 class="text-center" style="">Write Message</h6>
-                    <h2 class="text-center">Send a Message</h2>
-                    <div class="row">
-                        <div class="col">
+                    <!-- <h6 class="text-center" style="">Write Message</h6> -->
+                    <span class="display-4 px-2 py-2" style="color:#ffffff; background-color:#24bcbd;">Send a
+                        Message</span>
+                    <div class="row pt-4">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <input type="text" id="fname" class="form-control" placeholder="First name"
                                 aria-label="First name" required autofocus>
                         </div>
-                        <div class="col">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <input type="text" id="lname" class="form-control" placeholder="Last name"
                                 aria-label="Last name" required>
                         </div>
-                        <div class="col">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <input type="phone" id="phone" class="form-control" placeholder="Contact Number"
                                 aria-label="Contact Number" required>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <input type="text" id="city" class="form-control" placeholder="City" aria-label="City">
                         </div>
-                        <div class="col">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <input type="email" id="email" class="form-control" placeholder="Email" aria-label="Email"
                                 required>
                         </div>
-                        <div class="col">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <input type="text" id="subject" class="form-control" placeholder="Subject"
                                 aria-label="Subject">
                         </div>

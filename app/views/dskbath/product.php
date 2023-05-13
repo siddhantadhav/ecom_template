@@ -320,10 +320,10 @@
         <!-- product -->
         <div class="col">
             <section class="section-products" style="margin-top: 0; padding-top: 0;">
-                <div class="container">
+                <div class="container pb-4">
                     <div class="row justify-content-center text-center">
                         <div class="col-md-8 col-lg-6">
-                            <h2 class="display-2">All Products</h2>
+                            <h2 class="display-2 pt-2">All Products</h2>
                         </div>
                     </div>
                     <div class="row justify-content-center">
