@@ -145,6 +145,15 @@
 	position: relative;
     transition: all 200ms linear;
 }
+#navbar{
+    overflow: hidden;
+    z-index: 1000;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
     
 
     /* button */
@@ -234,7 +243,7 @@
     </div>
   </div>
   <!-- Copyright -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shift p-3">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light shift p-3">
             <a class="navbar-brand"
                href="<?=ROOT?>"><img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png"
                          alt=""
@@ -282,3 +291,17 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
