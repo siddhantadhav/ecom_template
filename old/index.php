@@ -30,10 +30,10 @@
 							<div class="col-sm-6">
 								<img src="<?= ASSETS . THEME ?>images/home/girl1.jpg"
 									 class="girl img-responsive"
-									 alt="" />
+									 alt="girl1" />
 								<img src="<?= ASSETS . THEME ?>images/home/pricing.png"
 									 class="pricing"
-									 alt="" />
+									 alt="pricing" />
 							</div>
 						</div>
 						<div class="item">
@@ -48,10 +48,10 @@
 							<div class="col-sm-6">
 								<img src="<?= ASSETS . THEME ?>images/home/girl2.jpg"
 									 class="girl img-responsive"
-									 alt="" />
+									 alt="girl2" />
 								<img src="<?= ASSETS . THEME ?>images/home/pricing.png"
 									 class="pricing"
-									 alt="" />
+									 alt="pricing" />
 							</div>
 						</div>
 
@@ -67,10 +67,10 @@
 							<div class="col-sm-6">
 								<img src="<?= ASSETS . THEME ?>images/home/girl3.jpg"
 									 class="girl img-responsive"
-									 alt="" />
+									 alt="girl3" />
 								<img src="<?= ASSETS . THEME ?>images/home/pricing.png"
 									 class="pricing"
-									 alt="" />
+									 alt="pricing" />
 							</div>
 						</div>
 
@@ -250,7 +250,7 @@
 
 					<div class="shipping text-center"><!--shipping-->
 						<img src="<?= ASSETS . THEME ?>images/home/shipping.jpg"
-							 alt="" />
+							 alt="shipping" />
 					</div><!--/shipping-->
 
 				</div>
@@ -268,7 +268,7 @@
 											<div style="overflow: hidden;">
 												<img class="product-image"
 													 src="<?= ROOT . $row->image ?>"
-													 alt="" />
+													 alt="product" />
 											</div>
 
 											<!-- <h2>$56</h2> -->
@@ -313,7 +313,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery1.jpg"
-												 alt="" />
+												 alt="gallery1" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -329,7 +329,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery2.jpg"
-												 alt="" />
+												 alt="gallery2" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -345,7 +345,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery3.jpg"
-												 alt="" />
+												 alt="gallery3" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -361,7 +361,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery4.jpg"
-												 alt="" />
+												 alt="gallery4" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -381,7 +381,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery4.jpg"
-												 alt="" />
+												 alt="gallery4" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -397,7 +397,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery3.jpg"
-												 alt="" />
+												 alt="gallery3" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -413,7 +413,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="images/home/gallery2.jpg"
-												 alt="" />
+												 alt="gallery2" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -429,7 +429,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery1.jpg"
-												 alt="" />
+												 alt="gallery1" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -449,7 +449,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery3.jpg"
-												 alt="" />
+												 alt="gallery3" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -465,7 +465,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery4.jpg"
-												 alt="" />
+												 alt="gallery4" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -481,7 +481,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery1.jpg"
-												 alt="" />
+												 alt="gallery1" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -497,7 +497,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery2.jpg"
-												 alt="" />
+												 alt="gallery2" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -517,7 +517,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery1.jpg"
-												 alt="" />
+												 alt="gallery1" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -533,7 +533,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery2.jpg"
-												 alt="" />
+												 alt="gallery2" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -549,7 +549,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery3.jpg"
-												 alt="" />
+												 alt="gallery3" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -565,7 +565,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery4.jpg"
-												 alt="" />
+												 alt="gallery4" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -585,7 +585,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery2.jpg"
-												 alt="" />
+												 alt="gallery2" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -601,7 +601,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery4.jpg"
-												 alt="" />
+												 alt="gallery4" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -617,7 +617,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery3.jpg"
-												 alt="" />
+												 alt="gallery3" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -633,7 +633,7 @@
 									<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="<?= ASSETS . THEME ?>images/home/gallery1.jpg"
-												 alt="" />
+												 alt="gallery1" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#"
@@ -661,7 +661,7 @@
 										<div class="single-products">
 											<div class="productinfo text-center">
 												<img src="<?= ASSETS . THEME ?>images/home/recommend1.jpg"
-													 alt="" />
+													 alt="recommend1" />
 												<h2>$56</h2>
 												<p>Easy Polo Black Edition</p>
 												<a href="#"
@@ -677,7 +677,7 @@
 										<div class="single-products">
 											<div class="productinfo text-center">
 												<img src="<?= ASSETS . THEME ?>images/home/recommend2.jpg"
-													 alt="" />
+													 alt="recommend" />
 												<h2>$56</h2>
 												<p>Easy Polo Black Edition</p>
 												<a href="#"
@@ -693,7 +693,7 @@
 										<div class="single-products">
 											<div class="productinfo text-center">
 												<img src="<?= ASSETS . THEME ?>images/home/recommend3.jpg"
-													 alt="" />
+													 alt="recommend" />
 												<h2>$56</h2>
 												<p>Easy Polo Black Edition</p>
 												<a href="#"
@@ -711,7 +711,7 @@
 										<div class="single-products">
 											<div class="productinfo text-center">
 												<img src="<?= ASSETS . THEME ?>images/home/recommend1.jpg"
-													 alt="" />
+													 alt="recommend" />
 												<h2>$56</h2>
 												<p>Easy Polo Black Edition</p>
 												<a href="#"
@@ -727,7 +727,7 @@
 										<div class="single-products">
 											<div class="productinfo text-center">
 												<img src="<?= ASSETS . THEME ?>images/home/recommend2.jpg"
-													 alt="" />
+													 alt="recommend" />
 												<h2>$56</h2>
 												<p>Easy Polo Black Edition</p>
 												<a href="#"
@@ -743,7 +743,7 @@
 										<div class="single-products">
 											<div class="productinfo text-center">
 												<img src="<?= ASSETS . THEME ?>images/home/recommend3.jpg"
-													 alt="" />
+													 alt="recommend" />
 												<h2>$56</h2>
 												<p>Easy Polo Black Edition</p>
 												<a href="#"

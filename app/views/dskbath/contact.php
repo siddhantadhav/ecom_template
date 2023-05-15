@@ -31,7 +31,7 @@
 
 <body>
     <div>
-        <img style="width: 100%;" src="<?= ASSETS . THEME ?>\images\contact\contact.jpeg" alt="" class="img-fluid">
+        <img style="width: 100%;" src="<?= ASSETS . THEME ?>\images\contact\contact.jpeg" alt="contact.jpeg" class="img-fluid">
     </div>
     <div class="container-fluid" style="height: 10vh; <!-- Add background image -->">
         <h1 class="text-center display-2" style="color: rgb(60, 183, 186)">Contact Us</h1>
@@ -72,7 +72,6 @@
                 </div>
                 <div class="col p-5 contact-form"
                     style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;background-color: rgba(238,238,238,255);;border-top: 15px solid rgb(36, 188, 189);">
-                    <!-- <h6 class="text-center" style="">Write Message</h6> -->
                     <span class="display-4 px-2 py-2" style="color:#ffffff; background-color:#24bcbd;">Send a
                         Message</span>
                     <div class="row pt-4">

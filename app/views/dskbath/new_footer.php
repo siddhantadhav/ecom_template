@@ -108,7 +108,7 @@
         <!--Grid column-->
         <div class="col-lg-4 col-md-12 col-sm-12 pb-5" style="background-color:rgba(238,238,238,255)">
           <div class="footerlogo pb-3">
-            <img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png" alt="" class="img-fluid"
+            <img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png" alt="DSK_LOGO" class="img-fluid"
               style=" height: 15vh; padding-top: 3vh; ">
           </div>
           <p style="" class="text-muted">DSK has wide range of bathroom products which are of High Standards, each of
@@ -149,16 +149,16 @@
           <div class="social">
             <h1>Follow us</h1>
             <div class="Social-media">
-              <a href="#">
+              <a href="https://www.facebook.com/dskbathsolutions/">
                 <font color="#0dcaf0"><i class="fab fa-facebook"></i></font>
               </a>
-              <a href="#">
+              <a href="new_index.php">
                 <font color="#0dcaf0"><i class="fab fa-linkedin"></i></font>
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/dsk_bath/?hl=en">
                 <font color="#0dcaf0"><i class="fab fa-instagram"></i></font>
               </a>
-              <a href="#">
+              <a href="new_index.php">
                 <font color="#0dcaf0"><i class="fab fa-youtube"></i>
               </a></font>
             </div>

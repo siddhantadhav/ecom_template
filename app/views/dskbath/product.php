@@ -27,10 +27,6 @@
         color: #444444;
     }
 
-    /* .section-products .single-product {
-        margin-bottom: 26px;
-    } */
-
     .section-products .product-box {
         border: 2px solid rgb(60, 183, 186);
         transition: all .5s ease-in-out;
@@ -164,7 +160,7 @@
 <div class="">
     <img style="width: 100%;"
          src="<?= ASSETS . THEME ?>images/home/slider/ambience.jpg"
-         alt=""
+         alt="dsk bathroom ambience"
          class="img-fluid">
 </div>
 
@@ -334,7 +330,7 @@
                                     <a href="<?= ROOT . "product_detail/" ?><?= $row->slug ?>">
                                         <div id="product-1" class="single-product">
                                             <div class="part-1">
-                                                <img class="img-fluid" src="<?= ROOT . $row->image ?>" alt="">
+                                                <img class="img-fluid" src="<?= ROOT . $row->image ?>" alt="product image">
                                     </a>
                                     <hr style="border: 2px solid rgb(60, 183, 186);">
                                     <ul>
