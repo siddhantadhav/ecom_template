@@ -382,3 +382,59 @@ Stack trace:
 #3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
 #4 {main}
   thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[15-May-2023 10:18:09 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[15-May-2023 10:18:09 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[15-May-2023 10:18:09 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[15-May-2023 10:18:10 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[15-May-2023 10:18:10 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[15-May-2023 10:18:10 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[15-May-2023 10:18:11 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36

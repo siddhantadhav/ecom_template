@@ -3,7 +3,7 @@
 define("WEBSITE_TITLE", 'DSKBATH');
 
 // for server
-define('DB_NAME', 'creatrzy_dskbath_db');
+define('DB_NAME', 'creatrzy_test_dskbath_db');
 define('DB_USER', 'creatrzy_developerCM3');
 define('DB_PASSWORD', 'DeveloperCM3');
 
