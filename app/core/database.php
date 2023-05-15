@@ -7,10 +7,10 @@ Class Database{
        try{
             $string = DB_TYPE . ":host=" .DB_HOST . ";port=3306;dbname=" . DB_NAME;
             // for server
-            // self::$conn = new PDO($string, DB_USER, DB_PASSWORD);
+            self::$conn = new PDO($string, DB_USER, DB_PASSWORD);
 
             // for localhost
-            self::$conn = new PDO($string, DB_USER);
+            // self::$conn = new PDO($string, DB_USER);
        }
        catch (PDOException $e){
             die($e->getMessage());

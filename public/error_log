@@ -1,0 +1,384 @@
+[08-May-2023 08:45:55 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[08-May-2023 08:45:56 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[08-May-2023 08:45:57 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[08-May-2023 08:45:57 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[08-May-2023 08:45:58 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[08-May-2023 08:45:58 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[08-May-2023 08:46:24 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[08-May-2023 08:46:34 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[08-May-2023 08:46:34 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[08-May-2023 08:46:35 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[08-May-2023 08:46:36 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[12-May-2023 06:49:05 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:05 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:05 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('Ceiling-Showers...', 'Ceiling-Showers...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('Ceiling-Showers...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:11 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:11 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:11 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('Ceiling-Showers...', 'Ceiling-Showers...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('Ceiling-Showers...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:21 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:21 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:21 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('Ceiling-Showers...', 'Ceiling-Showers...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('Ceiling-Showers...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:30 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:30 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:30 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('Ceiling-Showers...', 'Ceiling-Showers...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('Ceiling-Showers...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:31 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:31 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:31 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('Ceiling-Showers...', 'Ceiling-Showers...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('Ceiling-Showers...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:31 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:31 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:31 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('Ceiling-Showers...', 'Ceiling-Showers...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('Ceiling-Showers...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:31 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:31 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:31 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('Ceiling-Showers...', 'Ceiling-Showers...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('Ceiling-Showers...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:31 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:31 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:31 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('Ceiling-Showers...', 'Ceiling-Showers...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('Ceiling-Showers...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:32 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:32 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:49:32 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('Ceiling-Showers...', 'Ceiling-Showers...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('Ceiling-Showers...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:51:54 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:51:54 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 06:51:54 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:14 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:14 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:14 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:14 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:14 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:14 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:17 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:17 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:17 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:18 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:18 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:18 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:22 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:22 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:22 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:23 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:23 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:23 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:23 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:23 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:23 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:24 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:24 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:24 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:24 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:24 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:24 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:24 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:24 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:24 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:25 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:25 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:25 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:25 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:25 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:25 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:25 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:25 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:25 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:27 America/Chicago] PHP Warning:  Undefined variable $new_width in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:27 America/Chicago] PHP Warning:  Undefined variable $new_height in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[12-May-2023 07:00:27 America/Chicago] PHP Fatal error:  Uncaught ValueError: imagecreatetruecolor(): Argument #1 ($width) must be greater than 0 in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php:85
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(85): imagecreatetruecolor(NULL, NULL)
+#1 /home1/creatrzy/testing.dskbath.com/app/models/image.class.php(263): Image->crop_image('rlgX8JYoGY88tc8...', 'rlgX8JYoGY88tc8...', 600, 600)
+#2 /home1/creatrzy/testing.dskbath.com/app/controllers/product.php(22): Image->get_thumb_post('rlgX8JYoGY88tc8...')
+#3 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Product->index('home')
+#4 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#5 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/models/image.class.php on line 85
+[15-May-2023 10:15:12 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[15-May-2023 10:15:14 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[15-May-2023 10:15:15 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
+[15-May-2023 10:15:15 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'creatrzy_dskbath_db.products' doesn't exist in /home1/creatrzy/testing.dskbath.com/app/core/database.php:36
+Stack trace:
+#0 /home1/creatrzy/testing.dskbath.com/app/core/database.php(36): PDOStatement->execute(Array)
+#1 /home1/creatrzy/testing.dskbath.com/app/controllers/home.php(14): Database->read('select * from p...')
+#2 /home1/creatrzy/testing.dskbath.com/app/core/app.php(30): Home->index('home')
+#3 /home1/creatrzy/testing.dskbath.com/public/index.php(21): App->__construct()
+#4 {main}
+  thrown in /home1/creatrzy/testing.dskbath.com/app/core/database.php on line 36
