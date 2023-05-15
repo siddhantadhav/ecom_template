@@ -148,7 +148,7 @@
                         <div class="row mb-3">
                             <!-- image -->
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <img src="<?= $row->image ?>" class="img-fluid" alt="" style="">
+                                <img src="<?= $row->image ?>" class="img-fluid" alt="cart product image" style="">
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                 <div class="row">

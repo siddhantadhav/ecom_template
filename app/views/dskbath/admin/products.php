@@ -183,11 +183,11 @@
                             </div>
                         </div>
                         <div class="js-product-images-add edit_product_images">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
+                            <img src="" alt="product_image">
+                            <img src="" alt="product_image">
+                            <img src="" alt="product_image">
+                            <img src="" alt="product_image">
+                            <img src="" alt="product_image">
                         </div>
                         <button type="button"
                                 class="btn btn-danger"

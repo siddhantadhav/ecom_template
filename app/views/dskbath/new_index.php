@@ -1,9 +1,8 @@
 <?php $this->view("new_header", $data); ?>
 
 <style>
-    body {
-        /* max-width: fit-content;
-        overflow-x: hidden; */
+    html{
+        overflow-x: hidden;
     }
 
     .outer-circle {
@@ -93,33 +92,27 @@
             <div class="carousel-item active">
                 <img src="<?= ASSETS . THEME ?>images/home/slider/asthetic.jpg"
                      class="d-block w-100 img-fluid"
-                     alt="...">
+                     alt="asthetic slider1">
             </div>
             <div class="carousel-item">
                 <img src="<?= ASSETS . THEME ?>images/home/slider/complete.jpg"
                      class="d-block w-100 img-fluid"
-                     alt="...">
+                     alt="complete slider2">
             </div>
             <div class="carousel-item">
                 <img src="<?= ASSETS . THEME ?>images/home/slider/redesign.jpg"
                      class="d-block w-100 img-fluid"
-                     alt="...">
+                     alt="redesign slider3">
             </div>
         </div>
-        <button class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"
-                  aria-hidden="true"></span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
-            <span class="carousel-control-next-icon"
-                  aria-hidden="true"></span>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
@@ -159,7 +152,7 @@
                              style="background-color: #eee; height: 10vh; "></div>
                         <div style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;">
                             <img src="<?= ASSETS . THEME ?>images/home/home_section_2.jpg"
-                                 alt=""
+                                 alt="dsk luxurious bathroom"
                                  srcset=""
                                  class="img-fluid"
                                  style="max-height: 100vh; width: 100%;">
@@ -181,7 +174,7 @@
                     <div class="col gx-0" style="">
                         <div style="background-color: #eee; height: 10vh; "></div>
                         <div>
-                            <img src="<?= ASSETS . THEME ?>images/home/home_section_3.jpg" alt="" class="img-fluid" style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px; width: 100%;">
+                            <img src="<?= ASSETS . THEME ?>images/home/home_section_3.jpg" alt="dsk bath innovative bathroom" class="img-fluid" style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px; width: 100%;">
                         </div>
                     </div>
                     <div class="col-1 gx-0 d-none d-xl-block d-lg-block d-md-block" style="background-color: #eee; z-index: -1; margin-bottom:10vh;"></div>
@@ -200,35 +193,25 @@
                 <div class="row mt-5">
                     <div class="col">
                         <p class="text-muted" data-aos="fade-up"
-     data-aos-duration="1000"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_01.png" style="height: 4vh;" class="img-fluid"> Biggest Market</p>
+     data-aos-duration="1000"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_01.png" style="height: 4vh;" class="img-fluid" alt="Biggest Market"> Biggest Market</p>
                         <p class="text-muted" data-aos="fade-up"
-     data-aos-duration="1000"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_02.png" style="height: 4vh;" class="img-fluid"> Being The Best One</p>
+     data-aos-duration="1000"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_02.png" style="height: 4vh;" class="img-fluid" alt="Being The Best One"> Being The Best One</p>
                         <p class="text-muted" data-aos="fade-up"
-     data-aos-duration="1000"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_04.png" style="height: 4vh;" class="img-fluid"> Happy Customers</p>
+     data-aos-duration="1000"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_04.png" style="height: 4vh;" class="img-fluid" alt="Happy Customers"> Happy Customers</p>
                     </div>
                     <div class="col">
                         <p class="text-muted" data-aos="fade-up"
-     data-aos-duration="1000"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_05.png" style="height: 4vh;" class="img-fluid"> Professional Outlook</p>
+     data-aos-duration="1000"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_05.png" style="height: 4vh;" class="img-fluid" alt="Professional Outlook"> Professional Outlook</p>
                         <p class="text-muted" data-aos="fade-up"
-     data-aos-duration="1000"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_05.png" style="height: 4vh;" class="img-fluid"> Innovative Technology</p>
+     data-aos-duration="1000"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_05.png" style="height: 4vh;" class="img-fluid" alt="Innovative Technology"> Innovative Technology</p>
                         <p class="text-muted" data-aos="fade-up"
-     data-aos-duration="1000"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_05.png" style="height: 4vh;" class="img-fluid"> Elegant Design</p>
+     data-aos-duration="1000"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_05.png" style="height: 4vh;" class="img-fluid" alt="Elegant Design"> Elegant Design</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<!-- <section style="margin-top: 0;">
-    <div class="">
-        <img src="<?= ASSETS . THEME ?>images/home/card_bg.jpg"
-             alt=""
-             class="img-fluid"
-             style="">
-    </div>
-</section> -->
-
 
 <section class="card-section my-5"
          style="background-image: url('<?= ASSETS . THEME ?>images/home/card_bg.jpg');
@@ -243,7 +226,7 @@
                      style=" text-align: center; box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; background-color: rgb(60, 183, 186);">
                     <img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_07.png"
                          class="card-img-top"
-                         alt="..."
+                         alt="unique element icon"
                          style="width: 25%; height: 25%; border-radius: 50%; margin: 0 auto; ">
 
                     <h5 style="background-color :; height: 1.4em;"
@@ -262,7 +245,7 @@
                      style=" border-radius: 15em; text-align: center; box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; background-color: rgb(60, 183, 186);">
                     <img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_08.png"
                          class="card-img-top"
-                         alt="..."
+                         alt="Beautiful Design icon"
                          style="width: 25%; height: 25%; border-radius: 50%; margin: 0 auto; ">
 
                     <h5 style="background-color :; height: 1.4em;"
@@ -282,7 +265,7 @@
                      style="border-radius: 15em; text-align: center; box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; background-color: rgb(60, 183, 186);">
                     <img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_09.png"
                          class="card-img-top"
-                         alt="..."
+                         alt="Trendy Components icon"
                          style="width: 25%; height: 25%; border-radius: 50%; margin: 0 auto; ">
 
                     <h5 style="height: 1.4em;"
@@ -341,7 +324,7 @@
                              style="background-color: #eee; height: 10vh; "></div>
                         <div style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;">
                             <img src="<?= ASSETS . THEME ?>images/home/home_section_4.jpg"
-                                 alt=""
+                                 alt="happy customer"
                                  srcset=""
                                  class="img-fluid"
                                  style="max-height: 100vh; width: 100%;">

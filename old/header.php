@@ -82,7 +82,7 @@
 					<div class="col-sm-4">
 						<div class="logo pull-left">
 							<a href="index"><img src="<?= ASSETS ?>dskbath/images/home/logo.png"
-									 alt="" /></a>
+									 alt="logo" /></a>
 						</div>
 
 						<!-- <div class="btn-group pull-right">

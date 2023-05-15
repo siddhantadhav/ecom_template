@@ -30,7 +30,7 @@
 </style>
 <div>
     <img src="<?= ASSETS . THEME ?>images/about/about_us_banner.jpg"
-         alt=""
+         alt="about_us_banner"
          class="img-fluid">
 </div>
 
@@ -64,7 +64,7 @@
                         <div style="background-color: #eee; height: 10vh; "></div>
                         <div>
                             <img src="<?= ASSETS . THEME ?>images/about/about_us_section_1.jpg"
-                                 alt=""
+                                 alt="about_us_intro_image"
                                  class="img-fluid"
                                  style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;">
                         </div>
@@ -87,7 +87,7 @@
                         <div style="background-color: #eee; height: 10vh; "></div>
                         <div>
                             <img src="<?= ASSETS . THEME ?>images/about/about_us_section_2.jpeg"
-                                 alt=""
+                                 alt="about_us_section_2.jpeg"
                                  class="img-fluid"
                                  style="box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px; width: 100%;">
                         </div>

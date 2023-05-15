@@ -246,7 +246,7 @@
         <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light shift p-3">
             <a class="navbar-brand"
                href="<?=ROOT?>"><img src="<?= ASSETS . THEME ?>images/DSK_LOGO.png"
-                         alt=""
+                         alt="DSK_LOGO"
                          srcset=""
                          class="img-fluid"
                          style="max-height:10vh;"></a>
