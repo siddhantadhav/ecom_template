@@ -202,7 +202,7 @@
                                     <?php if(in_array($category->id, $parents)): ?>
                                     <ul class="collapse nav flex-column ms-1" id="<?=$category->category?>" data-bs-parent="#menu">  
                                         <li class="w-100">
-                                            <a href="<?=ROOT .'product/category/'. $category->category?>" class="nav-link px-0 "> <span class="d-sm-inline text-black">All Products</span></a>
+                                            <a href="<?=ROOT .'product/category/'. $category->category?>" class="nav-link px-0 display-2"> <span class="d-sm-inline text-black">All Products</span></a>
                                             <?php foreach ($categories as $sub_cat): ?>
                                                 <?php if ($sub_cat->parent == $category->id): ?>
                                                     <a href="<?=ROOT .'product/category/'. $category->category.'/'.$sub_cat->category?>" class="nav-link px-0 text-black"> <span class="d-sm-inline"><?php $sub_cat->category = str_replace('_', ' ', $sub_cat->category); echo ucwords($sub_cat->category)?></span></a>
@@ -228,7 +228,7 @@
                                 <a href="<?= ROOT .'product/color/'. $color->color ?>"
                                    data-bs-toggle="collapse"
                                    onclick = "window.open(this.href,'_self')"
-                                   class="nav-link px-0 align-middle text-black">
+                                   class="nav-link px-0 align-middle text-muted">
                                    
                                    <span class="dot " style="background-color: rgb(<?=$color->red?>, <?=$color->green?>, <?=$color->blue?>);"></span>
                                     <span class="ms-1 d-sm-inline align-self-start">
@@ -245,7 +245,7 @@
         <div class="col-lg-2 col-md-3 col-sm-12 d-none d-lg-block d-md-block" id="sidebar_collapse">
             <!-- category -->
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
-                <span class="fs-5 d-sm-inline text-black " ><h2 class="display-5">Categories</h2> </span>
+                <span class="fs-5 d-sm-inline text-black " ><h2 class="display-4">Categories</h2> </span>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         <?php if (isset($categories) && is_array($categories)): ?>
                             <?php foreach ($categories as $category):
@@ -256,7 +256,7 @@
                             
                                 <!-- Category with child  -->
                                 <li>
-                                    <a href="<?=in_array($category->id, $parents) ? '#' . $category->category : ROOT .'product/category/'. $category->category?>" data-bs-toggle="collapse"  aria-expanded="false" class="nav-link px-0 align-middle text-black"
+                                    <a href="<?=in_array($category->id, $parents) ? '#' . $category->category : ROOT .'product/category/'. $category->category?>" data-bs-toggle="collapse"  aria-expanded="false" class="nav-link px-0 align-middle text-muted"
                                     <?php if(!in_array($category->id, $parents)): ?> 
                                         onclick = "window.open(this.href,'_self')"
                                     <?php endif; ?> > 
@@ -290,7 +290,7 @@
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
                 <a href="/"
                    class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none text-black ">
-                    <span class="fs-5 d-sm-inline sidebar_heading"><h2 class="display-5">Colors</h2></span>
+                    <span class="fs-5 d-sm-inline sidebar_heading"><h2 class="display-4">Colors</h2></span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                     id="menu">
@@ -300,7 +300,7 @@
                                 <a href="<?= ROOT .'product/color/'. $color->color ?>"
                                    data-bs-toggle="collapse"
                                    onclick = "window.open(this.href,'_self')"
-                                   class="nav-link px-0 align-middle text-black">
+                                   class="nav-link px-0 align-middle text-muted">
                                    
                                    <span class="dot " style="background-color: rgb(<?=$color->red?>, <?=$color->green?>, <?=$color->blue?>);"></span>
                                     <span class="ms-1 d-sm-inline align-self-start">
@@ -320,10 +320,10 @@
         <!-- product -->
         <div class="col">
             <section class="section-products" style="margin-top: 0; padding-top: 0;">
-                <div class="container">
+                <div class="container pb-4">
                     <div class="row justify-content-center text-center">
                         <div class="col-md-8 col-lg-6">
-                            <h2 class="display-2">All Products</h2>
+                            <h2 class="display-2 pt-2">All Products</h2>
                         </div>
                     </div>
                     <div class="row justify-content-center">

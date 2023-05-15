@@ -19,7 +19,7 @@
         font-weight: 400;
         margin-bottom: 0;
         margin-top: 0;
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Poppins', sans-serif;
     }
 
     /*product list*/

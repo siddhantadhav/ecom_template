@@ -50,12 +50,15 @@
         margin-top: -20vh;
     }
 
-    @media only screen and (max-width: 900px) {
+    @media only screen and (max-width: 992px) {
         .outer-circle {
             margin-bottom: 5vh;
         }
         .cc-section{
             margin-top: 0;
+        }
+        .row-2{
+            margin-top: 5vh;
         }
     }
 
@@ -78,7 +81,7 @@
         
         .sec-para{
             padding: 0 5vh !important; ;
-        }
+        }      
     }
 </style>
 
@@ -128,7 +131,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 my-5 sec-para"
                  style="padding: 0 10vh ;">
-                <h2 class="display-2" data-aos="fade-up"
+                <h2 class="display-3" data-aos="fade-up"
      data-aos-duration="1000">Unfold Luxurious Experience</h2>
                 <p class="text-muted" data-aos="fade-up"
      data-aos-duration="1000">
@@ -185,8 +188,8 @@
                 </div>
             </div>
 
-            <div class="col sec-para" style="padding: 0 10vh ;">
-                <h2 class="display-2" data-aos="fade-up"
+            <div class="col sec-para row-2" style="padding: 0 10vh ; ">
+                <h2 class="display-3" data-aos="fade-up"
      data-aos-duration="1000">An Innovative Approach</h2>
                 <p class="text-muted" data-aos="fade-up"
      data-aos-duration="1000">DSK has a wide range of bathroom products which are of High Standards, each of which has been designed and evolved through keen market study and 26 Years of Experience. All items are designed with meticulous importance to offer optimum convenience during bathroom planning. Our types of equipment have been gifting a world of elegant bathroom accessories with its high-quality range of sleek, innovative and attractive products. Helping you make your bathroom experience the best.</p>
@@ -195,7 +198,7 @@
                     <a href="<?=ROOT?>product"><button class="button"><i class="fa fa-chevron-right"></i> Quote Products</button><br><br></a>
                 </div>
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="col">
                         <p class="text-muted" data-aos="fade-up"
      data-aos-duration="1000"><img src="<?= ASSETS . THEME ?>images/icons/Icon_Page_01.png" style="height: 4vh;" class="img-fluid"> Biggest Market</p>
                         <p class="text-muted" data-aos="fade-up"
@@ -232,7 +235,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed; background-size: contain; ">
     <div class="row align-items-center justify-content-center">
-        <div class="col row justify-content-center" data-aos="zoom-out-right"
+        <div class="col row justify-content-center" data-aos="zoom-out-up"
      data-aos-duration="1000">
             <div class="rounded-circle outer-circle row align-items-center justify-content-center"
                  style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;">
@@ -244,14 +247,14 @@
                          style="width: 25%; height: 25%; border-radius: 50%; margin: 0 auto; ">
 
                     <h5 style="background-color :; height: 1.4em;"
-                        class="my-3 display-4 text-white">Unique Elements</h5>
+                        class=" display-4 text-white">Unique Elements</h5>
 
-                    <p class="card-text text-white p-4">Venture into a world of smooth and modernity with magnum products
+                    <p class="card-text text-white p-2">Venture into a world of smooth and modernity with magnum products
                         from the worlds finest gathering.</p>
                 </div>
             </div>
         </div>
-        <div class="col row justify-content-center" data-aos="zoom-out-left"
+        <div class="col row justify-content-center" data-aos="zoom-out-up"
      data-aos-duration="1000">
             <div class="rounded-circle outer-circle d-flex align-items-center justify-content-center"
                  style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;">
@@ -263,15 +266,15 @@
                          style="width: 25%; height: 25%; border-radius: 50%; margin: 0 auto; ">
 
                     <h5 style="background-color :; height: 1.4em;"
-                        class="my-3 display-4 text-white">Beautiful Design</h5>
+                        class=" display-4 text-white">Beautiful Design</h5>
 
-                    <p class="card-text text-white p-4">An ideal mix of smooth shapes, clean lines, and agile bends made
+                    <p class="card-text text-white p-2">An ideal mix of smooth shapes, clean lines, and agile bends made
                         particularly to glitz up bathing ranges</p>
                 </div>
             </div>
 
         </div>
-        <div class="col row justify-content-center" data-aos="zoom-out-down"
+        <div class="col row justify-content-center" data-aos="zoom-out-up"
      data-aos-duration="1000">
             <div class="rounded-circle outer-circle d-flex align-items-center justify-content-center"
                  style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;">
@@ -283,9 +286,9 @@
                          style="width: 25%; height: 25%; border-radius: 50%; margin: 0 auto; ">
 
                     <h5 style="height: 1.4em;"
-                        class="my-4 justify-content-center display-4 text-white">Trendy Components</h5>
+                        class=" justify-content-center display-4 text-white">Trendy Components</h5>
 
-                    <p class="card-text text-white p-4">The designs from this collection endeavor to carry you closer to
+                    <p class="card-text text-white p-2" style="margin-top: 1.5rem;">The designs from this collection endeavor to carry you closer to
                         your desires and love for flawlessness.</p>
                 </div>
             </div>
@@ -299,13 +302,13 @@
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 my-5 sec-para" style="padding: 0 10vh ;">
-                <h2 class="display-4" data-aos="fade-up"
+                <h2 class="display-3" data-aos="fade-up"
      data-aos-duration="1000">Customer Centricity</h2>
                 <p class="text-muted" data-aos="fade-up"
      data-aos-duration="1000">We render most high-grade experience to our customers. Providing the widest variety of elements we attempt to conceive customers great bathing experiences.</p>
                 <div class="row mt-3" style="">
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                        <h5 style="color: rgb(60, 183, 186);" class="display-6" data-aos="fade-up"
+                        <h5 style="color: rgb(60, 183, 186);" class="display-5" data-aos="fade-up"
      data-aos-duration="1000">Our Goals</h5>
                         <p class="text-muted" data-aos="fade-up"
      data-aos-duration="1000">Global Markets</p>
@@ -315,7 +318,7 @@
      data-aos-duration="1000">Happy Customers</p>
                     </div>
                     <div class="col">
-                        <h5 style="color: rgb(60, 183, 186);" class="display-6" data-aos="fade-up"
+                        <h5 style="color: rgb(60, 183, 186);" class="display-5" data-aos="fade-up"
      data-aos-duration="1000">Field Of Works</h5>
                         <p class="text-muted" data-aos="fade-up"
      data-aos-duration="1000">Kitchen</p>
